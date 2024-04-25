@@ -3,5 +3,7 @@ WWW,World Wide Web
 HTTP,Hypertext Transfer Protocol
 RDF,Resource Description Framework
 LTQP,Link Traversal Query Processing
-SPARQL, SPARQL Protocol and RDF Query Language
-WWWLD, World Wide Web of Linked Data 
+SPARQL,SPARQL Protocol and RDF Query Language
+WWWLD,World Wide Web of Linked Data
+IRI,Internationalized Resource Identifier
+URI,Uniform Resource Identifier
