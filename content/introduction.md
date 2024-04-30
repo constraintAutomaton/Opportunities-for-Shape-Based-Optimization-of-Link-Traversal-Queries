@@ -18,7 +18,7 @@ Additionally, HTTP requests can be very slow and unpredictable making their exec
 Reachability criteria [](cite:cites Hartig2012) is a partial answer to this problem by defining completeness on the traversal of URIs
 contained in the internal data source instead of on the acquisition of all the results or the traversal of the whole web.
 Those criteria can also be used as a lookup policy for derefencing external data sources.
-Another difficulty is the lack of a priori information about the triples inside the data sources rendering query planning arduous.
+Another difficulty is the lack of a priori information about the sources rendering query planning arduous.
 To alleviate this problem, the current state of the art is to use carefully crafted heuristics [](cite:cites Hartig2011, Hartig2014).
 Those heuristics provide non-optimal fairly performant query plans.
 Their faults are of little importance (in most cases) because the main bottleneck of the approach is the high number of HTTP requests.

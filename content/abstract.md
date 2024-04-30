@@ -2,8 +2,7 @@
 <!-- Context      -->
 The World Wide Web of Linked Data (WWWLD) can be represented as one big decentralized unstructured database.
 <!-- Need         -->
-Querying this database is difficult due to the pseudo-infinite size of the web implying
-a very large search domain and
+Querying this database is difficult due to the pseudo-infinite size of the web and
 its unstructured nature providing little standardize useful a priori information
 for query optimization.
 <!-- Task         -->
@@ -20,6 +19,7 @@ discover data on the web and greatly reduce the query execution time compared to
 by adapting dynamically the query engine lookup policy .
 <!-- Conclusion   -->
 Those results indicate that if the data publisher describes precisely the content and location of its data
-and if the user creates selective enough queries then queries over the WWWLD might be a viable means to access information automatically.
+and if the user creates selective enough queries then queries over the WWWLD might be a viable means to access information 
+on the web without predefined federation.
 <!-- Perspectives -->
 In future work we are going to formalize our method, evaluate it with more queries, and environment and experiment if we can improve query plan and the speed the users get their results.
