@@ -1,25 +1,23 @@
 ## Abstract
 <!-- Context      -->
-The World Wide Web of Linked Data (WWWLD) can be represented as one big decentralized unstructured database.
+Linked Data on the Web can be considered one very large Decentralized Knowledge Graph (DKG).
 <!-- Need         -->
-Querying this database is difficult due to the pseudo-infinite size of the web and
-its unstructured nature providing little standardize useful a priori information
-for query optimization.
+Querying this DKG in a link traversal-based manner is difficult due to the pseudo-infinite size of the Web,
+its unstructured nature,
+and the fact that query engines have no priori information for query planning.
+In practise, we encounter subsets of the Web that form specific decentralized environments,
+which offer structural properties that query engines can benefit from
+for improving both discovery and query planning.
 <!-- Task         -->
-Most queries over the web implicitly target a small unknown subdomain.
-If the data providers expose some information about the data they publish
-it is possible to progressively know information about segments of the search domain
-before traversing it.
+Our goal is to explore the opportunities for using shape-based structural metadata within decentralized environments
+to improve discovery and query planning within traversal-based query engines.
 <!-- Object       -->
-We propose to introduce a shape index as a means to describe
-data sources improving the discoverability and quality of data, and helping query engine in their processing.
+In this article, we discuss these opportunities, present preliminary results, and discuss opportunities for future work.
 <!-- Findings     -->
-With our early experiment, we show that our method can more easily
-discover data on the web and greatly reduce the query execution time compared to the current state of the art
-by adapting dynamically the query engine lookup policy .
+Our initial experiments show that our method can more selectively discover data,
+leading to significant reductions to query execution time compared to the current state of the art.
 <!-- Conclusion   -->
-Those results indicate that if the data publisher describes precisely the content and location of its data
-and if the user creates selective enough queries then queries over the WWWLD might be a viable means to access information 
-on the web without predefined federation.
+Our preliminary results demonstrate benefits for shape-based metadata when querying over decentralized environments.
 <!-- Perspectives -->
-In future work we are going to formalize our method, evaluate it with more queries, and environment and experiment if we can improve query plan and the speed the users get their results.
+In future work we are going to formalize our method, perform more extensive experiments,
+and design algorithms for query planning that take into account this shape metadata.
