@@ -7,3 +7,6 @@ SPARQL,SPARQL Protocol and RDF Query Language
 WWWLD,World Wide Web of Linked Data
 IRI,Internationalized Resource Identifier
 URI,Uniform Resource Identifier
+regex,Regular Expression
+SI,Shape Index
+LDSE,Linked Data Structured Environment
