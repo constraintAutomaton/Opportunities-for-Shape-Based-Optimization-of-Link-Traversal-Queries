@@ -1,18 +1,18 @@
 ## Abstract
 <!-- Context      -->
-Linked Data on the Web can be considered one very large Decentralized Knowledge Graph (DKG).
+Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph (DKG).
 <!-- Need         -->
 Querying this DKG in a link traversal-based manner is difficult due to the pseudo-infinite size of the Web,
 its unstructured nature,
-and the fact that query engines have no priori information for query planning.
+and the fact that query engines have no a priori information for query planning.
 In practise, we encounter subsets of the Web that form specific decentralized environments,
 which offer structural properties that query engines can benefit from
 for improving both discovery and query planning.
 <!-- Task         -->
 Our goal is to explore the opportunities for using shape-based structural metadata within decentralized environments
-to improve discovery and query planning within traversal-based query engines.
+to improve discovery and query planning for traversal-based queries.
 <!-- Object       -->
-In this article, we discuss these opportunities, present preliminary results, and discuss opportunities for future work.
+In this article, we discuss these opportunities, present preliminary results, and discuss potential future work.
 <!-- Findings     -->
 Our initial experiments show that our method can more selectively discover data,
 leading to significant reductions to query execution time compared to the current state of the art.
