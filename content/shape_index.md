@@ -29,7 +29,7 @@ one could consider that it is not a needed heuristic because shapes without that
 but it is false due to potential optional predicates inside of RDF shapes.
 If every $$Q_p \in Q$$ are contained by a shape of the SI then we know before the request of the whole domain
 where potential solution can be gotten, so we can safely adapt the lookup policy to prune links from the rest of the domain.
-This is the best-case scenario but there are other consideration.
+This is the best-case scenario but other propositions are necessary to solve the problem.
 For instance, if one of the shapes is open then it will always be necessary to visit the set of the documents associated
 with it.
 If the SI is complete and some $$Q_p$$ are not contained inside a $$Q_s$$ then the engine has to visit
