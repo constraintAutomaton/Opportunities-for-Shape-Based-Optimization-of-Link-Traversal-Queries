@@ -40,6 +40,6 @@ definition of the shapes and class and in the implicit data model (when consider
 Lastly, if the dereferencing of the triples from $$Q_p$$ that have no binding with $$Q_s$$
 leads to resources outside of the domain of the SI then we consider that $$Q_p  \sqsubseteq Q_s$$.
 This last proposition is the only dynamic part of our approach , indeed until this
-proposition it was possible without any dereferencing to determine potential more restrictive search spaces.
+proposition it was possible without any dereferencing (apart from getting the SI) to determine potential more restrictive search spaces.
 This implies that to benefit from this proposition the derefencing of those URI has to be executed
 before the dereferencing of URIs that the we know are inside the domain of the SI.
