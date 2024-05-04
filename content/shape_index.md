@@ -29,10 +29,16 @@ one could consider that it is not a needed heuristic because shapes without that
 but it is false due to potential optional predicates inside of RDF shapes.
 If every $$Q_p \in Q$$ are contained by a shape of the SI then we know before the request of the whole domain
 where potential solution can be gotten, so we can safely adapt the lookup policy to prune links from the rest of the domain.
-This is the best-case scenario but others are also possible.
+This is the best-case scenario but there are other consideration.
 For instance, if one of the shapes is open then it will always be necessary to visit the set of the documents associated
 with it.
 If the SI is complete and some $$Q_p$$ are not contained inside a $$Q_s$$ then the engine has to visit
 every set of documents where $$Q_p$$ has a partial binding with an associated $$Q_s$$.
 In a similar case where the SI is not complete then it is necessary to visit every document in the domain minus those
 where the $$Q_p$$ have no partial binding with the $$Q_s$$.
+Lastly, if the dereferencing of the triples from $$Q_p$$ that have no binding with $$Q_s$$
+leads to resources outside of the domain of the SI then we consider that $$Q_p  \sqsubseteq Q_s$$.
+This last proposition is the only dynamic part of our approach , indeed until this
+proposition it was possible without any dereferencing to determine potential more restrictive search spaces.
+This implies that to benefit from this proposition the derefencing of those URI has to be executed
+before the dereferencing of URIs that the we know are inside the domain of the SI.
