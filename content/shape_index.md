@@ -23,10 +23,7 @@ into a query then if  $$Q_p$$ is contained inside $$Q_s$$ the associated
 set of documents can contribute to the query result.
 Often $$Q_p$$ is contained inside multiple $$Q_s$$ due to the reuse of vocabulary terms,
 in those instances, we consider every document associated with those shapes
-as potential sources of solutions, unless $$Q_p$$ and $$Q_s$$ are bound by the same RDF class then we only consider $$Q_s$$.
-We use this heuristic because we consider that if the user specifies a class it indicates their intention for a specific object,
-one could consider that it is not a needed heuristic because shapes without that class would not be "containers" of the query,
-but it is false due to potential optional predicates inside of RDF shapes.
+as potential sources of solutions.
 If every $$Q_p \in Q$$ are contained by a shape of the SI then we know before the request of the whole domain
 where potential solution can be gotten, so we can safely adapt the lookup policy to prune links from the rest of the domain.
 Above is the best-case scenario but other propositions are necessary to completly solve the problem.
@@ -35,6 +32,11 @@ with it. If the SI is complete and some $$Q_p$$ are not contained inside a $$Q_s
 every set of documents where $$Q_p$$ has a partial binding with an associated $$Q_s$$.
 In a similar case where the SI is not complete then it is necessary to visit every document in the domain minus those
 where the $$Q_p$$ have no partial binding with the $$Q_s$$.
+For the previous case we can apply the following heuristic,
+if $$Q_p$$ and $$Q_s$$ are bound by the same RDF class then we only consider $$Q_s$$.
+We use this heuristic because of the definition of the SI and because if the user specifies a class it indicates their intention for this specific object.
+This proposition suppose that at least in the context of the query there are no contradiction between the
+definition of the shapes and class and in the implicit data model (when considering joining of triple patterns) the user want as results. 
 Lastly, if the dereferencing of the triples from $$Q_p$$ that have no binding with $$Q_s$$
 leads to resources outside of the domain of the SI then we consider that $$Q_p  \sqsubseteq Q_s$$.
 This last proposition is the only dynamic part of our approach , indeed until this
