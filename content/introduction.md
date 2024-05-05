@@ -28,7 +28,7 @@ The limitations of this approach are usually of little importance because the ma
 In response to this, current research focuses on providing fast results to the user by ordering adequately the dereferencing operations of IRIs [](cite:cites hartig2016walking, Ladwig2010).
 
 Current LTQP research considers that resources are served by HTTP servers.
-However, some subsets of is expose by web servers implement protocols above the application layer of the TCP/IP stack.
+However, some subsets of the web is expose by web servers implementing protocols above the application layer of the TCP/IP stack.
 Those protocols organize the location of the information published in an HTTP server.
 Examples of them are Solid and the other protocols presented earlier.
 We refer to those subsets of the web as Link Data Structured Environments (LDSE).
@@ -44,10 +44,9 @@ It is reasonable to hypothesize that a significant portion of those HTTP request
 documents containing data that don't contribute to the result of the query.
 Hence investigating more descriptive structural assumptions is a relevant research endeavor.
 Structural assumptions based on the path structure of URIs are not a viable solution.
-Indeed, those types of assumptions either don't describe enough the data, are too exhaustive to be effective or practical
-or they are not compatible with the specific data publication strategy
-of the agent, combined with the fact that they are not easily described in a machine-interpretable way 
-they don't make a potentially general approach for this problem.
+Indeed, those types of assumptions either don't describe enough the data, or are too exhaustive to be effective or practical
+combined with the fact that they are not easily described in a machine-interpretable way 
+they don't make a potentially general strategy for this problem.
 
 In this article, we proposed to use RDF shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
 RDF shapes are mostly used in data validation [](cite:cites Gayo2018a) hence they provide an excellent means to describe data.
