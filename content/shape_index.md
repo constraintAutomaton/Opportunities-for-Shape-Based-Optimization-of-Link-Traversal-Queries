@@ -25,15 +25,13 @@ Often $$Q_p$$ is contained inside multiple $$Q_s$$ due to the reuse of vocabular
 in those instances, we consider every document associated with those shapes
 as potential sources of solutions.
 If every $$Q_p \in Q$$ are contained by a shape of the SI then we know before the request of the whole domain
-where potential solution can be gotten, so we can safely adapt the lookup policy to prune links from the rest of the domain.
-Above is the best-case scenario but other propositions are necessary to completly solve the problem.
+where potential solution can be gotten, so we can safely adapt the lookup policy to prune every links from the rest of the domain.
+Above is the best-case scenario but other propositions are necessary to solve the general problem.
 If one of the shapes is open then it will always be necessary to visit the set of documents associated
 with it. If the SI is complete and some $$Q_p$$ are not contained inside a $$Q_s$$ then the engine has to visit
 every set of documents where $$Q_p$$ has a partial binding with an associated $$Q_s$$.
 In a similar case where the SI is not complete then it is necessary to visit every document in the bounded yet unknown domain minus those
 where the $$Q_p$$ have no partial binding with the $$Q_s$$.
-This means that original lookup policy of the engine has to be keept, but some links can be prune
-to not avoid a lost in result.
 For the previous case we can apply the following heuristic,
 if $$Q_p$$ and $$Q_s$$ are bound by the same RDF class then we only consider $$Q_s$$.
 We use this heuristic because of the definition of the SI and because if the user specifies a class it indicates their intention for this specific object.
