@@ -30,7 +30,7 @@ Above is the best-case scenario but other propositions are necessary to completl
 If one of the shapes is open then it will always be necessary to visit the set of documents associated
 with it. If the SI is complete and some $$Q_p$$ are not contained inside a $$Q_s$$ then the engine has to visit
 every set of documents where $$Q_p$$ has a partial binding with an associated $$Q_s$$.
-In a similar case where the SI is not complete then it is necessary to visit every document in the unknown domain minus those
+In a similar case where the SI is not complete then it is necessary to visit every document in the bounded yet unknown domain minus those
 where the $$Q_p$$ have no partial binding with the $$Q_s$$.
 This means that original lookup policy of the engine has to be keept, but some links can be prune
 to not avoid a lost in result.
