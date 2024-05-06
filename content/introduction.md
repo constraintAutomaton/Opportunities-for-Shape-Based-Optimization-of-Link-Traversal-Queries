@@ -44,9 +44,9 @@ It is reasonable to hypothesize that a significant portion of those HTTP request
 documents containing data that don't contribute to the result of the query.
 Hence investigating more descriptive structural assumptions is a relevant research endeavor.
 Structural assumptions based on the path structure of URIs are not a viable solution.
-Indeed, those types of assumptions either don't describe enough the data, or are too exhaustive to be effective or practical
-combined with the fact that they are not easily described in a machine-interpretable way 
-they don't make a potentially general strategy for this problem.
+Indeed, those types of assumptions either don't describe enough the data, or are too exhaustive to be effective and practical.
+Furthermore, the semantic of the URI of the path structure is not easily machine-interpretable, hence
+making this approach not suitable for a generalizable solution.
 
 In this article, we proposed to use RDF shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
 RDF shapes are mostly used in data validation [](cite:cites Gayo2018a) hence they provide an excellent means to describe data.
