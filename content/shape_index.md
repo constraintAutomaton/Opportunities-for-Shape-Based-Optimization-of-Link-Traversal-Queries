@@ -17,8 +17,7 @@ in this short paper we are not going to provide proof for this proposition, howe
 Delva et al. [](cite:cites Delva2021) provide an intuition by demonstrating how to extract 
 a subgraph from an RDF graph using RDF shape as a query language.
 Considering a query $$Q_p$$ a subquery of the query provided by the user $$Q$$
-where $$Q_p$$ is created from a star pattern and its dependencies inside $$Q$$
-,and $$Q_s$$ formed by the transformation of a shape inside of the SI
+where $$Q_p$$ is created from a star pattern and its dependencies, and $$Q_s$$ formed by the transformation of a shape inside of the SI
 into a query then if  $$Q_p$$ is contained inside $$Q_s$$ the associated 
 set of documents can contribute to the query result.
 Often $$Q_p$$ is contained inside multiple $$Q_s$$ due to the reuse of vocabulary terms,
@@ -32,11 +31,11 @@ with it. If the SI is complete and some $$Q_p$$ are not contained inside a $$Q_s
 every set of documents where $$Q_p$$ has a partial binding with an associated $$Q_s$$.
 In a similar case where the SI is not complete then it is necessary to visit every document in the bounded yet unknown domain minus those
 where the $$Q_p$$ have no partial binding with the $$Q_s$$.
-For the previous case we can apply the following heuristic,
-if $$Q_p$$ and $$Q_s$$ are bound by the same RDF class then we only consider $$Q_s$$.
+For those two cases the following heuristic can be used.
+If $$Q_p$$ and $$Q_s$$ are bound by the same RDF class then we only consider the set of document of $$Q_s$$.
 We use this heuristic because of the definition of the SI and because if the user specifies a class it indicates their intention for this specific object.
 This proposition suppose that at least in the context of the query there are no contradiction between the
-definition of the shapes and class and in the implicit data model (when considering joining of triple patterns) the user request. 
+definition of the shapes, class and the implicit data model (when considering joining of triple patterns) the user request. 
 Lastly, if the dereferencing of the triples from $$Q_p$$ that have no binding with $$Q_s$$
 leads to resources outside of the domain of the SI then we consider that $$Q_p  \sqsubseteq Q_s$$.
 This last proposition is the only dynamic part of our approach , indeed until this
