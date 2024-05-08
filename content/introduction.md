@@ -45,14 +45,14 @@ documents containing data that don't contribute to the result of the query.
 Hence investigating more descriptive structural assumptions is a relevant research endeavor.
 Structural assumptions based on the path structure of URIs are not a viable solution.
 Indeed, those types of assumptions either don't describe enough the data, or are too exhaustive to be effective and practical.
-Furthermore, the semantic of the URI of the path structure is not easily machine-interpretable, hence
+Furthermore, the semantic of the structure of the path of URI is not easily machine-interpretable, hence
 making this approach not suitable for a generalizable solution.
 
 In this article, we proposed to use RDF shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
 RDF shapes are mostly used in data validation [](cite:cites Gayo2018a) hence they provide an excellent means to describe data.
 They are also used to a lesser extent in the context of federated query optimization [](cite:cites kashif2021).
 RDF shapes don't require significative power to be maintained because they only need to be changed 
-when the data model is modified and not on regular operation over the data source.
+when the data model is modified.
 The low cost of maintenance combined with the mostly passive contribution of 
 the server when using RDF shape for query optimization makes it a promising potential approach. 
 We intend to use the SI in the context of queries for data source discovery, URIs dereferencing discrimination and ordering, and query planning.
