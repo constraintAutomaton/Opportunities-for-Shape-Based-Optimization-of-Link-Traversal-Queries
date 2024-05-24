@@ -1,0 +1,86 @@
+%% The first command in your LaTeX source must be the \documentclass command.
+%%
+%% Options:
+%% twocolumn : Two column layout.
+%% hf: enable header and footer.
+\documentclass[
+% twocolumn,
+% hf,
+]{ceurart}
+
+%%
+%% One can fix some overfulls
+\sloppy
+
+%%
+%% Minted listings support 
+%% Need pygment <http://pygments.org/> <http://pypi.python.org/pypi/Pygments>
+\usepackage{listings}
+%% auto break lines
+\lstset{breaklines=true}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% Rights management information.
+%% CC-BY is default license.
+\copyrightyear{2024}
+\copyrightclause{Copyright for this paper by its authors.
+  Use permitted under Creative Commons License Attribution 4.0
+  International (CC BY 4.0).}
+
+%%
+%% This command is for the conference information
+\conference{Alberto Mendelzon International Workshop on Foundations of Data Management}
+
+%%
+%% The "title" command
+\title{Opportunities for Shape-based Optimization of Link Traversal Query Execution over Decentralized Environments}
+
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+\author[1]{Bryan-Elliott Tam}[%
+]
+
+\author[1]{Ruben Taelman}[%
+]
+\author[1]{Pieter Colpaert}[%
+]
+
+
+\address[1]{IDLab,
+Department of Electronics and Information Systems, Ghent University – imec}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\begin{keywords}
+  LaTeX class \sep
+  paper template \sep
+  paper formatting \sep
+  CEUR-WS
+\end{keywords}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+
+\input{section/abstract}
+\input{section/introduction}
+\input{section/shape_index}
+\input{section/result}
+
+% --- Bibliography ---
+
+\bibliography{references}
+
+\end{document}
+
+%%
+%% End of file

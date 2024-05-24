@@ -1,8 +1,7 @@
-.DS_Store
-*.pdf
-
-.sass-cache
-tmp
-output
-*.log
-*.diff
+*
+!ceurart.cls
+!makefile
+!references.bib
+!**/*.tex
+!section
+!cc-by.pdf
