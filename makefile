@@ -3,5 +3,5 @@
 clear:
 	rm -f *.log *.xmpi *.xmpdata *.abs *.aux main.pdf *.out *.text.bbl main.*.blg *.blg *.bbl *.fls *.fdb_latexmk main.log *.synctex.gz section/*.aux *.bcf *-blx.bib *.run.xml
 
-main.pdf: main.tex section/*.tex
+main.pdf: main.tex references.bib section/*.tex
 	pdflatex main && bibtex main && pdflatex main && pdflatex main
