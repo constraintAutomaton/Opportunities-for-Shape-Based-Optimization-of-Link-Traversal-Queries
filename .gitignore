@@ -2,7 +2,10 @@
 !ceurart.cls
 !makefile
 !references.bib
+!references_original.bib
 !main.tex
 !section
 !section/*
+!figure
+!figure/*
 !cc-by.pdf
