@@ -15,6 +15,10 @@ We executed each queries 50 times with a timeout of 1 minute (6,000 ms)
 \footnote{The \href{https://github.com/constraintAutomaton/amw_shape_index_results}{benchmark and complemantary results} are available in the hypermedia link}.
 The results are presented at the figure \ref{fig:result}, the results of the complexe queries are not shown because both approach 
 were not able to finish the execution before the timeout.
+We can notice that in the worst case our approach (in blue) have similar query execution time with a distribution that tend to be
+lower than the state of the art. Also the variance tend to be lower than the state of the art. 
+A possible explanation is that the HTTP request tend to impredictatable which could cause the increase of variance.
+In the best case 
 
 \begin{figure}[ht]
     \includesvg[width=\linewidth]{figure/combined}
