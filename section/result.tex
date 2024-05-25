@@ -3,22 +3,28 @@ We have implemented the containment algorithm describe in the previous section
 \footnote{The \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{integration} 
 in the \href{https://github.com/comunica/comunica}{Comunica} query engine are open source can be access via the hypermedia links}.
-In it's current state the algorithm doesn't support \href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property path}, nested queries
+In its current state the algorithm doesn't support \href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property path}, nested queries
 and the dynamic analysis describe in the previous section. 
-We use Solidbench \cite{Taelman2023} to compare our approach with the current state of the art.
+We use the benchmark Solidbench \cite{Taelman2023} to compare our approach with the current state of the art 
+(combination of a type index and the \href{https://www.w3.org/TR/ldp/}{LDP specification}) \cite{Taelman2023}.
 To accomodate the limitation of our implementation we use a subset of the queries of Solidbench
-\footnote{ We use interactive-short 1 and 5, interactive-discover 1,3-7 and interactive-complex 8}
-\footnote{We modify the benchmark by adding shape index inside each "pod" of the benchmark.
-The \href{https://github.com/constraintAutomaton/rdf-dataset-fragmenter.js/tree/feature/shapeIndex}{generator} of those index can be  can be access via the hypermedia link
+\footnote{ We use interactive-short 1 and 5, interactive-discover 1,3-7 and interactive-complex 8.}
+\footnote{We modify the benchmark by adding shape indexes inside each "pod" of the benchmark.
+The \href{https://github.com/constraintAutomaton/rdf-dataset-fragmenter.js/tree/feature/shapeIndex}{generator} of those indexes can be  can be access via the hypermedia link
 }.
 We executed each queries 50 times with a timeout of 1 minute (6,000 ms) 
-\footnote{The \href{https://github.com/constraintAutomaton/amw_shape_index_results}{benchmark and complemantary results} are available in the hypermedia link}.
+\footnote{ \label{foot:complement}The \href{https://github.com/constraintAutomaton/amw_shape_index_results}{benchmark and complemantary results} are available via the hypermedia link}.
 The results are presented at the figure \ref{fig:result}, the results of the complexe queries are not shown because both approach 
 were not able to finish the execution before the timeout.
 We can notice that in the worst case our approach (in blue) have similar query execution time with a distribution that tend to be
-lower than the state of the art. Also the variance tend to be lower than the state of the art. 
+lower than the state of the art. Furthermore the variance tend to be lower than the state of the art. 
 A possible explanation is that the HTTP request tend to impredictatable which could cause the increase of variance.
-In the best case 
+This not not only indicate that we can have more realible repetition with our approach but also that in an
+environement with where the network is unstable we might get faster results.
+In the best case scenario the percentage of reduction of query execution time can be as far as 80\% and of number of HTTP request
+97\%. However, there not a direct corrolation between the reduction of HTTP request and execution time.
+This hint at the results from the state of the art \cite{Taelman2023} stipulating that the query plan is the bottleneck for queries in this environment,
+but the overhead of the containment calculation could also be a contributing factor.
 
 \begin{figure}[ht]
     \includesvg[width=\linewidth]{figure/combined}
