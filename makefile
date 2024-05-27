@@ -2,7 +2,7 @@ SOURCE = main.tex references.bib section/*.tex figure/*.svg
 
 .PHONY: clean
 
-clear:
+clean:
 	rm -f *.log *.xmpi *.xmpdata *.abs *.aux main.pdf *.out *.text.bbl main.*.blg *.blg *.bbl *.fls *.fdb_latexmk main.log *.synctex.gz section/*.aux *.bcf *-blx.bib *.run.xml
 	rm -r svg-inkscape
 main.pdf: $(SOURCE)
