@@ -4,8 +4,8 @@ Short paper submitted for the ["Alberto Mendelzon International Workshop on Foun
 
 ## Building a PDF
 The authors compiled the PDF version using `pdflatex` (you can use your favorite latex compiler).
-We produced a `makefile` to facilitate the building of PDF.
-One can simply execute `make main.pdf` to produce a PDF version if `pdflatex` and other depencies for the tex live suite are installed on the machine of the user.
+We produced a `makefile` to facilitate the building of the PDF version.
+One can simply execute `make main.pdf` to produce the PDF if `pdflatex` and the other dependencies of the tex live suite are installed on the machine of the user.
 
 ## Abstract
 Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph (DKG). Querying
