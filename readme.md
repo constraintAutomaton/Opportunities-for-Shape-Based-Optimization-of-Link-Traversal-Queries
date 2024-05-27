@@ -1,6 +1,7 @@
 # Opportunities for Shape-based Optimization of Traversal Queries over Decentralized Environments
 
-Short paper submitted for the ["Alberto Mendelzon International Workshop on Foundations of Data Management"](https://amw2024.github.io/).
+Short paper submitted for the ["Alberto Mendelzon International Workshop on Foundations of Data Management"](https://amw2024.github.io/). 
+The experiment repository is available via [this hypermedia link](https://github.com/constraintAutomaton/amw_shape_index_results/tree/main).
 
 ## Building a PDF
 The authors compiled the PDF version using `pdflatex` (you can use your favorite latex compiler).
