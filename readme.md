@@ -2,6 +2,11 @@
 
 Short paper submitted for the ["Alberto Mendelzon International Workshop on Foundations of Data Management"](https://amw2024.github.io/).
 
+## Building a PDF
+The authors compiled the PDF version using `pdflatex` (you can use your favorite latex compiler).
+We produced a `makefile` to facilitate the building of PDF.
+One can simply execute `make main.pdf` to produce a PDF version if `pdflatex` and other depencies for the tex live suite are installed on the machine of the user.
+
 ## Abstract
 Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph (DKG). Querying
 this DKG in a link traversal-based manner is difficult due to the pseudo-infinite size of the Web, its unstructured
