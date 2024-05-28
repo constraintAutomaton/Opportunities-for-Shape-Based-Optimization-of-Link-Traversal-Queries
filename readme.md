@@ -22,6 +22,16 @@ discover data, leading to significant reductions in query execution time compare
 art. In future work, we are going to formalize our method, perform more extensive experiments, and design
 algorithms for query planning that take into account this shape metadata.
 
+# Results
+Here is the figure presenting the main result
+
+![figure displaying the main results](figure/combined.svg)
+The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
+The results of our approach are in blue and the state of the art (type index with LDP) in red.
+The results have been generated with 50 repetitions and a timeout of 6000 ms.
+The queries are denoted with first the initial of the query template (e.g., S1 for interactive-**s** hort-\textbf**1**), and the version of the concrete query (e.g., V0). 
+Values not present in the plot indicate that the query timeout before the end of the execution.
+
 ## Conclusion 
 
 Our approach for shape-based optimization for LTQP over decentralized environments consists of
