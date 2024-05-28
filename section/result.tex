@@ -12,24 +12,25 @@
     \label{fig:result}
 \end{figure}
 
-\sepfootnotecontent{impl}{The \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an 
-\href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{integration} 
-in the \href{https://github.com/comunica/comunica}{Comunica} query engine are open source and can be accessed via the hypermedia links.}
+\sepfootnotecontent{impl}{The algorithm is available at the following link \href{https://github.com/constraintAutomaton/query-shape-detection}{https://t.ly/4sTcI} 
+and  an integration inside the engine \href{https://github.com/comunica/comunica}{Comunica} in at this link 
+\href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{https://t.ly/U2GcK}.}
 
-\sepfootnotecontent{benchmark}{ We executed interactive-short 1 and 5, interactive-discover 1,3-7 and interactive-complex 8 with
-a modified benchmark. 
-The results of the complex queries were omitted because the two approaches were not able to execute them before the timeout.
+\sepfootnotecontent{benchmark}{We executed interactive-short 1 and 5, interactive-discover 1,3-7 and interactive-complex 8 with
+a modified benchmark. The results of the complex queries were omitted because the two approaches were not able to execute them before the timeout.
 This benchmark adds a complete shape index inside each "pod" of the dataset using
 a \href{https://github.com/constraintAutomaton/rdf-dataset-fragmenter.js/tree/feature/shapeIndex}{generator} accessible via the hypermedia link.
-The implementation of the \href{https://github.com/constraintAutomaton/amw_shape_index_results}{benchmark and complementary preliminary results}
-can be accessed via the hypermedia link for reproducibility purposes and further analysis of the presented results (for instance analysis of the statistical significance).}
+The implementation of the benchmark and complementary results (for instance analysis of the statistical significance) are availabe at the following link 
+\href{https://github.com/constraintAutomaton/amw_shape_index_results}{https://t.ly/Insu5}.}
 
-For early evaluation, we implemented the containment algorithm described in the previous section \sepfootnote{impl}.
+For early evaluation, we implemented the containment algorithm described in the previous section.
+An open implementation of the algorithm and an integration in an query engine is available online \sepfootnote{impl}.
 In its current state, the implementation doesn't support 
 \href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property paths} and nested queries.
 We use the benchmark Solidbench \cite{Taelman2023} to compare our approach with the current state of the art 
 (a combination of the type index and the \href{https://www.w3.org/TR/ldp/}{LDP specification} as structural assumptions) \cite{Taelman2023}.
-To accommodate the limitation of our implementation we use a subset of the queries of Solidbench\sepfootnote{benchmark}.
+To accommodate the limitation of our implementation we use a subset of the queries of Solidbench.
+The benchmark with complementary result is open source and available online \sepfootnote{benchmark}.
 We executed each query 50 times with a timeout of 1 minute (6,000 ms).
 The results are presented in Figure \ref{fig:result}.
 In Figure \ref{fig:result}, we notice that in the worst cases, our approach (in blue) has similar query execution times with a 
