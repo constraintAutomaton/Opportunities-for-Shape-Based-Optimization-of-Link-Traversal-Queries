@@ -24,16 +24,16 @@ The implementation of the benchmark and complementary results (for instance anal
 \href{https://github.com/constraintAutomaton/amw_shape_index_results}{https://t.ly/Insu5}.}
 
 For early evaluation, we implemented the containment algorithm described in the previous section.
-An open implementation of the algorithm and an integration in an query engine is available online \sepfootnote{impl}.
+An open implementation of the algorithm and an integration in an query engine \rt{You can cite comunica} is available online \sepfootnote{impl}.
 In its current state, the implementation doesn't support 
 \href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property paths} and nested queries.
 We use the benchmark Solidbench \cite{Taelman2023} to compare our approach with the current state of the art 
-(a combination of the type index and the \href{https://www.w3.org/TR/ldp/}{LDP specification} as structural assumptions) \cite{Taelman2023}.
+(a combination of the type index and the \href{https://www.w3.org/TR/ldp/}{LDP specification} as structural assumptions \rt{Neither of these have been explained yet!!}) \cite{Taelman2023}.
 To accommodate the limitation of our implementation we use a subset of the queries of Solidbench.
 The benchmark with complementary result is open source and available online \sepfootnote{benchmark}.
 We executed each query 50 times with a timeout of 1 minute (6,000 ms).
 The results are presented in Figure \ref{fig:result}.
-In Figure \ref{fig:result}, we notice that in the worst cases, our approach (in blue) has similar query execution times with a 
+In Figure \ref{fig:result},  \rt{Let's start with the good news first} we notice that in the worst cases, our approach (in blue) has similar query execution times with a 
 distribution tending to be lower than the state of the art (with exeption to D3V3 and D3V4).
 Furthermore, their variances tend to be lower compared to their counterpart. 
 A possible explanation is that the execution time of HTTP requests is not constant and can be unpredictable \cite{hartig2016walking}
