@@ -20,12 +20,12 @@ where $Q_p$ is created from a star pattern and its dependencies, and $Q_s$ forme
 into a query then if  $Q_p$ is contained inside $Q_s$ the associated 
 set of documents exclusively contribute to the query result of $Q_p$ in the domain of the SI.
 Often $Q_p$ is contained inside multiple $Q_s$ due to the reuse of vocabulary terms,
-in those instances all the documents associated with the $Q_s$s are exclusive source of solution in relation to the domain.
+in those instances all the documents associated with the $Q_s$s are exclusive sources of solution in relation to the domain.
 If every $Q_p \in Q$ are contained by a shape of the SI then we know before the request of the whole domain
-where potential solution can be accessed, thus the engine can safely adapt the lookup policy to prune every links from the rest of the domain.
+where potential solutions can be accessed, thus the engine can safely adapt the lookup policy to prune every links from the rest of the domain.
 Above is the best-case scenario but other propositions are necessary to solve the general problem.
 If one of the shapes is open then it will always be necessary to visit the set of documents associated
-with it, unless negative predicate are defined in the shape.
+with it, unless negative predicates invalidate the bindings.
 If the SI is complete and some $Q_p$ are not contained inside a $Q_s$ then the engine has to visit
 every set of documents where $Q_p$ has a partial binding with an associated $Q_s$.
 In a similar case where the SI is not complete then it is necessary to visit every document in the bounded yet not necessarly known domain 
