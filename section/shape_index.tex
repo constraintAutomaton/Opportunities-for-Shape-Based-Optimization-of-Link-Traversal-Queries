@@ -1,14 +1,18 @@
 \section{Shape index and query shape containment}
 
-We define a SI as a set of mapping between RDF shapes and sets of resources.
+\rt{I would first briefly explain the basics of Solid and data pods. I know your approach is not tied to Solid, but I would give Solid as an example of how it can be used. Otherwise things are too abstract to understand. But definitely say that your approach can be applied outside of Solid as well.}
+
+We define a Shape Index (SI) as a set of mappings between RDF shapes and sets of resources.
 Additionally, an SI has an associated domain of action
 and a flag indicating if each resource in the domain is bound by a shape. 
-We refer to a SI with this flag as a complete shape index.
+We refer to a SI with this flag as a \emph{complete} Shape Index.
 In a SI when a shape is in relation to a set of RDF resources then the shape must validate those resources.
 Furthermore, every set of triples respecting the shape in the domain must be located inside one resource of the set.
 Lastly, if the shape has an RDF class constraint
-then every set of triples associated with that class must respect the shape.
+then every set of triples associated with that class must respect the shape. \rt{Doesn't this follow from the fact that triples must be valid to the shape?}
 
+\rt{The next paragraph is very difficult to follow. I'm think you're trying to explain your query containment approach and how you can prune links, but I don't understand it, because the text goes a bit all over the place. I suggest restructuring the paragraph, by first saying that you prune links using shape-query containment. Then, say that shape-query containment has not been investigated in detail (but mention Delva2021). Then, explain your algorithm in different steps, and first give a high-level overview of each step (optionally in pseudocode). And if there's not enough room to properly explain it, better to keep it high-level, and keep the details for the next paper.}
+\rt{What could even be more helpful for this paper, is an illustration of a shape index in practise, and intuitively explaining how to use it for a specific query. This is just a short paper, so we don't need to explain our algorithm in detail yet.}
 An RDF shape describes the predicates an RDF subject must be associated with complementary information about
 the relative cardinality of the predicates and a constraint binding the associated RDF objects.
 RDF shapes can be transformed into a SPARQL query, but
