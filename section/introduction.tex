@@ -12,12 +12,12 @@ Linked data is mostly modeled and published using the graph data formalization \
 RDF Terms can be expressed using IRIs, Blank Nodes, and Litterals.
 The usage of IRIs provides more reusability of data and explicitizes in a machine-interpretable way the relations between
 information from multiple remote or local subgraphs.
-More information about an IRI term can be found by dereferencing them using the HTTP protocol.\rt{Not all IRIs can be dereferenced, but all URLs can.}
+More information about an IRI term can be found if it is dereferenceable (treated as an URL) using the HTTP protocol.
 
-\rt{Make sure to cite a paper from Alberto Mendelzon in the next paragraph. You can look at Taelman2023 for an example, as I cite one there as well.}
-Link Traversal Query Processing (LTQP) \cite{Hartig2012} is a query paradigm that exploits
-\rt{You go into the details of LTQP too quickly. First start by explaining its motivation (querying a globally distributed dataspace without prior indexing), and constrast it to traditional centralized querying}
-the informative potential of IRIs dereferencing during SPARQL queries.
+The web is a wealth of information, hence using it as a machine-usable database is a desirable solution to enable large-scale "intelligent" dynamic communication systems.
+The web is by nature decentralized hence traversal-based approaches are necessary to tackle this challenge while preserving its serendipity and avoiding restrictive indexes.
+We can consider the usage of "index servers" and the query language webSQL \cite{Mendelzon1996} as a predecessor of the modern more versatile linked data approaches.
+The state of the art of traversal-based queries on the web of linked data is the query paradigmn Link Traversal Query Processing (LTQP) \cite{Hartig2012}.
 LTQP starts with a few URIs called seed URIs and recursively dereferences them from an internal data source following a lookup policy.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
 One of them is the pseudo-infinite search domain derived from the size of the World Wide Web \cite{Hartig2014}.
@@ -35,11 +35,21 @@ LTQP research considers that resources are served by HTTP servers.
 However, some subsets of the web are expose by web servers implementing protocols above the application layer of the TCP/IP stack.
 Those protocols organize the location of the information published in an HTTP server.
 An examples of them is Solid.
-We refer to those subsets of the web as Link Data Structured Environments (LDSE).\rt{Not sure it makes sense to consider this as a subset. All Linked Data environments have some structure, but each environment may have different structures. I would suggest just pointing out this fact, and that you can then draw assumptions over them.}
-An important aspect of LDSE is the explicit structural assumptions.
+All linked data environement have structured, however, in most cases they are implicit.
+In environement like Solid they are made explicit using more or less detailed hypermedia descriptions \cite{Fielding}.
+We refer to the structure exploitable for query optimization as structural assumptions.
 Structural assumptions act as contracts between the data provider and 
 the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
-Those assumptions can be declared in the form of hypermedia descriptions \cite{Fielding}.
+The usage of structural assumptions has been studied in Solid \cite{Taelman2023}.
+The approach consist of using the structure of Solid for data discovery and link prunning by guiding the
+query engine towards relevant data sources \cite{verborgh2020guided}.
+More concretly the approach make use of the hypermedia description of 
+\href{https://solidproject.org/TR/protocol#resources}{solid storages} (colloquially referred as solid pod)
+derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification},
+to locate all the resources of a storage.
+However, the LDP specification only capture the structure of storages but not their contents.
+In response, the \href{https://solid.github.io/type-indexes/}{type index specification} is additionally used.
+The type index propose a more declarative approach \cite{Taelman2017} by mapping RDF classes with set of resources to perform dynamic optmizations.
 It has been shown that by making query engines exploit those assumptions it is possible to reduce the query execution time
 of realistic queries to the extent where the bottleneck is not the execution of 
 HTTP requests but the suboptimal heuristic-based query plan \cite{eschauzier_quweda_2023, Taelman2023}.
@@ -47,20 +57,16 @@ Yet for multiple queries, the bottleneck remains the high number of HTTP request
 It is reasonable to hypothesize that a significant portion of those HTTP requests lead to the dereferencing of
 documents containing data that don't contribute to the result of the query.
 Hence investigating more descriptive structural assumptions is a relevant research endeavor.
-\rt{I recommend talking about link pruning somewhere around here and guided link traversal: https:\/\/www.rubensworks.net\/publications\/verborgh\_amw\_2020\/}
-Structural assumptions based on the path structure of URIs are not a viable solution. \rt{But this is what you're doing, right? You link shapes to URL paths.}
-Indeed, those types of assumptions either don't describe enough the data or are too exhaustive to be effective and practical.
-Furthermore, the semantics of the structure of the path of URI is not easily machine-interpretable, hence \rt{This is confusing, because you are literally attaching semantics using shapes.}
-making this approach not suitable for a generalizable solution.
 
-In this article, we propose to use RDF shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI). \rt{Contrast this to the Solid type index somewhere?}
-RDF shapes are mostly used in data validation \cite{Gayo2018a} hence they provide an excellent means to describe data.
-They are also used to a lesser extent in the context of federated query optimization \cite{kashif2021}.
-RDF shapes don't require significative power to be maintained because they only need to be edited 
-when the data model is modified.
-The low cost of maintenance combined with the mostly passive contribution of 
-the server when using RDF shape for query optimization makes it a promising potential medium. 
+In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
+The shape index is inspired by the type index.
+However, it intend to be more expressive by describing the content of the data instead of only its class.
+% We could have used here as a reference the paper from Ben Demeester RDF Graph Validation Using Rule-Based Reasoning 
+RDF data shapes are mostly used in data validation \cite{Gayo2018a} hence they provide an excellent means to describe data.
+Yet to a lesser extent they have been used in the context of federated query optimization \cite{kashif2021}.
+%RDF data shapes don't require significative power to be maintained because they only need to be edited 
+%when the data model is modified.
+%The low cost of maintenance combined with the mostly passive contribution of 
+%the server when using RDF data shape for query optimization makes it a promising potential medium. 
 We foresee opportunities for using a shape index during data source discovery, link pruning and ordering, and query planning.
 This short paper present our preliminary work on data discovery and link pruning.
-
-\rt{I'm surprised there is no example on how shapes can help in a Solid pod. I would recommend to add an intuitive example before you introduce shapes above. You could give the example of finding posts, and thereby omitting data from other shapes.}
