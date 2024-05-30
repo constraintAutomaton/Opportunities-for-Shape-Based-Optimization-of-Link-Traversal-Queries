@@ -2,7 +2,10 @@
     % Context
     Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph (DKG).
     % Need
-    Querying this DKG in a link traversal-based manner is difficult due to the pseudo-infinite size of the Web,
+    While centralized query processing approaches are well-understood,
+    decentralization-friendly alternatives such as Link Traversal Query Processing (LTQP)
+    that don't require prior indexing are insufficiently performant for real-world use cases.
+    Indeed, querying DKG in a LTQP manner is difficult due to the pseudo-infinite size of the Web,
     its unstructured nature,
     and the lack of a priori information for query planning.
     For most traversal-based queries the execution of large number of HTTP request is the bottleneck
