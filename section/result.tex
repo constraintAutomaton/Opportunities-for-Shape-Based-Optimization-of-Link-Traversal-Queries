@@ -1,6 +1,7 @@
 \section{Preliminary results}
 
 \begin{figure}[!ht]
+    \centering
     \includesvg[width=\linewidth]{figure/combined}
     \caption{The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
     The results of our approach are in blue and the state of the art (type index with LDP) in red.
@@ -28,25 +29,23 @@ An open implementation of the algorithm and an integration in the query engine C
 In its current state, the implementation doesn't support 
 \href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property paths} and nested queries.
 We use the benchmark Solidbench \cite{Taelman2023} to compare our approach with the current state of the art 
-(a combination of the type index and the \href{https://www.w3.org/TR/ldp/}{LDP specification} as structural assumptions \rt{Neither of these have been explained yet!!}) \cite{Taelman2023}.
+(a combination of the type index and the \href{https://www.w3.org/TR/ldp/}{LDP specification} as structural assumptions) \cite{Taelman2023}.
 To accommodate the limitation of our implementation we use a subset of the queries of Solidbench.
 The benchmark with complementary result is open source and available online \sepfootnote{benchmark}.
 We executed each query 50 times with a timeout of 1 minute (6,000 ms).
 The results are presented in Figure \ref{fig:result}.
-In Figure \ref{fig:result},  \rt{Let's start with the good news first} we notice that in the worst cases, our approach (in blue) has similar query execution times with a 
-distribution tending to be lower than the state of the art (with exeption to D3V3 and D3V4).
+In the Figure \ref{fig:result}, we notice that in the best-case scenario the percentage of the reduction can be as high as 80\% (D1V3 and S1V3) for the execution time 
+and 97\% (S1V3) for the number of HTTP requests.
+However, there is not a direct correlation between the reduction of execution time and HTTP requests (e.g., the ratio 
+between our approach and the state of the art of the number of HTTP request by the execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
+This hints at the results from the state of the art \cite{Taelman2023} proposing that the query plan is the bottleneck for some queries in this environment,
+but the overhead of the containment calculation could also be a contributing factor to the current results.
+As for the number of HTTP requests our approach reliably executes less of them, as expected because no
+queries target (implicitly) each file of a user.
+In the worst cases, our approach  has similar query execution times with a 
+distribution tending to be lower than the state of the art (with exeption to D3V3 and D3V4 with an augmentation of 9\% of the mean of execution time).
 Furthermore, their variances tend to be lower compared to their counterpart. 
 A possible explanation is that the execution time of HTTP requests is not constant and can be unpredictable \cite{hartig2016walking}
 which could lead to an increase in variance.
-This observation not only has potential implications for the reliability of multiple executions in terms of time
-but also in terms of performance for single execution in unstable networks where the server might take longer times to respond. 
-As for the number of HTTP requests our approach reliably executes less of them, as expected because no
-queries target (implicitly) each file of a user.
-In the best-case scenario the percentage of the reduction can be as high as 80\% (D1V3 and S1V3) for the execution time 
-and 97\% (S1V3) for the number of HTTP requests.
-However, there is not a direct correlation between the reduction of execution time and HTTP requests (e.g., the ratio 
-between our approach and the state of the art of HTTP request by the ratio of execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
-This hints at the results from the state of the art \cite{Taelman2023} proposing that the query plan is the bottleneck for some queries in this environment,
-but the overhead of the containment calculation could also be a contributing factor to the current results.
-
-  
+This observation not only has potential implications for the reliability of multiple executions in terms of execution time
+but also in terms of the performance for single execution in unstable networks where the server might take longer times to respond. 
