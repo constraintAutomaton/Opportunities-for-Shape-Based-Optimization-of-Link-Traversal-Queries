@@ -5,8 +5,8 @@ The experiment repository is available via [this hypermedia link](https://github
 
 ## Building a PDF
 The authors compiled the PDF version using `pdflatex` (you can use your favorite latex compiler).
-We produced a `makefile` to facilitate the building of the PDF version.
-One can simply execute `make main.pdf` to produce the PDF if `pdflatex` and the other dependencies of the tex live suite are installed on the machine of the user.
+We created a `makefile` to facilitate the building of the PDF version.
+One can simply execute `make main.pdf` or `make` to produce the PDF version if `pdflatex` and the other dependencies of the tex live suite are installed on the machine of the user.
 
 ## Abstract
 Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph. While centralized
