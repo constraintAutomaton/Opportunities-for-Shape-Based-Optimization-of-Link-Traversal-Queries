@@ -9,15 +9,15 @@ Furthermore, every set of triples respecting the shape in the domain must be loc
 
 Our approach consists of determining before the traversal of a whole domain the location of the useful resource for the query execution.
 The query engine starts with a "maximalist" lookup policy and adapt it to a more restrictive one upon the evaluation of the SI.
-For that purpose, the query engine must first discover the SI.
+For that purpose, the query engine must first discover the SI in each (sub)domain.
 In the case of Solid, the SI should be at the root of the storage to be easily discoverable.
 The evaluation of the query with the SI is similar to the classic query containment problem.
 Indeed, we propose that we can transform a shape into a query ($Q_{s}$).
-In this short paper, we don't provide proof for this, however, 
-\citeauthor{Delva2021} give an intuition for this proposition by demonstrating how to query RDF subgraphs using RDF data shapes as a query language.
+In this short paper, we don't provide a proof for this proposition, however, 
+\citeauthor{Delva2021} give an intuition by demonstrating how to query RDF subgraphs using RDF data shapes as a query language.
 We divide the query into multiple star patterns with their dependencies ($Q_{star}$).
 The evaluation of the SI consists of finding if those $Q_{star}$ are contained inside the shapes of the SI.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$ of the SI
-then we adapt the lookup policy to ignore all the other resource inside the domain even if the SI is \emph{uncomplete}.
-If the SI is \emph{complete} and not all the $Q_{star}$ are not contained in a $Q_{s}$ then the lookup policy can be adapted
-to visit every resources in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$.
+then we adapt the lookup policy to ignore all the other resources inside the domain even if the SI is \emph{incomplete}.
+If the SI is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s}$ then the lookup policy can be adapted
+to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$.
