@@ -1,6 +1,6 @@
 \section{Preliminary results}
 
-\begin{figure}
+\begin{figure}[!h]
     \centering
     \includesvg[width=\linewidth]{figure/combined}
     \caption{The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
@@ -39,11 +39,11 @@ and 97\% (S1V3) for the number of HTTP requests.
 However, there is not a direct correlation between the reduction of execution time and HTTP requests (e.g., the ratio 
 between our approach and the state of the art of the number of HTTP request by the execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
 This hints at the results from the state of the art \cite{Taelman2023} proposing that the query plan is the bottleneck for some queries in this environment,
-but the overhead of the containment calculation could also be a contributing factor to the current results.
-As for the number of HTTP requests our approach reliably executes less of them, as expected because no
-queries target (implicitly) each file of a user.
+however, the overhead of the containment calculation could also be a contributing factor to the current results.
+Our approach reliably executes less HTTP requests compared to the state of the art.
+This is an expected result because no queries target (implicitly) each file of a user.
 In the worst cases, our approach  has similar query execution times with a 
-distribution tending to be lower than the state of the art (with exeption to D3V3 and D3V4 with an augmentation of 9\% of the mean of execution time).
+distribution tending to be lower than the state of the art (with exeption to D3V3 and D3V4 with an augmentation of 9\% of the mean of the execution time).
 Furthermore, their variances tend to be lower compared to their counterpart. 
 A possible explanation is that the execution time of HTTP requests is not constant and can be unpredictable \cite{hartig2016walking}
 which could lead to an increase in variance.
