@@ -21,7 +21,7 @@ and an integration inside the engine \href{https://github.com/comunica/comunica}
 a modified benchmark. The results of the complex queries were omitted because the two approaches were not able to execute them before the timeout.
 This benchmark adds a complete shape index inside each "pod" of the dataset using
 a \href{https://github.com/constraintAutomaton/rdf-dataset-fragmenter.js/tree/feature/shapeIndex}{generator} accessible via the hypermedia link.
-The implementation of the benchmark and complementary results (for instance analysis of the statistical significance) are availabe at the following link 
+The implementation of the benchmark and complementary results (for instance analysis of the statistical significance) are available at the following link 
 \href{https://github.com/constraintAutomaton/amw_shape_index_results}{https://t.ly/Insu5}.}
 
 For early evaluation, we implemented the containment algorithm described in the previous section.
@@ -31,21 +31,21 @@ In its current state, the implementation doesn't support
 We use the benchmark Solidbench \cite{Taelman2023} to compare our approach with the current state of the art 
 (a combination of the type index and the \href{https://www.w3.org/TR/ldp/}{LDP specification} as structural assumptions) \cite{Taelman2023}.
 To accommodate the limitation of our implementation we use a subset of the queries of Solidbench.
-The benchmark with complementary result is open source and available online \sepfootnote{benchmark}.
+The benchmark with complementary results is open source and available online \sepfootnote{benchmark}.
 We executed each query 50 times with a timeout of 1 minute (6,000 ms).
 The results are presented in Figure \ref{fig:result}.
-In the Figure \ref{fig:result}, we notice that in the best-case scenario the percentage of the reduction can be as high as 80\% (D1V3 and S1V3) for the execution time 
+In Figure \ref{fig:result}, we notice that in the best-case scenario, the percentage of the reduction can be as high as 80\% (D1V3 and S1V3) for the execution time 
 and 97\% (S1V3) for the number of HTTP requests.
 However, there is not a direct correlation between the reduction of execution time and HTTP requests (e.g., the ratio 
 between our approach and the state of the art of the number of HTTP request by the execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
 This hints at the results from the state of the art \cite{Taelman2023} proposing that the query plan is the bottleneck for some queries in this environment,
 however, the overhead of the containment calculation could also be a contributing factor to the current results.
-Our approach reliably executes less HTTP requests compared to the state of the art.
+Our approach reliably executes fewer HTTP requests compared to the state of the art.
 This is an expected result because no queries target (implicitly) each file of a user.
 In the worst cases, our approach  has similar query execution times with a 
-distribution tending to be lower than the state of the art (with exeption to D3V3 and D3V4 with an augmentation of 9\% of the mean of the execution time).
+distribution tending to be lower than the state of the art (with the exception to D3V3 and D3V4 with an augmentation of 9\% of the mean of the execution time).
 Furthermore, their variances tend to be lower compared to their counterpart. 
 A possible explanation is that the execution time of HTTP requests is not constant and can be unpredictable \cite{hartig2016walking}
 which could lead to an increase in variance.
 This observation not only has potential implications for the reliability of multiple executions in terms of execution time
-but also in terms of the performance for single execution in unstable networks where the server might take longer times to respond. 
+but also in terms of the performance of single execution in unstable networks where the server might take longer times to respond. 

@@ -4,16 +4,16 @@ We define a Shape Index (SI) as a set of mappings between RDF data shapes and se
 Additionally, an SI has an associated domain of action
 and a flag indicating if each resource in the domain is bound by a shape. 
 We refer to a SI with this flag as a \emph{complete} Shape Index.
-In a SI when a shape is in relation to a set of RDF resources then the shape must validate those resources.
+In a SI when a shape is in relation to a set of RDF resources then the shape must validate them.
 Furthermore, every set of triples respecting the shape in the domain must be located inside one resource of the set.
 
 Our approach consists of determining before the traversal of a whole domain the location of the useful resource for the query execution.
-The query engine starts with a "maximalist" lookup policy and adapt it to a more restrictive one upon the evaluation of the SI.
+The query engine starts with a "maximalist" lookup policy and adapts it to a more restrictive one upon the evaluation of the SI.
 For that purpose, the query engine must first discover the SI in each (sub)domain.
 In the case of Solid, the SI should be at the root of the storage to be easily discoverable.
 The evaluation of the query with the SI is similar to the classic query containment problem.
 Indeed, we propose that we can transform a shape into a query ($Q_{s}$).
-In this short paper, we don't provide a proof for this proposition, however, 
+In this short paper, we don't provide proof for this proposition, however, 
 \citeauthor{Delva2021} give an intuition by demonstrating how to query RDF subgraphs using RDF data shapes as a query language.
 We divide the query into multiple star patterns with their dependencies ($Q_{star}$).
 The evaluation of the SI consists of finding if those $Q_{star}$ are contained inside the shapes of the SI.
