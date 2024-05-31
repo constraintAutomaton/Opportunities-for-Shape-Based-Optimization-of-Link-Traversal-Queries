@@ -1,17 +1,16 @@
 \begin{abstract}
     % Context
-    Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph (DKG).
+    Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph.
     % Need
     While centralized query processing approaches are well-understood,
     decentralization-friendly alternatives such as Link Traversal Query Processing (LTQP)
     that don't require prior indexing are insufficiently performant for real-world use cases.
-    Indeed, querying DKG in a LTQP manner is difficult due to the pseudo-infinite size of the Web,
+    Indeed, LTQP approaches particularly on the scale of the web are difficult due to its pseudo-infinite size,
     its unstructured nature,
     and the lack of a priori information for query planning.
-    For most traversal-based queries the execution of large number of HTTP request is the bottleneck
-    of the approach. 
-    However in practice, queries target small subsets of the Web.
-    All of those subsets are structured either implicitly or explicitly.
+    For most traversal-based queries the execution of a large number of HTTP requests is the bottleneck. 
+    However, in practice, queries target small subsets of the Web.
+    Web subsets are always structured either implicitly or explicitly.
     Explicit structure can be described via hypermedia descriptions.
     Using those structural information query engines can improve
     their performances by reducing their search domain.
@@ -23,7 +22,7 @@
     % Findings
     Our initial experiments show that with little maintenance and work from the server,
     our method can significantly reduce the number of links traversed to answer a query leading to
-    substantial reduction in query execution time compared to the state of the art.
+    a substantial reduction in query execution time compared to the state of the art.
     % Perspectives
     In future work, we are going to formalize our method, perform more extensive experiments,
     and design algorithms for query planning that take into consideration this shape metadata.
