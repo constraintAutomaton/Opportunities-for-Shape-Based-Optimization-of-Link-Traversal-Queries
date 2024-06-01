@@ -7,7 +7,7 @@ We refer to a SI with this flag as a \emph{complete} Shape Index.
 In a SI when a shape is in relation to a set of RDF resources then the shape must validate them.
 Furthermore, every set of triples respecting the shape in the domain must be located inside one resource of the set.
 
-Our approach consists of determining before the traversal of a whole domain the location of the useful resource for the query execution.
+Our approach consists of determining before the traversal of a whole domain the location of the useful resources for the query execution.
 The query engine starts with a "maximalist" lookup policy and adapts it to a more restrictive one upon the evaluation of the SI.
 For that purpose, the query engine must first discover the SI in each (sub)domain.
 In the case of Solid, the SI should be at the root of the storage to be easily discoverable.
