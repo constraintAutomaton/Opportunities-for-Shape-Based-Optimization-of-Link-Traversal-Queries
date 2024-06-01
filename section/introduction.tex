@@ -18,7 +18,7 @@ More information about an IRI term can be found if it is dereferenceable (treate
 The web is a decentralized wealth of information.
 Index servers and the query language webSQL \cite{Mendelzon1996} propose a mechanism to capture this knowledge using conjunctive queries.
 However, this approach rely on prior indexing, which can be restrictive and hinder the natural serendipity of the web. 
-Link Traversal Query Processing (LTQP) \cite{Hartig2012} propose to replace the index servers with dereferenceable IRIs 
+Link Traversal Query Processing (LTQP) \cite{Hartig2012} propose to replace the index servers with descriptive dereferenceable IRIs 
 preserving the natural link between information in the web.
 LTQP starts with a few URIs called seed URIs and recursively dereferences them from an internal data source following a lookup policy.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
@@ -35,14 +35,14 @@ In response to this, current research focuses on providing fast results to the u
 
 Previous LTQP research didn't considered the particular structure of the querying environment.
 Environments like Solid described structures using more or less detailed hypermedia descriptions \cite{Fielding}.
-We refer to the structure exploitable for query optimizations as structural assumptions.
+We refer to the structures exploitable for query optimizations as structural assumptions.
 Structural assumptions act as contracts between the data provider and 
 the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
 The usage of structural assumptions has been studied in Solid \cite{Taelman2023}.
 The approach consists of guiding the query engine towards relevant data sources by using 
-the assumptions for data discovery and link pruning \cite{verborgh2020guided}.
-More concretely the approach makes use of the hypermedia description of 
-\href{https://solidproject.org/TR/protocol#resources}{solid storages} (colloquially referred as solid pod)
+those assumptions in a manner to discover useful data and prune irrelevant ones \cite{verborgh2020guided}.
+More concretely, in Solid, the approach makes use of the hypermedia description of 
+\href{https://solidproject.org/TR/protocol#resources}{solid storages} (colloquially referred to as solid pod)
 derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification},
 to locate all the resources of a storage.
 However, the LDP specification only captures the structure of storage but not its contents.
