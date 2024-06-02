@@ -18,6 +18,7 @@ In this short paper, we don't provide proof for this proposition, however,
 We divide the query into multiple star patterns with their dependencies ($Q_{star}$).
 The evaluation of the SI consists of finding if those $Q_{star}$ are contained inside the shapes of the SI.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$ of the SI
-then we adapt the lookup policy to ignore all the other resources inside the domain even if the SI is \emph{incomplete}.
+then we adapt the lookup policy to ignore all the resources not linked to a $Q_{s}$ inside the domain even if the SI is \emph{incomplete}.
 If the SI is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s}$ then the lookup policy can be adapted
-to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$.
+to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$. 
+In the \emph{incomplete} case the SI can only be used for data discovery.
