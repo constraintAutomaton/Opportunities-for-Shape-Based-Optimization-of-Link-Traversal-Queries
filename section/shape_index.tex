@@ -1,24 +1,28 @@
 \section{Shape index and query shape containment}
 
 We define a Shape Index (SI) as a set of mappings between RDF data shapes and sets of resources.
-Additionally, an SI has an associated domain of action
-and a flag indicating if each resource in the domain is bound by a shape. 
+Additionally, an SI has an associated domain of action \rt{Just say "URL scope" to make it clearer?}
+and a flag indicating if each resource in the domain is bound by a shape. \rt{This "bound by a shape" is not very clear. Just mention "complete" immediately, and then later on explain? An in the explanation, I'd talk about all triples in the resource match the shape, and there are no extra triples. (or feel free to formalize it if it's shorter)}
 We refer to a SI with this flag as a \emph{complete} Shape Index.
 In a SI when a shape is in relation to a set of RDF resources then the shape must validate them.
 Furthermore, every set of triples respecting the shape in the domain must be located inside one resource of the set.
 
-Our approach consists of determining before the traversal of a whole domain the location of the useful resources for the query execution.
-The query engine starts with a "maximalist" lookup policy and adapts it to a more restrictive one upon the evaluation of the SI.
-For that purpose, the query engine must first discover the SI in each (sub)domain.
-In the case of Solid, the SI should be at the root of the storage to be easily discoverable.
-The evaluation of the query with the SI is similar to the classic query containment problem.
+The main goal of our approach is to use the shape index for pruning links that point to resources not matching query-relevant shapes during link traversal.
+In essence, we do this by considering all shapes inside the shape index,
+checking which shapes are relevant to our query using \emph{query-shape containment},
+and then pruning away links towards irrelevant shapes.
+The query engine starts with a "maximalist" \rt{Readers will not know what you're talking about, so let's be precise. You use cMatch and LDP+TypeIndex. So we'll have to briefly explain them as well.} lookup policy and adapts it to a more restrictive one \rt{What is this more restrictive one? The shape-based one?} upon the evaluation of the SI.
+For that purpose, the query engine must first discover the SI in each (sub)domain.\rt{Subdomain => solid pod?}
+In the case of Solid, the SI should be at the root of the storage \rt{pod?} to be easily discoverable.
+
+The evaluation of the query \rt{No, this is not about the evaluation of the query, but about pruning links, right? But you use the query as way to select shapes to prune links by.} \rt{Let's also explicitly coin the term "query-shape containment"!} with the SI is similar to the classic query containment problem.
 Indeed, we propose that we can transform a shape into a query ($Q_{s}$).
 In this short paper, we don't provide proof for this proposition, however, 
 \citeauthor{Delva2021} give an intuition by demonstrating how to query RDF subgraphs using RDF data shapes as a query language.
 We divide the query into multiple star patterns with their dependencies ($Q_{star}$).
 The evaluation of the SI consists of finding if those $Q_{star}$ are contained inside the shapes of the SI.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$ of the SI
-then we adapt the lookup policy to ignore all the resources not linked to a $Q_{s}$ inside the domain even if the SI is \emph{incomplete}.
+then we adapt the lookup policy \rt{Make sure to use the proper terminology: you mean reachability criterion here?} to ignore all the resources not linked to a $Q_{s}$ inside the domain even if the SI is \emph{incomplete}.
 If the SI is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s}$ then the lookup policy can be adapted
 to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$. 
 In the \emph{incomplete} case the SI can only be used for data discovery.
