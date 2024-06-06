@@ -16,13 +16,13 @@ More information about an IRI term can be found if it is dereferenceable (treate
 The web is a decentralized wealth of information.
 Index servers and the query language webSQL \cite{Mendelzon1996} propose a mechanism to capture this knowledge using conjunctive queries.
 However, this approach rely on prior indexing, which can be restrictive and hinder the natural serendipity of the web. 
-Link Traversal Query Processing (LTQP) \cite{Hartig2012} propose to replace the index servers with descriptive dereferenceable IRIs 
+Link Traversal Query Processing (LTQP) \cite{hartig2016walking} propose to replace the index servers with descriptive dereferenceable IRIs 
 preserving the natural link between information in the web.
 LTQP starts with a few URIs called seed URIs and recursively dereferences them from an internal data source following a lookup policy.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
-One of them is the pseudo-infinite search domain derived from the size of the World Wide Web \cite{Hartig2014}.
+One of them is the pseudo-infinite search domain derived from the size of the World Wide Web \cite{hartig2016walking}.
 Additionally, HTTP requests can be very slow and unpredictable making their execution the bottleneck of the method \cite{hartig2016walking}.
-Reachability criteria \cite{Hartig2012} are a partial answer to this problem by defining completeness on the traversal of URIs
+Reachability criteria \cite{hartig2016walking} are a partial answer to this problem by defining completeness on the traversal of URIs
 contained in the internal data source instead of on the acquisition of all the results or the traversal of the whole web.
 Those criteria can also be used as a lookup policy for dereferencing of external data sources.
 Another difficulty is the lack of a priori information about the sources rendering query planning arduous.
@@ -38,7 +38,7 @@ Structural assumptions act as contracts between the data provider and
 the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
 The usage of structural assumptions has been studied in Solid \cite{Taelman2023}.
 The approach consists of guiding the query engine towards relevant data sources by using 
-those assumptions to discover and prune data \cite{verborgh2020guided}.
+those assumptions to discover and prune data \cite{Taelman2023}.
 More concretely, in Solid, the approach makes use of the hypermedia description of 
 \href{https://solidproject.org/TR/protocol#resources}{solid storages} (that we refered to has Solid pods \cite{Taelman2023})
 derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification},
@@ -53,7 +53,6 @@ Yet for multiple queries, the bottleneck remains the high number of HTTP request
 It is reasonable to hypothesize that a significant portion of those HTTP requests lead to the dereferencing of
 documents containing data that don't contribute to the result of the query.
 Hence investigating more descriptive structural assumptions is a relevant research endeavor.
-
 In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
 The shape index is inspired by the type index.
 However, it intend to be more expressive by describing the content of the data instead of only its class \cite{Taelman2017}.
