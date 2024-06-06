@@ -1,4 +1,4 @@
-SOURCE = main.tex references.bib section/*.tex figure/*.svg
+SOURCE = main.tex references.bib section/*.tex figure/*
 
 main.pdf: $(SOURCE)
 	pdflatex --shell-escape main && bibtex main && pdflatex --shell-escape main && pdflatex --shell-escape main

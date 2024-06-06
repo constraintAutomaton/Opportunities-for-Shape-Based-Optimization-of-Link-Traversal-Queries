@@ -22,3 +22,11 @@ we adapt the reachability criteria to ignore all the resources not linked to a $
 If the SI is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s}$ the reachability criteria can be adapted
 to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$. 
 In the case of an \emph{incomplete} SI the algorithm can only discover resources.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figure/shape_containement_v2}
+    \caption{A schema of the source selection when an engine encounter a SI. It first dereference it, 
+    then it perform the \emph{query-shape containment} and lastly it dereference only the resources that might contribute to the query execution}
+    \label{fig:shape_index}
+\end{figure}
