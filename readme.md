@@ -34,17 +34,17 @@ and design algorithms for query planning that take into consideration this shape
 Here is the figure presenting the main result.
 
 ![figure displaying the main results](figure/combined.svg)
-<div style="text-align: justify"> 
+<p style="text-align: justify"> 
 The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
 The results of our approach are in blue and the state of the art (type index with LDP) in red.
 The results have been generated with 50 repetitions and a timeout of 6000 ms.
 The queries are denoted with first the initial of the query template (e.g., S1 for interactive-**s**hort-**1**), and the version of the concrete query (e.g., V0). 
 Values not present in the plot indicate that the query timeout before the end of the execution.
-</div> 
+</p> 
 
 ## Conclusion 
 
-<div style="text-align: justify"> 
+<p style="text-align: justify"> 
 Our approach of shape-based optimization for LTQP over decentralized environments consists of exploiting the structure provided by
 annotated data sources with RDF shape metadata. 
 We propose the usage of a shape index as a hypermedia descriptor for structural information.
@@ -56,4 +56,4 @@ as our early experiments show that this approach can significantly reduce the qu
 In future work, we will provide a complete implementation of our containment algorithm,
 a formalization of the approach and a more detailed analysis of the performance of the method.
 Furthermore, we intend to explore the usage of shapes in the context of LTQP for query planning and link prioritization.
-</div>
+</p>
