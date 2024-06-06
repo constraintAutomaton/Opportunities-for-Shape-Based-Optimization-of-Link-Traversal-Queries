@@ -32,7 +32,7 @@ In future work, we are going to formalize our method, perform more extensive exp
 and design algorithms for query planning that take into consideration this shape metadata.
 
 ## Results
-Here is the figure presenting the main result
+Here is the figure presenting the main result.
 
 ![figure displaying the main results](figure/combined.svg)
 The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
