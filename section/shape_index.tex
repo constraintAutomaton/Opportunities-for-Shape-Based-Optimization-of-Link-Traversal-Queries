@@ -1,7 +1,7 @@
 \section{Shape index and query-shape containment}
 
 We define a Shape Index (SI) as a set of mappings between RDF data shapes and sets of resources.
-Additionally, an SI has an associated domain of action (set of URL)
+Additionally, an SI has an associated domain (set of URLs)
 and a flag indicating if the SI is \emph{complete}.
 A SI is complete when every resources in the domain is associated with a shape.
 In a SI when a shape is in relation to a set of RDF resources then the shape must validate them.
@@ -15,7 +15,7 @@ Source selection with an SI consists of interpreting the binding results from a 
 We propose that we can transform a shape into a query ($Q_{s}$).
 In this short paper, we don't provide proof for this proposition, however, 
 \citeauthor{Delva2021} give an intuition by demonstrating how to query RDF subgraphs using RDF data shapes as a query language.
-The algorith consist of dividing the query into multiple star patterns with their dependencies ($Q_{star}$).
+The algorithm divides the query into multiple star patterns with their dependencies ($Q_{star}$).
 Then we evaluate if the  $Q_{star}$ are contained inside the $Q_s$ of the SI.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$
 we adapt the reachability criteria to ignore all the resources not linked to a $Q_{s}$ even if the SI is \emph{incomplete}.
