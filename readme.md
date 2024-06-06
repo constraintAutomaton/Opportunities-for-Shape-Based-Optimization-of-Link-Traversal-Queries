@@ -34,13 +34,11 @@ and design algorithms for query planning that take into consideration this shape
 Here is the figure presenting the main result.
 
 ![figure displaying the main results](figure/combined.svg)
-<p style="text-align: justify"> 
 The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
 The results of our approach are in blue and the state of the art (type index with LDP) in red.
 The results have been generated with 50 repetitions and a timeout of 6000 ms.
 The queries are denoted with first the initial of the query template (e.g., S1 for interactive-**s**hort-**1**), and the version of the concrete query (e.g., V0). 
 Values not present in the plot indicate that the query timeout before the end of the execution.
-</p> 
 
 ## Conclusion 
 
