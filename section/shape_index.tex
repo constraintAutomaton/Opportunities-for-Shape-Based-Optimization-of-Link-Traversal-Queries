@@ -1,11 +1,12 @@
 \section{Shape index and query-shape containment}
 
-We define a SI as a set of mappings between RDF data shapes and sets of resources.
+We define a shape index as a set of mappings between RDF data shapes and sets of resources.
 Additionally, an SI has an associated domain (set of URLs)
 and a flag indicating if the SI is \emph{complete}.
 A SI is complete when every resource in the domain is associated with a shape.
 In a SI when a shape is in relation to a set of RDF resources then the shape must validate them.
 Furthermore, every set of triples respecting the shape in the domain must be located inside one resource of the set.
+
 Our approach consists of determining before the traversal of a whole domain the location of the useful resources for the query execution
 resulting in the pruning of links leading to surely non-contributing resources.
 For that purpose, the query engine must first discover the SI in each (sub)domain.
@@ -24,7 +25,7 @@ to visit every resource in relation to a $Q_{s}$ with a partial binding with a $
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.45\textwidth]{figure/shape_containement}
+    \includegraphics[width=0.5\textwidth]{figure/shape_containement}
     \caption{A schema of the source selection algorithm with a SI. First the SI is dereference, 
     then the \emph{query-shape containment} is performed lastly the only the relevant resources are dereferenced.}
     \label{fig:shape_index}
