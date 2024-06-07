@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.9363607"
-     inkscape:cx="479.76598"
-     inkscape:cy="166.54955"
+     inkscape:zoom="1.444112"
+     inkscape:cx="468.10774"
+     inkscape:cy="209.47129"
      inkscape:window-width="1670"
      inkscape:window-height="911"
      inkscape:window-x="0"
@@ -804,5 +804,16 @@
        cy="43.519039"
        rx="10.455863"
        ry="10.919958" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.88056px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.754999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="80.969215"
+       y="33.482643"
+       id="text36-5"><tspan
+         sodipodi:role="line"
+         id="tspan36-3"
+         style="font-size:3.88056px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755"
+         x="80.969215"
+         y="33.482643">Dereferencing operations</tspan></text>
   </g>
 </svg>
