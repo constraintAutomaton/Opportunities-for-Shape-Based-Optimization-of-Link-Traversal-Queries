@@ -6,14 +6,14 @@
     \caption{The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
     The results of our approach are in blue and the state of the art (type index with LDP) in red.
     The results have been generated with 50 repetitions and a timeout of 6000 ms. 
-    The queries are denoted with first the initial of the query template (e.g., S1 for interactive-\textbf{s}hort-\textbf{1}), and the version
+    The queries are denoted with first the initial of the query template (e.g., S1 for interactive-\textbf{s}hort-\textbf{1}), and then the version
      of the concrete query (e.g., V0). 
      Values not present in the plot indicate that the query timeout before the end of the execution.
     }
     \label{fig:result}
 \end{figure}
 
-\sepfootnotecontent{impl}{ The algoritm implementation is available at the following link \newline
+\sepfootnotecontent{impl}{ The algorithm implementation is available at the following link \newline
 \href{https://github.com/constraintAutomaton/query-shape-detection}{https://github.com/constraintAutomaton/query-shape-detection}
 and the integration in the Comunica query engine at the following link 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}.}
@@ -25,7 +25,7 @@ The implementation of the benchmark and complementary results (such as the analy
 \href{https://github.com/constraintAutomaton/amw_shape_index_results}{https://github.com/constraintAutomaton/amw\_shape\_index\_results}.}
 
 For early evaluation, we implemented the containment algorithm described in the previous section.
-An open implementation of the \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{integration} in the query engine Comunica \cite{taelman_iswc_resources_comunica_2018} is available online \sepfootnote{impl}.
+An open source implementation of the \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{integration} in the query engine Comunica \cite{taelman_iswc_resources_comunica_2018} is available online \sepfootnote{impl}.
 In its current state, the implementation doesn't support 
 \href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property paths} and nested queries.
 We use the benchmark Solidbench \cite{Taelman2023} to compare our approach with the current state of the art 
