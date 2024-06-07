@@ -23,11 +23,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.1983689"
-     inkscape:cx="485.2429"
-     inkscape:cy="191.09308"
-     inkscape:window-width="1920"
-     inkscape:window-height="1052"
+     inkscape:zoom="1.9363607"
+     inkscape:cx="479.76598"
+     inkscape:cy="166.54955"
+     inkscape:window-width="1670"
+     inkscape:window-height="911"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -393,7 +393,7 @@
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan2">Query Engine</tspan></text>
+         id="tspan6">Query Engine</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,81.176355,91.080062)"
@@ -401,7 +401,7 @@
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-7-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan3">Solid Pod</tspan></text>
+         id="tspan7">Solid Pod</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,6.0788017,-12.875621)"
@@ -414,7 +414,7 @@
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan4">Query</tspan></text>
+         id="tspan8">Query</tspan></text>
     <g
        id="g13"
        transform="translate(3.2075404,1.2140714)" />
@@ -552,9 +552,9 @@
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9);display:inline;fill:#d2c002;fill-opacity:1;stroke:none;stroke-width:1.88868;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan10"><tspan
+         id="tspan13"><tspan
            style="font-weight:bold;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:#000000"
-           id="tspan5">Shape  Index</tspan></tspan></text>
+           id="tspan9">Shape  Index</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.24090918,0,0,0.24090918,88.217924,31.081569)"
@@ -562,9 +562,9 @@
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-5);display:inline;fill:#d2c002;fill-opacity:1;stroke:#000000;stroke-width:1.88868;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan12"><tspan
+         id="tspan15"><tspan
            style="fill:#000000;stroke:none"
-           id="tspan11">Resources</tspan></tspan></text>
+           id="tspan14">Resources</tspan></tspan></text>
     <g
        id="g23"
        transform="translate(-17.896659,-28.977635)">
@@ -775,7 +775,7 @@
        inkscape:original-d="m 57.097778,45.343532 c 6e-6,-3.092246 1.1e-5,-6.184495 1.6e-5,-9.276742 2.816657,-7.142281 5.633202,-14.284275 8.449802,-21.426413 4.433636,-2.038305 8.867095,-4.076529 13.300644,-6.1147925 4.748117,-1.3817253 9.496044,-2.7633953 14.244069,-4.1450929 4.307802,-0.052041 8.615431,-0.1040797 12.923151,-0.1561195 4.16266,0.057733 8.32515,0.1154634 12.48773,0.1731952 3.06207,0.3179371 6.12402,0.6358612 9.18604,0.9537919 2.60975,0.4685065 5.2194,0.9369939 7.82911,1.405491"
        transform="translate(-4.026504,13.14245)" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.055;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.355;stroke-dasharray:0.35499999,0.35499999;stroke-dashoffset:0;stroke-opacity:1"
        d="m 138.75645,7.6680776 c 0.78066,2.3241007 1.56131,4.6482014 2.59954,6.0497344 1.03822,1.401532 2.33396,1.880481 3.56757,2.614857 1.23361,0.734376 2.40501,1.724127 3.54004,2.438262 1.13502,0.714135 2.23359,1.152611 3.33219,1.591098"
        id="path35"
        inkscape:path-effect="#path-effect35"
@@ -797,5 +797,12 @@
          style="font-size:3.88056px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755"
          x="15.840631"
          y="14.686813">Query-shape containement evaluation</tspan></text>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.381475;stroke-dasharray:0.381475, 0.381475;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1"
+       cx="147.8661"
+       cy="43.519039"
+       rx="10.455863"
+       ry="10.919958" />
   </g>
 </svg>
