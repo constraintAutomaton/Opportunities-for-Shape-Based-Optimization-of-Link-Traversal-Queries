@@ -10,12 +10,12 @@ Linked data is mostly modeled and published using the graph data formalization \
 RDF terms can be expressed using IRIs, Blank Nodes, and Litterals.
 The usage of IRIs provides more reusability of data and explicitizes in a machine-interpretable way the relations between
 information from multiple remote or local subgraphs.
-More information about an IRI term can be found if it is dereferenceable (treated as an URL) using the HTTP protocol.
+More information about an IRI term can be found if it is dereferenceable (treated as a URL) using the HTTP protocol.
 
 
 The web is a decentralized wealth of information.
 Index servers and the query language webSQL \cite{Mendelzon1996} propose a mechanism to capture this knowledge using conjunctive queries.
-However, this approach rely on prior indexing, which can be restrictive and hinder the natural serendipity of the web. 
+However, this approach relies on prior indexing, which can be restrictive and hinder the natural serendipity of the web. 
 Link Traversal Query Processing (LTQP) \cite{Hartig2012} propose to replace the index servers with descriptive dereferenceable IRIs 
 preserving the natural link between information in the web.
 LTQP starts with a few URIs called seed URIs and recursively dereferences them from an internal data source following a lookup policy.
@@ -26,12 +26,12 @@ Reachability criteria \cite{Hartig2012} are a partial answer to this problem by 
 contained in the internal data source instead of on the acquisition of all the results or the traversal of the whole web.
 Those criteria can also be used as a lookup policy for dereferencing of external data sources.
 Another difficulty is the lack of a priori information about the sources rendering query planning arduous.
-To alleviate this problem, the current state of the art is to use carefully crafted heuristics for joins ordering \cite{Hartig2011}.
+To alleviate this problem, the current state of the art consists of using carefully crafted heuristics for joins ordering \cite{Hartig2011}.
 Those heuristics provide non-optimal fairly performant query plans.
 The limitations of this approach are usually of little importance because the main bottleneck is the high number of HTTP requests.
 In response to this, current research focuses on providing fast results to the user by ordering adequately the dereferencing operations of IRIs \cite{hartig2016walking}.
 
-Previous LTQP research didn't considered the particular structure of the querying environment.
+Previous LTQP research didn't consider the particular structure of the querying environment.
 Environments like Solid described structures using more or less detailed hypermedia descriptions \cite{Fielding}.
 We refer to the structures exploitable for query optimizations as structural assumptions.
 Structural assumptions act as contracts between the data provider and 
@@ -40,12 +40,12 @@ The usage of structural assumptions has been studied in Solid \cite{Taelman2023}
 The approach consists of guiding the query engine towards relevant data sources by using 
 those assumptions to discover and prune data \cite{verborgh2020guided}.
 More concretely, in Solid, the approach makes use of the hypermedia description of 
-\href{https://solidproject.org/TR/protocol#resources}{solid storages} (that we refered to has Solid pods \cite{Taelman2023})
+\href{https://solidproject.org/TR/protocol#resources}{solid storages} (that we refer to as Solid pods \cite{Taelman2023})
 derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification},
 to locate all the resources of a storage.
 However, the LDP specification only captures the structure of storage but not its contents.
 In response, the \href{https://solid.github.io/type-indexes/}{type index specification} is additionally used.
-The type index propose a more declarative approach \cite{Taelman2017} by mapping RDF classes with set of resources to perform dynamic optmizations.
+The type index propose a more declarative approach \cite{Taelman2017} by mapping RDF classes with sets of resources to perform dynamic optimizations.
 It has been shown that by making query engines exploit those assumptions it is possible to reduce the query execution time
 of realistic queries to the extent where the bottleneck is not the execution of 
 HTTP requests but the suboptimal heuristic-based query plan \cite{eschauzier_quweda_2023, Taelman2023}.
