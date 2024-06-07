@@ -2,7 +2,7 @@
 
 \begin{figure}[!h]
     \centering
-    \includesvg[width=0.8\linewidth]{figure/combined}
+    \includesvg[width=\linewidth]{figure/combined}
     \caption{The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
     The results of our approach are in blue and the state of the art (type index with LDP) in red.
     The results have been generated with 50 repetitions and a timeout of 6000 ms. 
@@ -13,12 +13,15 @@
     \label{fig:result}
 \end{figure}
 
-\sepfootnotecontent{impl}{Available at the following link \newline
+\sepfootnotecontent{impl}{ The algoritm implementation is available at the following link \newline
+\href{https://github.com/constraintAutomaton/query-shape-detection}{https://github.com/constraintAutomaton/query-shape-detection}
+and the integration in the Comunica query engine at the following link 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}.}
 
 \sepfootnotecontent{benchmark}{We executed interactive-short 1 and 5, interactive-discover 1,3-7 and interactive-complex 8 with
 a modified benchmark containing a \href{https://github.com/constraintAutomaton/rdf-dataset-fragmenter.js/tree/feature/shapeIndex}{\emph{complete} shape index in each pod}.
-The implementation of the benchmark and complementary results are available at the following link 
+The results from interactive-complex 8 are omitted because the two approaches were not able to finish the execution before the timeout.
+The implementation of the benchmark and complementary results (such as the analysis of the statistical significance) are available at the following link 
 \href{https://github.com/constraintAutomaton/amw_shape_index_results}{https://github.com/constraintAutomaton/amw\_shape\_index\_results}.}
 
 For early evaluation, we implemented the containment algorithm described in the previous section.
