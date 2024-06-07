@@ -9,7 +9,7 @@ We created a `makefile` to facilitate the building of the PDF version.
 One can simply execute `make main.pdf` or `make` to produce the PDF version if `pdflatex` and the other dependencies of the tex live suite are installed on the machine of the user.
 
 ## Abstract
-<div style="text-align: justify"> 
+<p style="text-align: justify"> 
 Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph.
 While centralized query processing approaches are well-understood,
 decentralization-friendly alternatives with no prior indexing such as Link Traversal Query Processing (LTQP)
@@ -28,7 +28,7 @@ Our initial experiments show that with little maintenance and work from the serv
 our method can significantly reduce the number of links traversed to answer a query leading to a substantial reduction in query execution time compared to the state of the art.
 In future work, we are going to formalize our method, perform more extensive experiments,
 and design algorithms for query planning that take into consideration this shape metadata.
- </div>
+ </p>
 
 ## Results
 Figure presenting the main result.
