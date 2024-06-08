@@ -23,7 +23,7 @@ While LTQP enables live exploration of environments without prior indexing, it l
 One of them is the pseudo-infinite search domain derived from the size of the World Wide Web \cite{hartig2016walking}.
 Additionally, HTTP requests can be very slow and unpredictable making their execution the bottleneck of the method \cite{hartig2016walking}.
 Reachability criteria \cite{Hartig2012} are a partial answer to this problem by defining completeness on the traversal of URIs
-contained in the internal data source instead of on the acquisition of all the results or the traversal of the whole web.
+contained in the internal data source of the engine instead of on the acquisition of all the results or the traversal of the whole web.
 Those criteria can also be used as a lookup policy for dereferencing of external data sources.
 Another difficulty is the lack of a priori information about the sources rendering query planning arduous.
 To alleviate this problem, the current state of the art consists of using carefully crafted heuristics for joins ordering \cite{Hartig2011}.
@@ -36,14 +36,14 @@ Environments like Solid described structures using more or less detailed hyperme
 We refer to the structures exploitable for query optimizations as structural assumptions.
 Structural assumptions act as contracts between the data provider and 
 the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
-The usage of structural assumptions has been studied in Solid \cite{Taelman2023}.
 The approach consists of guiding the query engine towards relevant data sources by using 
 those assumptions to discover and prune data \cite{verborgh2020guided}.
-More concretely, in Solid, the approach makes use of the hypermedia description of 
-\href{https://solidproject.org/TR/protocol#resources}{solid storages} (that we refer to as Solid pods \cite{Taelman2023})
-derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification},
-to locate all the resources of a storage.
-However, the LDP specification only captures the structure of storage but not its contents.
+The usage of structural assumptions has been studied in Solid \cite{Taelman2023}.
+The approach involves the utilization of the 
+\href{https://solidproject.org/TR/protocol#resources}{solid storages} (that we refer to as Solid pods \cite{Taelman2023}) hypermedia description
+to locate all the resources of a pod. 
+This hypermedia description is derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification}
+which only captures the structures of storage but not their contents.
 In response, the \href{https://solid.github.io/type-indexes/}{type index specification} is additionally used.
 The type index propose a more declarative approach \cite{Taelman2017} by mapping RDF classes with sets of resources to perform dynamic optimizations.
 It has been shown that by making query engines exploit those assumptions it is possible to reduce the query execution time
