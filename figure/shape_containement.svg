@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.8411045"
-     inkscape:cx="573.56874"
-     inkscape:cy="252.2942"
+     inkscape:zoom="1.0331894"
+     inkscape:cx="451.5145"
+     inkscape:cy="217.28833"
      inkscape:window-width="1670"
      inkscape:window-height="911"
      inkscape:window-x="0"
@@ -388,20 +388,20 @@
      inkscape:label="Layer 2">
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-56.702258,57.587338)"
+       transform="matrix(0.26458333,0,0,0.26458333,-54.801,57.587338)"
        id="text9-9-3"
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan9">Query Engine</tspan></text>
+         id="tspan2">Query Engine</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,81.176355,91.080062)"
+       transform="matrix(0.26458333,0,0,0.26458333,81.176346,91.080062)"
        id="text9-9-3-0"
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-7-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan10">Solid Pod</tspan></text>
+         id="tspan3">Solid Pod</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,6.0788017,-12.875621)"
@@ -414,7 +414,7 @@
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan11">Query</tspan></text>
+         id="tspan4">Query</tspan></text>
     <g
        id="g13"
        transform="translate(3.2075404,1.2140714)" />
@@ -507,7 +507,7 @@
              id="tspan1-36-1-9-7-9"
              style="font-size:3.175px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-dasharray:none"
              x="169.69858"
-             y="108.90585">Pod:movie</tspan></text>
+             y="108.90585">Pod:movies</tspan></text>
       </g>
       <g
          id="g15"
@@ -547,14 +547,14 @@
        transform="matrix(0.91052291,0,0,0.91052291,78.575258,23.947544)" />
     <text
        xml:space="preserve"
-       transform="matrix(0.24090918,0,0,0.24090918,82.378755,-4.4742802)"
+       transform="matrix(0.24090918,0,0,0.24090918,80.120287,-4.4742802)"
        id="text9"
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9);display:inline;fill:#d2c002;fill-opacity:1;stroke:none;stroke-width:1.88868;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan13"><tspan
+         id="tspan6"><tspan
            style="font-weight:bold;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:#000000"
-           id="tspan12">Shape  Index</tspan></tspan></text>
+           id="tspan5">Shape  Index</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.24090918,0,0,0.24090918,88.217924,31.081569)"
@@ -562,9 +562,9 @@
        style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-5);display:inline;fill:#d2c002;fill-opacity:1;stroke:#000000;stroke-width:1.88868;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
          y="122.32001"
-         id="tspan15"><tspan
+         id="tspan8"><tspan
            style="fill:#000000;stroke:none"
-           id="tspan14">Resources</tspan></tspan></text>
+           id="tspan7">Resources</tspan></tspan></text>
     <g
        id="g2"
        transform="translate(-17.896659,-27.81756)">
