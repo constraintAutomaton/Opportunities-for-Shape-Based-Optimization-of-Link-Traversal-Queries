@@ -7,18 +7,19 @@ A SI is complete when every resource in the domain is associated with a shape.
 In a SI when a shape is in relation to a set of RDF resources then the shape must validate them.
 Furthermore, every set of triples respecting the shape in the domain must be located inside one resource of the set.
 
-Our approach consists of determining before the traversal of a whole domain the location of the useful resources for the query execution
-resulting in the pruning of links leading to surely non-contributing resources.
-The query engine can start its processing with a more permissive reachability criteria
+Our approach consists of determining before the traversal of a whole domain the location of the useful resources for the query execution.
+This data discovery operation results in the implicit pruning of links leading to surely non-contributing resources.
+In this approach, the query engine can start its processing with a permissive reachability criteria
 such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criterion ($c_{LDP}$ and $c_{\text{type index}}$) \cite{Taelman2023}
-and adapt it to a more restrictive upon the analysis of the SI.
-For that purpose, the query engine must first discover the SI in each (sub)domain.
+and not suffer the associated longer execution time during the traversal of environments containing a SI.
+Indeed, after the analysis of the SI with the query provided by the user the criteria can be adapted to become more restrictive within the domain of the SI.
+For that purpose, the query engine must first discover the SI in the current (sub)domain.
 In the case of Solid, the SI should be at the root of the pod to be easily discoverable.
 The approach is schematized at Figure \ref{fig:shape_index}.
 Source selection with an SI consists of interpreting the binding results from a \emph{query-shape containment} problem similar to the classic query containment problem \cite{afariQCE, Spasi2023}.
 Indeed, we propose that we can transform a shape into a query ($Q_{s}$).
 In this short paper, we don't provide proof for this proposition, however, 
-\citeauthor{Delva2021} give an intuition by demonstrating how to query RDF subgraphs using RDF shapes as a query language.
+\citeauthor{Delva2021} give an intuition by demonstrating how to query RDF subgraphs using RDF data shapes as a query language.
 The algorithm divides the query into multiple star patterns with their dependencies ($Q_{star}$).
 Then it pushdown \cite{Yang2021FlexPushdownDBHP} the (sub)queries to the level of source selection to evaluate if the $Q_{star}$ are contained inside the $Q_s$ of the SI.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$
