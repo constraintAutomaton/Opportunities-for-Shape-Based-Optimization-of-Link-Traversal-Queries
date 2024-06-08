@@ -17,7 +17,7 @@ For that purpose, the query engine must first discover the SI in the current (su
 In the case of Solid, the SI should be at the root of the pod to be easily discoverable.
 The approach is schematized at Figure \ref{fig:shape_index}.
 Source selection with an SI consists of interpreting the binding results from a \emph{query-shape containment} problem similar to the classic query containment problem \cite{afariQCE, Spasi2023}.
-Indeed, we propose that we can transform a shape into a query ($Q_{s}$).
+To perform this algorithm, we propose that we can transform a shape into a query ($Q_{s}$).
 In this short paper, we don't provide proof for this proposition, however, 
 \citeauthor{Delva2021} give an intuition by demonstrating how to query RDF subgraphs using RDF data shapes as a query language.
 The algorithm divides the query into multiple star patterns with their dependencies ($Q_{star}$).
