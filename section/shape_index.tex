@@ -17,9 +17,7 @@ For that purpose, the query engine must first discover the SI in the current (su
 In the case of Solid, the SI should be at the root of the pod to be easily discoverable.
 The approach is schematized at Figure \ref{fig:shape_index}.
 Source selection with an SI consists of interpreting the binding results from a \emph{query-shape containment} problem similar to the classic query containment problem \cite{afariQCE, Spasi2023}.
-To perform this algorithm, we propose that we can transform a shape into a query ($Q_{s}$).
-In this short paper, we don't provide proof for this proposition, however, 
-\citeauthor{Delva2021} give an intuition by demonstrating how to query RDF subgraphs using RDF data shapes as a query language.
+To perform this algorithm, we transform the shapes into queries ($Q_{s}$) \cite{labragayo2017validating, Delva2021}.
 The algorithm divides the query into multiple star patterns with their dependencies ($Q_{star}$).
 Then it pushdown \cite{Yang2021FlexPushdownDBHP} the (sub)queries to the level of source selection to evaluate if the $Q_{star}$ are contained inside the $Q_s$ of the SI.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$
@@ -27,8 +25,9 @@ the reachability criteria is adapted to ignore all the resources not linked to a
 If the SI is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s}$ the reachability criteria can be adapted
 to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$.
 In a similar case with a \emph{incomplete} SI the query engine can only uses the SI for data discovery.
-This case is similar to the usage of the type index but with a larger direct reach because with the SI the properties are described in the shapes
-whereas with the type index only the class is directly available but its properties \emph{may} be discoverable upon the dereferencing of the class IRI.
+This case is similar to the usage of the type index but with a larger direct reach because the SI directly describes the properties of data whereas
+the type index only describes the classes. 
+Since a class is an IRI it is possible to find its properties (if they are defined) by performing another dereferencing operation.
 However, it has to be noted that the current usage of the type index only match the class with the query and do not consider the properties \cite{Taelman2023}.
 
 \begin{figure}
