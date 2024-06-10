@@ -43,9 +43,9 @@ however, the overhead of the containment calculation could also be a contributin
 Our approach reliably executes fewer HTTP requests compared to the state of the art.
 This is an expected result because no queries target (implicitly) each file of a user.
 In the worst cases, our approach  has similar query execution times with a 
-distribution tending to be lower than the state of the art (with the exception to D3V3 and D3V4 with an augmentation of 9\% of the mean of the execution time).
+distribution tending to be lower than the state of the art (with the exception to D3V3 and D3V4 with an increase of 9\% of the mean of the execution time).
 Furthermore, their variances tend to be lower compared to their counterpart. 
-One possible explanation for this observation is that the execution time of HTTP requests is not constant and can be unpredictable \cite{hartig2016walking}
-which could lead to an increase in variance.
+One possible explanation for this observation is that the execution time of HTTP requests is unpredictable \cite{hartig2016walking}
+leading to an increase in variance.
 This observation not only has potential implications for the reliability of multiple executions in terms of execution time
 but also in terms of the performance of single execution in unstable networks where the server might take longer times to respond. 

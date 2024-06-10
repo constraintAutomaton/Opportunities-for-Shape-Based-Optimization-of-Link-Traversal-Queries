@@ -1,7 +1,7 @@
 \section{Introduction}
  
 The large-scale publication of linked data empowers more freedom in the creation and usage of web applications.
-More concretely linked data can diminish data silos \cite{Verstraete2022}
+Concretely linked data can diminish data silos \cite{Verstraete2022}
 and could foster potential new forms of application ownership \cite{Mechant2021}.
 The \href{https://solidproject.org/TR/protocol}{Solid} and
 \href{https://docs.joinmastodon.org/}{Mastodon} protocols
@@ -13,11 +13,10 @@ information from multiple remote or local subgraphs.
 More information about an IRI term can be found if it is dereferenceable (treated as a URL) using the HTTP protocol.
 
 
-The web is a decentralized wealth of information.
 Index servers and the query language webSQL \cite{Mendelzon1996} propose a mechanism to capture this knowledge using conjunctive queries.
-However, this approach relies on prior indexing, which can be restrictive and hinder the natural serendipity of the web. 
+However, this approach relies on prior indexing, which necessitates possibly frequent expensive updates rendering the approach restrictive and hindering the natural serendipity of the web. 
 Link Traversal Query Processing (LTQP) \cite{Hartig2012} propose to replace the index servers with descriptive dereferenceable IRIs 
-preserving the natural link between information in the web.
+from the structure of RDF triples to preserve the natural link between information in the web.
 LTQP starts with a few URIs called seed URIs and recursively dereferences them from an internal data source following a lookup policy.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
 One of them is the pseudo-infinite search domain derived from the size of the World Wide Web \cite{hartig2016walking}.
@@ -29,10 +28,10 @@ Another difficulty is the lack of a priori information about the sources renderi
 To alleviate this problem, the current state of the art consists of using carefully crafted heuristics for joins ordering \cite{Hartig2011}.
 Those heuristics provide non-optimal fairly performant query plans.
 The limitations of this approach are usually of little importance because the main bottleneck is the high number of HTTP requests.
-In response to this, current research focuses on providing fast results to the user by ordering adequately the dereferencing operations of IRIs \cite{hartig2016walking}.
+In response to this, current research focuses on providing fast results to the user by adequately ordering the dereferencing operations of IRIs \cite{hartig2016walking}.
 
-Previous LTQP research didn't consider the particular structure of the querying environment.
-Environments like Solid described structures using more or less detailed hypermedia descriptions \cite{Fielding}.
+Until recently, LTQP research did not consider the particular structure of the querying environment.
+Environments like Solid describ structures using hypermedia descriptions \cite{Fielding}.
 We refer to the structures exploitable for query optimizations as structural assumptions.
 Structural assumptions act as contracts between the data provider and 
 the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
@@ -44,8 +43,8 @@ The method involves the utilization of the
 to locate all the resources of a pod. 
 This hypermedia description is derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification}
 which only captures the structures of storage but not their contents.
-In response, the \href{https://solid.github.io/type-indexes/}{type index specification} is additionally used.
-The type index propose a more declarative approach \cite{Taelman2017} by mapping RDF classes with sets of resources to perform dynamic optimizations.
+For query-aware optimizations, the \href{https://solid.github.io/type-indexes/}{type index specification} is additionally used.
+The type index propose a more declarative approach \cite{Taelman2017} by mapping RDF classes with sets of resources.
 It has been shown that by making query engines exploit those assumptions it is possible to reduce the query execution time
 of realistic queries to the extent where the bottleneck is not the execution of 
 HTTP requests but the suboptimal heuristic-based query plan \cite{eschauzier_quweda_2023, Taelman2023}.
@@ -57,12 +56,7 @@ Hence investigating more descriptive structural assumptions is a relevant resear
 In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
 The shape index is inspired by the type index.
 However, it intend to be more expressive by describing the content of the data instead of only its class \cite{Taelman2017}.
-% We could have used here as a reference the paper from Ben Demeester RDF Graph Validation Using Rule-Based Reasoning 
 RDF data shapes are mostly used in data validation \cite{Gayo2018a} hence they provide an excellent means to describe data.
-Yet to a lesser extent, they have been used in the context of federated query optimizations \cite{kashif2021}.
-%RDF data shapes don't require significative power to be maintained because they only need to be edited 
-%when the data model is modified.
-%The low cost of maintenance combined with the mostly passive contribution of 
-%the server when using RDF data shape for query optimization makes it a promising potential medium. 
+Additionally, they have been used in the context of federated query optimizations \cite{kashif2021}.
 We foresee opportunities for using a shape index during data source discovery, link pruning and ordering, and query planning.
 This short paper presents our preliminary work on data discovery and link pruning.

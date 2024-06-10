@@ -10,9 +10,9 @@ Furthermore, every set of triples respecting the shape in the domain must be loc
 Our approach consists of determining before the traversal of a whole domain the location of the useful resources for the query execution.
 This data discovery operation results in the implicit pruning of links leading to surely non-contributing resources.
 In this approach, the query engine can start its processing with a permissive reachability criteria
-such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criterion ($c_{LDP}$ and $c_{\text{type index}}$) \cite{Taelman2023}
+such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criterion ($\mathrm{c_{LDP}}$ and $\mathrm{c_{type-index}}$) \cite{Taelman2023}
 and not suffer from the associated longer execution time during the traversal of environments containing a SI.
-Indeed, after the analysis of the SI with the query provided by the user the criteria can be adapted to become more restrictive within the domain of the SI.
+After the analysis of the SI with the query provided by the user the criteria can be adapted to become more restrictive within the domain of the SI.
 For that purpose, the query engine must first discover the SI in the current (sub)domain.
 In the case of Solid, the SI should be at the root of the pod to be easily discoverable.
 The approach is schematized at Figure \ref{fig:shape_index}.
