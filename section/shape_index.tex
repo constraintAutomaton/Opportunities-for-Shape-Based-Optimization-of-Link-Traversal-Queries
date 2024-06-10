@@ -11,7 +11,7 @@ Our approach consists of determining before the traversal of a whole domain the 
 This data discovery operation results in the implicit pruning of links leading to surely non-contributing resources.
 In this approach, the query engine can start its processing with a permissive reachability criteria
 such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criterion ($c_{LDP}$ and $c_{\text{type index}}$) \cite{Taelman2023}
-and not suffer the associated longer execution time during the traversal of environments containing a SI.
+and not suffer from the associated longer execution time during the traversal of environments containing a SI.
 Indeed, after the analysis of the SI with the query provided by the user the criteria can be adapted to become more restrictive within the domain of the SI.
 For that purpose, the query engine must first discover the SI in the current (sub)domain.
 In the case of Solid, the SI should be at the root of the pod to be easily discoverable.
@@ -26,11 +26,12 @@ If the SI is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s
 to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$.
 In a similar case with a \emph{incomplete} SI the query engine can only use the SI for data discovery.
 This case is similar to the usage of the type index but with a more reaching ability to match a query with the index 
-because shapes in their definition describe the properties (RDF predicate) of the entities whereas the type index only describes the classes IRIs.
-It would be possible to dereference the class IRIs to get information about the properties however it is not the current practice \cite{Taelman2023}.
-A comparison of the RDF data shapes and RDF class approach is delegated to future works.
+because shapes in their definition describe the properties (RDF predicates) of the entities whereas the type index only provides the classes IRIs.
+It would be possible to dereference the class IRIs to get information about the properties (if available) however it is not the current practice \cite{Taelman2023}.
+A comparison of the RDF data shapes and RDF class approach due to their potential similarities is delegated to future works.
 It has to be noted that in the literature \cite{demeester_swj_2021} there are comparisons 
-between the two approaches in the context of data validation but it is left to be determined if their frame of comparison is compatible with our problem.
+between the two approaches in the context of data validation but it is left to be determined if their frame of comparison is compatible with our current problem
+and foreseen opportunities.
 
 \begin{figure}
     \centering
