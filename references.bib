@@ -1,3 +1,28 @@
+@InProceedings{Corman2019,
+author="Corman, Julien
+and Florenzano, Fernando
+and Reutter, Juan L.
+and Savkovi{\'{c}}, Ognjen",
+editor="Ghidini, Chiara
+and Hartig, Olaf
+and Maleshkova, Maria
+and Sv{\'a}tek, Vojt{\v{e}}ch
+and Cruz, Isabel
+and Hogan, Aidan
+and Song, Jie
+and Lefran{\c{c}}ois, Maxime
+and Gandon, Fabien",
+title="Validating Shacl Constraints over a Sparql Endpoint",
+booktitle="The Semantic Web -- ISWC 2019",
+year="2019",
+publisher="Springer International Publishing",
+address="Cham",
+pages="145--163",
+abstract="shacl (Shapes Constraint Language) is a specification for describing and validating RDF graphs that has recently become a W3C recommendation. While the language is gaining traction in the industry, algorithms for shacl constraint validation are still at an early stage. A first challenge comes from the fact that RDF graphs are often exposed as sparql endpoints, and therefore only accessible via queries. Another difficulty is the absence of guidelines about the way recursive constraints should be handled. In this paper, we provide algorithms for validating a graph against a shacl schema, which can be executed over a sparql endpoint. We first investigate the possibility of validating a graph through a single query for non-recursive constraints. Then for the recursive case, since the problem has been shown to be NP-hard, we propose a strategy that consists in evaluating a small number of sparql queries over the endpoint, and using the answers to build a set of propositional formulas that are passed to a SAT solver. Finally, we show that the process can be optimized when dealing with recursive but tractable fragments of shacl, without the need for an external solver. We also present a proof-of-concept evaluation of this last approach.",
+isbn="978-3-030-30793-6"
+}
+
+
 @article{demeester_swj_2021,
   author = {De Meester, Ben and Heyvaert, Pieter and Arndt, D\"orthe and Dimou, Anastasia and Verborgh, Ruben},
   title = {{RDF} Graph Validation Using Rule-Based Reasoning},

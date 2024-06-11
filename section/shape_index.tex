@@ -23,7 +23,7 @@ For that purpose, the query engine must first discover the SI in the current (su
 In the case of Solid, the SI should be at the root of the pod to be easily discoverable.
 The approach is schematized at Figure \ref{fig:shape_index}.
 Source selection with an SI consists of interpreting the binding results from a \emph{query-shape containment} problem similar to the classic query containment problem \cite{afariQCE, Spasi2023}.
-To perform this algorithm, we transform the shapes into queries ($Q_{s}$) \cite{labragayo2017validating, Delva2021}.
+To perform this algorithm, we transform the shapes into queries ($Q_{s}$) \cite{labragayo2017validating, Corman2019, Delva2021}.
 The algorithm divides the query from the user into multiple star patterns with their dependencies ($Q_{star}$).
 Then it pushdown \cite{Yang2021FlexPushdownDBHP} the (sub)queries to the level of source selection to evaluate if the $Q_{star}$ are contained inside the $Q_s$ of the SI.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$
