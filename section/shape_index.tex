@@ -7,14 +7,14 @@ It can be considered as a similar concept then the subweb \cite{Bogaerts2021Link
 }
 
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
-Additionally, an SI has an associated domain (set of URLs)
+Additionally, an SI has an associated domain (set of URLs) \rt{Is it really a set? Or some kind of pattern?}
 and a flag indicating if the SI is \emph{complete}.
-A SI is complete when every resource in the domain is associated with a shape.
-In a SI when a shape is in relation to a set of RDF resources then the shape \emph{must} validate those resources.
+A SI is complete when every resource in the domain is associated with a shape within the SI.
+In a SI when a shape is in relation \rt{"in relation" -> "matches"?} to a set of RDF resources then the shape \emph{must} validate those resources.
 Furthermore, every set of triples respecting the shape in the domain \emph{must} be located inside one resource of the set.
 
-Our approach consists of determining before the traversal of a whole domain \sepfootnote{domain} the location of the useful resources for the query execution.
-This data discovery operation results in the implicit pruning of links leading to surely non-contributing resources.
+Our approach consists of determining before the traversal of a whole domain \sepfootnote{domain} the location of the useful resources for the query execution. \rt{This sentence needs rephrasing.}
+This data discovery operation results in the pruning of links leading to resources not contributing to query results.
 In this approach, the query engine can start its processing with a permissive reachability criteria
 such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criterion ($\mathrm{c_{LDP}}$ and $\mathrm{c_{type-index}}$) \cite{Taelman2023}
 and not suffer from the associated longer execution time during the traversal of environments containing a SI.
