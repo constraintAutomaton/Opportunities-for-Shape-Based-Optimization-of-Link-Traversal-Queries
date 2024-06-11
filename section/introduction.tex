@@ -14,7 +14,9 @@ More information about an IRI term can be found if it is dereferenceable (treate
 
 
 Index servers and the query language webSQL \cite{Mendelzon1996} propose a mechanism to capture this knowledge using conjunctive queries.
-However, this approach relies on prior indexing, which necessitates possibly frequent expensive updates rendering the approach restrictive and hindering the natural serendipity of the web. 
+However, this approach relies on prior indexing.
+Indexing processes can be expensive (particularly on the scale of the web) and necessitate frequent updates, furthermore, they can be restrictive
+by excluding (or not considering) some sources hence hindering the natural serendipity of the web.  
 Link Traversal Query Processing (LTQP) \cite{Hartig2012} propose to replace the index servers with descriptive dereferenceable IRIs 
 from the structure of RDF triples to preserve the natural link between information in the web.
 LTQP starts with a few URIs called seed URIs and recursively dereferences them from an internal data source following a lookup policy.
@@ -57,6 +59,6 @@ In this article, we propose to use RDF data shapes as the main mechanism for a s
 The shape index is inspired by the type index.
 However, it intend to be more expressive by describing the content of the data instead of only its class \cite{Taelman2017}.
 RDF data shapes are mostly used in data validation \cite{Gayo2018a} hence they provide an excellent means to describe data.
-Additionally, they have been used in the context of federated query optimizations \cite{kashif2021}.
+Additionally, to a lesser extend they have been used in the context of federated query optimizations \cite{kashif2021}.
 We foresee opportunities for using a shape index during data source discovery, link pruning and ordering, and query planning.
 This short paper presents our preliminary work on data discovery and link pruning.
