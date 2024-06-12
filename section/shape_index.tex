@@ -3,25 +3,24 @@
 \sepfootnotecontent{domain}{
 As defined earlier a domain is a set of URLs.
 A  domain can be, for example, a Solid pod or a route pattern of a website.
-It can be considered as a similar concept then the subweb \cite{Bogaerts2021LinkTW} but more abstract.
+It can be considered as a similar concept to the subweb from \citeauthor{Bogaerts2021LinkTW} but more abstract.
 }
 
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
-Additionally, an SI has an associated domain (set of URLs) \rt{Is it really a set? Or some kind of pattern?}
+Additionally, an SI has an associated domain (set of URLs)
 and a flag indicating if the SI is \emph{complete}.
 A SI is complete when every resource in the domain is associated with a shape within the SI.
-In a SI when a shape is in relation \rt{"in relation" -> "matches"?} to a set of RDF resources then the shape \emph{must} validate those resources.
+In a SI when a shape is mapped to a set of RDF resources then the shape \emph{must} validate those resources.
 Furthermore, every set of triples respecting the shape in the domain \emph{must} be located inside one resource of the set.
 
-Our approach consists of determining before the traversal of a whole domain \sepfootnote{domain} the location of the useful resources for the query execution. \rt{This sentence needs rephrasing.}
-This data discovery operation results in the pruning of links leading to resources not contributing to query results.
-In this approach, the query engine can start its processing with a permissive reachability criteria
-such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criterion ($\mathrm{c_{LDP}}$ and $\mathrm{c_{type-index}}$) \cite{Taelman2023}
+Our approach consists of determining before the traversal of a whole domain \sepfootnote{domain} the location of the useful resources for the query execution hence pruning irrelevant ones. 
+In this approach, the query engine can start its processing with permissive reachability criteria
+such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criteria \cite{Taelman2023}
 and not suffer from the associated longer execution time during the traversal of environments containing a SI.
 After the analysis of the SI with the query provided by the user the criteria can be adapted to become more restrictive within the domain of the SI.
 For that purpose, the query engine must first discover the SI in the current (sub)domain.
 In the case of Solid, the SI should be at the root of the pod to be easily discoverable.
-The approach is schematized at Figure \ref{fig:shape_index}.
+The approach is schematized in Figure \ref{fig:shape_index}.
 Source selection with an SI consists of interpreting the binding results from a \emph{query-shape containment} problem similar to the classic query containment problem \cite{afariQCE, Spasi2023}.
 To perform this algorithm, we transform the shapes into queries ($Q_{s}$) \cite{labragayo2017validating, Corman2019, Delva2021}.
 The algorithm divides the query from the user into multiple star patterns with their dependencies ($Q_{star}$).
@@ -42,7 +41,7 @@ and foreseen opportunities.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{figure/shape_containement}
-    \caption{A schema of the source selection algorithm with a SI. First, the SI is dereference, 
-    then the \emph{query-shape containment} is performed and lastly only the relevant resources are dereferenced.}
+    \caption{A schema of the source selection algorithm with a SI. First, the SI is dereferenced, 
+    then the \emph{query-shape containment} is performed and lastly, only the relevant resources are dereferenced.}
     \label{fig:shape_index}
 \end{figure}
