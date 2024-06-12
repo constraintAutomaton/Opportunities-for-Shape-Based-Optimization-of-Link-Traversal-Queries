@@ -17,7 +17,7 @@ Linked Data on the Web can be considered as one very large Decentralized Knowled
 Figure presenting the main result.
 
 ![figure displaying the main results](figure/combined.svg)
-Figure 2: The query execution time distribution (the upper graph) and the number of HTTP requests (the lower 
+The query execution time distribution (the upper graph) and the number of HTTP requests (the lower 
 graph). The results of our approach are in blue and the state of the art (type index with LDP) are in red. The 
 results have been generated with 50 repetitions and a timeout of 6000 ms. The queries are denoted with first the 
 initial of the query template (e.g., S1 for interactive-**s**hort-**1**), and then the version of the concrete query (e.g., 
