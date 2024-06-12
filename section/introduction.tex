@@ -18,7 +18,7 @@ However, this approach relies on prior indexing.
 Indexing processes can be expensive (particularly on the scale of the web) and necessitate frequent updates, furthermore, they can be restrictive
 by excluding (or not considering) some sources hence hindering the natural serendipity of the web.  
 Link Traversal Query Processing (LTQP) \cite{Hartig2012} propose to replace the index servers with descriptive dereferenceable IRIs 
-from the structure of RDF triples to preserve the natural link between information in the web.
+from the structure of RDF triples to preserve the natural link between information on the web.
 LTQP starts with a few URIs called seed URIs and recursively dereferences them from an internal data source following a lookup policy.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
 One of them is the pseudo-infinite search domain derived from the size of the World Wide Web \cite{hartig2016walking}.
@@ -46,7 +46,7 @@ to locate all the resources of a pod.
 This hypermedia description is derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification}
 which only captures the structures of storage but not their contents.
 For query-aware optimizations, the \href{https://solid.github.io/type-indexes/}{type index specification} is additionally used.
-The type index propose a more declarative approach \cite{Taelman2017} by mapping RDF classes with sets of resources.
+The type index formulation proposes a more declarative approach \cite{Taelman2017} by mapping RDF classes with sets of resources.
 It has been shown that by making query engines exploit those assumptions it is possible to reduce the query execution time
 of realistic queries to the extent where the bottleneck is not the execution of 
 HTTP requests but the suboptimal heuristic-based query plan \cite{eschauzier_quweda_2023, Taelman2023}.
@@ -57,8 +57,8 @@ Hence investigating more descriptive structural assumptions is a relevant resear
 
 In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
 The shape index is inspired by the type index.
-However, it intend to be more expressive by describing the content of the data instead of only its class \cite{Taelman2017}.
+However, it intends to be more expressive by describing the content of the data instead of only its class \cite{Taelman2017}.
 RDF data shapes are mostly used in data validation \cite{Gayo2018a} hence they provide an excellent means to describe data.
-Additionally, to a lesser extend they have been used in the context of federated query optimizations \cite{kashif2021}.
+Additionally, to a lesser extent, they have been used in the context of federated query optimizations \cite{kashif2021}.
 We foresee opportunities for using a shape index during data source discovery, link pruning and ordering, and query planning.
 This short paper presents our preliminary work on data discovery and link pruning.

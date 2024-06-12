@@ -4,7 +4,7 @@
     \centering
     \includesvg[width=\linewidth]{figure/combined}
     \caption{The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
-    The results of our approach are in blue and the state of the art (type index with LDP) in red.
+    The results of our approach are in blue and the state of the art (type index with LDP) are in red.
     The results have been generated with 50 repetitions and a timeout of 6000 ms. 
     The queries are denoted with first the initial of the query template (e.g., S1 for interactive-\textbf{s}hort-\textbf{1}), and then the version
      of the concrete query (e.g., V0). 
@@ -18,14 +18,14 @@
 and the integration in the Comunica query engine at the following link 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}.}
 
-\sepfootnotecontent{benchmark}{We executed interactive-short 1 and 5, interactive-discover 1,3-7 and interactive-complex 8 with
+\sepfootnotecontent{benchmark}{We executed interactive-short 1 and 5, interactive-discover 1,3-7, and interactive-complex 8 with
 a modified benchmark containing a \href{https://github.com/constraintAutomaton/rdf-dataset-fragmenter.js/tree/feature/shapeIndex}{\emph{complete} shape index in each pod}.
 The results from interactive-complex 8 are omitted because the two approaches were not able to finish the execution before the timeout.
 The implementation of the benchmark and complementary results (such as the analysis of the statistical significance) are available at the following link 
 \href{https://github.com/constraintAutomaton/amw_shape_index_results}{https://github.com/constraintAutomaton/amw\_shape\_index\_results}.}
 
 For early evaluation, we implemented the containment algorithm described in the previous section.
-An open source implementation of the \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an 
+An open-source implementation of the \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{integration} in the query engine 
 Comunica \cite{taelman_iswc_resources_comunica_2018} is available online \sepfootnote{impl}.
 In its current state, the implementation doesn't support 
@@ -39,15 +39,15 @@ The results are presented in Figure \ref{fig:result}.
 In Figure \ref{fig:result}, we notice that in the best-case scenario, the percentage of the reduction can be as high as 80\% (D1V3 and S1V3) for the execution time 
 and 97\% (S1V3) for the number of HTTP requests.
 However, there is not a direct correlation between the reduction of execution time and HTTP requests (e.g., the ratio 
-between our approach and the state of the art of the number of HTTP request by the execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
+between our approach and the state of the art of the number of HTTP requests by the execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
 This hints at the results from the state of the art \cite{Taelman2023} proposing that the query plan is the bottleneck for some queries in this environment,
 however, the overhead of the containment calculation could also be a contributing factor to the current results.
 Our approach reliably executes fewer HTTP requests compared to the state of the art.
 This is an expected result because no queries target (implicitly) each file of a user.
 In the worst cases, our approach  has similar query execution times with a 
-distribution tending to be lower than the state of the art (with the exception to D3V3 and D3V4 with an increase of 9\% of the mean of the execution time).
+distribution tending to be lower than the state of the art (with the exception of D3V3 and D3V4 with an increase of 9\% of the mean of the execution time).
 Furthermore, their variances tend to be lower compared to their counterpart. 
 One possible explanation for this observation is that the execution time of HTTP requests is unpredictable \cite{hartig2016walking}
 leading to an increase in variance.
 This observation not only has potential implications for the reliability of multiple executions in terms of execution time
-but also in terms of the performance of single execution in unstable networks where the server might take longer times to respond. 
+but also in terms of the performance of single executions in unstable networks where the server might take longer times to respond. 
