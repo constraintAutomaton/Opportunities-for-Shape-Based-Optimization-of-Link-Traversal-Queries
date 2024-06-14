@@ -3,12 +3,24 @@
 \begin{figure}[!h]
     \centering
     \includesvg[width=\linewidth]{figure/combined}
-    \caption{The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
+    \rv{Font size times two; I can't read it.}
+    \rv{Remove the box around the figure; it adds noise but no signal.}
+    \rv{The sudden $10^3$ is weird.}
+    \rv{Consider adding some horizontal gridlines too.}
+    \caption{
+      \rv{Don't state what we see; tell us what we need to see. Remove next 2 sentences.}
+      %\remove{
+    The query execution time distribution (the upper graph) and the number of HTTP requests (the lower graph).
     The results of our approach are in blue and the state of the art (type index with LDP) are in red.
+    %}
+    \rv{Next sentence should be an overlay on the graph \enquote{avg. of 50; timeout: 6000ms}}
     The results have been generated with 50 repetitions and a timeout of 6000 ms. 
+    \rv{The next sentence should be obvious from the graph so we don't have to say anything. Label them \emph{S1 (v1)} instead or so.}
     The queries are denoted with first the initial of the query template (e.g., S1 for interactive-\textbf{s}hort-\textbf{1}), and then the version
      of the concrete query (e.g., V0). 
+     \rv{Or maybe use a symbol to indicate timeout and add it to the legend.}
      Values not present in the plot indicate that the query timeout before the end of the execution.
+     \rv{So basically, this entire text should go. All of this should be spoken by the figure itself. Use the caption instead to say things like \enquote{The execution time with shape indexes is consistently lower than with the type index, and always uses fewer HTTP requests.}}
     }
     \label{fig:result}
 \end{figure}
@@ -24,30 +36,40 @@ The results from interactive-complex 8 are omitted because the two approaches we
 The implementation of the benchmark and complementary results (such as the analysis of the statistical significance) are available at the following link 
 \href{https://github.com/constraintAutomaton/amw_shape_index_results}{https://github.com/constraintAutomaton/amw\_shape\_index\_results}.}
 
+\remove{
 For early evaluation, we implemented the containment algorithm described in the previous section.
+}
 An open-source implementation of the \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{integration} in the query engine 
 Comunica \cite{taelman_iswc_resources_comunica_2018} is available online \sepfootnote{impl}.
-In its current state, the implementation doesn't support 
-\href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property paths} and nested queries.
 We use the \href{https://github.com/SolidBench/SolidBench.js}{benchmark Solidbench} \cite{Taelman2023} to compare our approach with the current state of the art 
 (a combination of the \href{https://solid.github.io/type-indexes/}{type index} and the \href{https://www.w3.org/TR/ldp/}{LDP specification} as structural assumptions) \cite{Taelman2023}.
-To accommodate the limitation of our implementation we use a subset of the queries of Solidbench.
+We used the supported subset of SolidBench queries,
+skipping the currently unimplemented
+\href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property paths} and nested queries.
 The benchmark with complementary results is open source and available online \sepfootnote{benchmark}.
+\rv{Didn't we say this already?}
+\rv{Let's remove all footnotes. They're details. Just link the implementation from the text directly.}
+\remove{
 We executed each query 50 times with a timeout of 1 minute (6,000 ms).
-The results are presented in Figure \ref{fig:result}.
-In Figure \ref{fig:result}, we notice that in the best-case scenario, the percentage of the reduction can be as high as 80\% (D1V3 and S1V3) for the execution time 
+}
+\rv{in figure already}
+
+Figure \ref{fig:result} shows that\remove{, in the best-case scenario,} the \remove{percentage of the} reduction can be as high as 80\% (D1V3 and S1V3) for execution time 
 and 97\% (S1V3) for the number of HTTP requests.
+Our approach reliably executes fewer HTTP requests compared to the state of the art.
 However, there is not a direct correlation between the reduction of execution time and HTTP requests (e.g., the ratio 
 between our approach and the state of the art of the number of HTTP requests by the execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
 This hints at the results from the state of the art \cite{Taelman2023} proposing that the query plan is the bottleneck for some queries in this environment,
 however, the overhead of the containment calculation could also be a contributing factor to the current results.
-Our approach reliably executes fewer HTTP requests compared to the state of the art.
 This is an expected result because no queries target (implicitly) each file of a user.
+
 In the worst cases, our approach  has similar query execution times with a 
-distribution tending to be lower than the state of the art (with the exception of D3V3 and D3V4 with an increase of 9\% of the mean of the execution time).
+\phrasing{distribution tending to be lower} \rv{didn't understand that} than the state of the art (with the exception of D3V3 and D3V4 with an increase of 9\% of the mean of the execution time).
 Furthermore, their variances tend to be lower compared to their counterpart. 
 One possible explanation for this observation is that the execution time of HTTP requests is unpredictable \cite{hartig2016walking}
 leading to an increase in variance.
 This observation not only has potential implications for the reliability of multiple executions in terms of execution time
 but also in terms of the performance of single executions in unstable networks where the server might take longer times to respond. 
+
+\rv{It should be made explicit that, as per Linked Data Fragments / TPF, a~reduction in number of requests by itself is not by default also good. For instance, a SPARQL endpoint reduces from 5613~requests to 1~request; but that one request is very expensive. So make the point that: the requests that we do make, are a subset of the same requests type index does (and hence, we are thus definitely saving). And it comes at the cost of requesting the shapes (how many requests, and argue why those are cheap requests).}
