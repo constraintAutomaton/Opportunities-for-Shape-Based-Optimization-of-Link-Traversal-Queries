@@ -1,7 +1,11 @@
+\rv{In the title, shall we remove \enquote{over Decentralized Environments}? That's a given.}
+
 \begin{abstract}
     % Context
+    ~\rv{The next sentence is not relevant context for our target audience. Let's remove.}
+    \remove{
     Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph.
-    % Need
+    }
     While centralized query processing approaches are well-understood,
     decentralization-friendly alternatives with no prior indexing such as Link Traversal Query Processing (LTQP)
     are insufficiently performant for real-world use cases.
@@ -13,16 +17,23 @@
     Web subsets are always structured either implicitly or explicitly.
     Explicit structure can be described via hypermedia descriptions.
     Query engines can improve their performance by using structural information to reduce their search domain.
+    \rv{So I've come to this point, but I have not read an actual need or a~problem. It's all context. WHY do we need LTQP? What do you want to do? What do you want to achieve? I think you might want to tell me the following. \textbf{CONTEXT:} hey, a lot of data is spread across many different places---and we cannot bring it together first, because of legal reasons (licenses, personal data laws, \ldots). Although decentralized query is thus a necessity, it's too slow.}
+    % Need
+    \rv{\textbf{NEED:} Figuring out to what extent shapes help us get speed back.}
     % Task
+    \rv{Try to phrase the next more strongly, as a task you have done (past tense), not what this paper does (that's the Object bit later). We didn't just explore; we did something really specific. Please tell us that thing here.}
     In this paper, we explore the opportunities of using mappings between RDF data shapes and distributed RDF subgraphs
     for the purpose of improving the performance of traversal-based queries.
     % Object
+    \rv{I think we can be more specific here (this sentence applies to every paper in the world.)}
     In this article, we discuss these opportunities, present preliminary results, and discuss potential future work.
     % Findings
     Our initial experiments show that with little maintenance and work from the server,
     our method can significantly reduce the number of links traversed to answer a query leading to
     a substantial reduction in query execution time compared to the state of the art.
+    \rv{Great; are there specific numbers we can mention in the previous sentence?}
     % Perspectives
+    \rv{This is not a place for promises about what we will do. It's a place to show how others can build upon our work. (And we might be those others, but that's not relevant.)}
     In future work, we will formalize our method, perform more extensive experiments,
     and design algorithms for query planning that take this shape metadata into consideration.
 \end{abstract}
