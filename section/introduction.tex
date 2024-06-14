@@ -58,7 +58,8 @@ Until recently, LTQP research did not consider the particular structure of the q
 \rv{So with the theorem way, the first sentence would say something like: structure can possibly massively speed up queries, but it hasn't been investigated.}
 \rv{Actually, upon reading the entire paragraph, your point does not seem to be \enquote{hasn't been investigated}, but rather something else. Because there's a whole bunch of investigation here. So what is it that you aim to say here? (This is a genuine question, as in, I don't know to what mental structure to attach the information coming next.)}
 Environments like Solid describe structures using hypermedia descriptions \cite{Fielding}.
-We refer to the structures exploitable for query optimizations as structural assumptions.
+\rv{They don't! That's not true, and Fielding is not claiming that.}
+We refer to the structures exploitable for query optimizations as \emph{structural assumptions}.
 Structural assumptions act as contracts between the data provider and 
 the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
 The query optimization approach derived from those assumptions consists of using them to guide the query engine towards relevant data sources 
@@ -80,6 +81,7 @@ documents containing data that don't contribute to the result of the query.
 Hence investigating more descriptive structural assumptions is a relevant research endeavor.
 
 In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
+\rv{The abbreviation is not working for me at all in the rest of the text; just abbreviate it to \enquote{index} later on and don't introduce the SI.}
 The shape index is inspired by the type index.
 However, it intends to be more expressive by describing the content of the data instead of only its class \cite{Taelman2017}.
 RDF data shapes are mostly used in data validation \cite{Gayo2018a} hence they provide an excellent means to describe data.

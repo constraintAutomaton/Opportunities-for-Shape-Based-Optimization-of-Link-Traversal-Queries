@@ -6,6 +6,7 @@ A  domain can be, for example, a Solid pod or a route pattern of a website.
 It can be considered as a similar concept to the subweb from \citeauthor{Bogaerts2021LinkTW} but more abstract.
 }
 
+\rv{Theorem style. Tell me where we're going. Why are we defining a shape index this way? What are we going to achieve with it?}
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
 Additionally, an SI has an associated domain (set of URLs)
 and a flag indicating if the SI is \emph{complete}.
@@ -13,34 +14,59 @@ A SI is complete when every resource in the domain is associated with a shape wi
 In a SI when a shape is mapped to a set of RDF resources then the shape \emph{must} validate those resources.
 Furthermore, every set of triples respecting the shape in the domain \emph{must} be located inside one resource of the set.
 
-Our approach consists of determining before the traversal of a whole domain \sepfootnote{domain} the location of the useful resources for the query execution hence pruning irrelevant ones. 
+\rv{Rewrite the next sentence as follows to have the objective clearly upfront:}
+\insertion{
+In order to determine beforehand which resources are useful and which can be pruned,
+we\ldots}
+Our approach consists of determining before the traversal of a whole domain\sepfootnote{domain} the location of the useful resources for the query execution hence pruning irrelevant ones. 
+\rv{It's a short paper; the need of such a complex footnote here, is a structural issue. Find a way to incorporate it into the paper.}
+\rv{Rewrite purpose-driven:}
+\insertion{
+To avoid the long execution time of\ldots,
+we start the query engine
+with permissive reachability criteria such as \ldots
+}
 In this approach, the query engine can start its processing with permissive reachability criteria
 such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criteria \cite{Taelman2023}
 and not suffer from the associated longer execution time during the traversal of environments containing a SI.
+
+\insertion{
+To make the query more restrictive\ldots,
+\ldots
+}
 After the analysis of the SI with the query provided by the user the criteria can be adapted to become more restrictive within the domain of the SI.
 For that purpose, the query engine must first discover the SI in the current (sub)domain.
-In the case of Solid, the SI should be at the root of the pod to be easily discoverable.
+\insertion{
+For now,
+we mandate the index to be at the root of the pod;
+however, confidentiality restrictions
+might require a~different approach in practice.
+}
+In the case of Solid, the SI \rephrase{should be} at the root of the pod to be easily discoverable.
 The approach is schematized in Figure \ref{fig:shape_index}.
+
 Source selection with an SI consists of interpreting the binding results from a \emph{query-shape containment} problem similar to the classic query containment problem \cite{afariQCE, Spasi2023}.
 To perform this algorithm, we transform the shapes into queries ($Q_{s}$) \cite{labragayo2017validating, Corman2019, Delva2021}.
 The algorithm divides the query from the user into multiple star patterns with their dependencies ($Q_{star}$).
-Then it pushdown \cite{Yang2021FlexPushdownDBHP} the (sub)queries to the level of source selection to evaluate if the $Q_{star}$ are contained inside the $Q_s$ of the SI.
+\phrasing{Then it pushdown} \cite{Yang2021FlexPushdownDBHP} the (sub)queries to the level of source selection to evaluate if the $Q_{star}$ are contained inside the $Q_s$ of the SI.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$
 the reachability criteria is adapted to ignore all the resources not linked to a $Q_{s}$ even if the SI is \emph{incomplete}.
 If the SI is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s}$ the reachability criteria can be adapted
 to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$.
+
 In a similar case with a \emph{incomplete} SI the query engine can only use the SI for data discovery.
 This case is similar to the usage of the type index but with a more reaching ability to match a query with the index 
 because shapes in their definition describe the properties (RDF predicates) of the entities whereas the type index only provides the classes IRIs.
 It would be possible to dereference the class IRIs to get information about the properties (if available) however it is not the current practice \cite{Taelman2023}.
 A comparison of the RDF data shapes and RDF class approach due to their potential similarities is delegated to future works.
-It has to be noted that in the literature \cite{demeester_swj_2021} there are comparisons 
-between the two approaches in the context of data validation but it is left to be determined if their frame of comparison is compatible with our current problem
+\remove{It has to be noted that in the literature} there exist comparisons 
+between the two approaches in the context of data validation~\cite{demeester_swj_2021} but it is left to be determined if their frame of comparison is compatible with our current problem
 and foreseen opportunities.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{figure/shape_containement}
+    \rv{Font size times two; I can't read it.}
     \caption{A schema of the source selection algorithm with a SI. First, the SI is dereferenced, 
     then the \emph{query-shape containment} is performed and lastly, only the relevant resources are dereferenced.}
     \label{fig:shape_index}
