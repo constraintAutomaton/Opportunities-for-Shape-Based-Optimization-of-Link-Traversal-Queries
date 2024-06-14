@@ -1,4 +1,5 @@
 \section{Conclusion}
+\remove{
 Our approach of shape-based optimization for LTQP over decentralized environments consists of exploiting the structure provided by
 annotated data sources with RDF shape metadata. 
 We propose the usage of a shape index as a hypermedia descriptor for structural information.
@@ -7,6 +8,14 @@ We propose to solve a \emph{query-shape containment} problem analogous to the cl
 using an adaptative lookup policy. 
 Our preliminary results show that using a shape index structural assumption for query optimization
 can significantly reduce the query execution time and the number of HTTP requests.
+}
+\rv{All of the previous is summary and can go. It's a short paper.}
+
+\todo{Insert: lessons learned. What does this mean for the reader? Should they now all start using our thing? Should they be cautious? What should Solid pod vendors do? Add support for shapes}
+
+\todo{Insert: limitations. What problems remain open with our approach? What's the overhead? When is it worse than other things? Mention privacy concerns of exposing a shape index. (Here are my pregnancy test shapes.)}
+
+\rv{Don't talk about what we will do. Talk about how others can build upon our work. Don't promise. Don't intend. Show hooks for others. (We might be those others, but that does not have to be the case.)}
 In future work, we will provide a complete implementation of our containment algorithm,
 a formalization of the approach, and a more detailed analysis of the performance of the method.
 Furthermore, we intend to explore the usage of shapes in the context of LTQP for query planning and link prioritization.
