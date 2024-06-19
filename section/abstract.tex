@@ -1,39 +1,22 @@
-\rv{In the title, shall we remove \enquote{over Decentralized Environments}? That's a given.}
-
 \begin{abstract}
     % Context
-    ~\rv{The next sentence is not relevant context for our target audience. Let's remove.}
-    \remove{
-    Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph.
-    }
-    While centralized query processing approaches are well-understood,
-    decentralization-friendly alternatives with no prior indexing such as Link Traversal Query Processing (LTQP)
-    are insufficiently performant for real-world use cases.
-    LTQP approaches on the web are difficult due to the pseudo-infinite size of the domain,
-    the unstructured nature of the medium,
-    and the lack of a priori information for query planning.
-    For most traversal-based queries the execution of a large number of HTTP requests is the bottleneck. 
-    However, in practice, queries target small subsets of the Web.
-    Web subsets are always structured either implicitly or explicitly.
-    Explicit structure can be described via hypermedia descriptions.
-    Query engines can improve their performance by using structural information to reduce their search domain.
-    \rv{So I've come to this point, but I have not read an actual need or a~problem. It's all context. WHY do we need LTQP? What do you want to do? What do you want to achieve? I think you might want to tell me the following. \textbf{CONTEXT:} hey, a lot of data is spread across many different places---and we cannot bring it together first, because of legal reasons (licenses, personal data laws, \ldots). Although decentralized query is thus a necessity, it's too slow.}
+    Data on the web is naturally unindexed and decentralized.
+    Centralizing web data, particularly personal data, for real-world applications raises ethical and legal concerns.
+    Yet, compared to centralized query approaches,
+    decentralization-friendly alternatives such as Link Traversal Query Processing (LTQP)
+    are significantly less performant and understood.
     % Need
-    \rv{\textbf{NEED:} Figuring out to what extent shapes help us get speed back.}
+    The two main difficulties of LTQP are the lack of apriori information about data sources and the high number of HTTP requests.
+    Exploring decentralized-friendly ways to document networks of data sources could lead to solutions to alleviate those difficulties.
+    RDF data shapes is the state-of-the-art for data validation of linked data documents, thus it is worthwhile to investigate
+    their potential for LTQP optimization.
     % Task
-    \rv{Try to phrase the next more strongly, as a task you have done (past tense), not what this paper does (that's the Object bit later). We didn't just explore; we did something really specific. Please tell us that thing here.}
-    In this paper, we explore the opportunities of using mappings between RDF data shapes and distributed RDF subgraphs
-    for the purpose of improving the performance of traversal-based queries.
+    In our work, we built an early version of a query and environment aware source selection algorithm for LTQP and measured its performance in a realistic environment.
     % Object
-    \rv{I think we can be more specific here (this sentence applies to every paper in the world.)}
-    In this article, we discuss these opportunities, present preliminary results, and discuss potential future work.
+    In this article, we present our algorithm and early results thus opening opportunities for further research for shape-based optimization of link traversal queries.
     % Findings
-    Our initial experiments show that with little maintenance and work from the server,
-    our method can significantly reduce the number of links traversed to answer a query leading to
-    a substantial reduction in query execution time compared to the state of the art.
-    \rv{Great; are there specific numbers we can mention in the previous sentence?}
+    Our initial experiments show that with little maintenance and work from the server, our method can reduce up to 80\% the execution time and 97\% the number of links traversed during realistic queries.
     % Perspectives
-    \rv{This is not a place for promises about what we will do. It's a place to show how others can build upon our work. (And we might be those others, but that's not relevant.)}
-    In future work, we will formalize our method, perform more extensive experiments,
-    and design algorithms for query planning that take this shape metadata into consideration.
+    Given our early results and the descriptive power of RDF data shapes it would be worthwhile to investigate non-heuristic-based query planning
+    using RDF shapes. 
 \end{abstract}
