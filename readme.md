@@ -10,22 +10,38 @@ One can simply execute `make main.pdf` or `make` to produce the PDF version if `
 
 ## Abstract
 <p style="text-align: justify"> 
-Linked Data on the Web can be considered as one very large Decentralized Knowledge Graph. While centralized query processing approaches are well-understood, decentralization-friendly alternatives with no prior indexing such as Link Traversal Query Processing (LTQP) are insufficiently performant for real-world use cases. LTQP approaches on the web are difficult due to the pseudo-infinite size of the domain, the unstructured nature of the medium, and the lack of a priori information for query planning. For most traversal-based queries the execution of a large number of HTTP requests is the bottleneck. However, in practice, queries target small subsets of the Web. Web subsets are always structured either implicitly or explicitly. Explicit structure can be described via hypermedia descriptions. Query engines can improve their performance by using structural information to reduce their search domain. In this paper, we explore the opportunities of using mappings between RDF data shapes and distributed RDF subgraphs for the purpose of improving the performance of traversal-based queries. In this article, we discuss these opportunities, present preliminary results, and discuss potential future work. Our initial experiments show that with little maintenance and work from the server, our method can significantly reduce the number of links traversed to answer a query leading to a substantial reduction in query execution time compared to the state of the art. In future work, we will formalize our method, perform more extensive experiments, and design algorithms for query planning that take this shape metadata into consideration. 
+    Data on the web is naturally unindexed and decentralized.
+    Centralizing web data, particularly personal data, for real-world applications raises ethical and legal concerns.
+    Yet, compared to centralized query approaches,
+    decentralization-friendly alternatives such as Link Traversal Query Processing (LTQP)
+    are significantly less performant and understood.
+    The two main difficulties of LTQP are the lack of apriori information about data sources and the high number of HTTP requests.
+    Exploring decentralized-friendly ways to document unindexed networks of data sources could lead to solutions to alleviate those difficulties.
+    RDF data shape is the state-of-the-art for data validation of linked data documents, thus it is worthwhile to investigate
+    their potential for LTQP optimization.
+    In our work, we built an early version of a source selection algorithm for LTQP using RDF data shape mappings with linked data documents and measured its performance in a realistic setup.
+    In this article, we present our algorithm and early results thus opening opportunities for further research for shape-based optimization of link traversal queries.
+    Our initial experiments show that with little maintenance and work from the server, our method can reduce up to 80\% the execution time and 97\% the number of links traversed during realistic queries.
+    Given our early results and the descriptive power of RDF data shapes it would be worthwhile to investigate non-heuristic-based query planning
+    using RDF shapes. 
 </p>
 
 ## Results
 Figure presenting the main result.
 
 ![figure displaying the main results](figure/combined.svg)
-The query execution time distribution (the upper graph) and the number of HTTP requests (the lower 
-graph). The results of our approach are in blue and the state of the art (type index with LDP) are in red. The 
-results have been generated with 50 repetitions and a timeout of 6000 ms. The queries are denoted with first the 
-initial of the query template (e.g., S1 for interactive-**s**hort-**1**), and then the version of the concrete query (e.g., 
-V0). Values not present in the plot indicate that the query timeout before the end of the execution. 
+  The execution time with shape indexes is consistently lower (up to 80\% with D1V3 and S1V3) or equal to with the type indexes (except for D3V3 and D3V4), and always uses fewer HTTP requests.
+
 
 
 ## Conclusion 
 
 <p style="text-align: justify"> 
-Our approach of shape-based optimization for LTQP over decentralized environments consists of exploiting the structure provided by annotated data sources with RDF shape metadata. We propose the usage of a shape index as a hypermedia descriptor for structural information. This shape index maps a subdomain of the web with RDF data shapes validating its content. We propose to solve a query-shape containment problem analogous to the classic query containment problem for dynamic source selection using an adaptative lookup policy. Our preliminary results show that using a shape index structural assumption for query optimization can significantly reduce the query execution time and the number of HTTP requests. In future work, we will provide a complete implementation of our containment algorithm, a formalization of the approach, and a more detailed analysis of the performance of the method. Furthermore, we intend to explore the usage of shapes in the context of LTQP for query planning and link prioritization.
+The shape index approach shows that more precise environment-aware source selection in LTQP can significantly reduce query execution time.
+It is still an early effort, but we think that a solution inspired by our approach could be beneficial for the query and publication of fragmented document-based linked data.
+The solution does not require a lot of computational power from the data publisher during queries and updates (considering no change in data model) of the data source.
+Additionally, we believe that using a shape index could help improve the interoperability of applications' data quality.
+There are still multiple questions left to be answered such as how to handle private data, what is the overhead and complexity of the method (given the expressiveness of RDF data shapes language~\cite{Delva2021, staworko_et_al:LIPIcs:2015:4985, 10.1007/978-3-319-68288-4_7} and practice in shape definitions~\cite{lieber_iswc_poster_2020, staworko_et_al:LIPIcs:2015:4985, Staworko2018ContainmentOS} ),
+can the shape index alone or with data summarisation structure be used to improve query planning without sacrificing query execution times?
+
 </p>
