@@ -23,11 +23,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.0331894"
-     inkscape:cx="451.5145"
-     inkscape:cy="217.28833"
-     inkscape:window-width="1670"
-     inkscape:window-height="911"
+     inkscape:zoom="2.9223009"
+     inkscape:cx="375.73133"
+     inkscape:cy="84.522439"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -288,8 +288,8 @@
     <rect
        x="310.17682"
        y="98.057251"
-       width="311.67847"
-       height="201.83383"
+       width="367.24443"
+       height="191.07754"
        id="rect9-7-7" />
     <rect
        x="310.17682"
@@ -388,20 +388,20 @@
      inkscape:label="Layer 2">
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-54.801,57.587338)"
+       transform="matrix(0.26458333,0,0,0.26458333,-72.626851,62.243866)"
        id="text9-9-3"
-       style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
+       style="font-size:37.3333px;white-space:pre;shape-inside:url(#rect9-7-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
-         y="122.32001"
-         id="tspan2">Query Engine</tspan></text>
+         y="132.02529"
+         id="tspan5">Query Engine</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,81.176346,91.080062)"
+       transform="matrix(0.26458333,0,0,0.26458333,75.380443,87.253806)"
        id="text9-9-3-0"
-       style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-7-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
+       style="font-size:42.6667px;white-space:pre;shape-inside:url(#rect9-7-7-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
-         y="122.32001"
-         id="tspan3">Solid Pod</tspan></text>
+         y="136.87801"
+         id="tspan10">Solid Pod</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,6.0788017,-12.875621)"
@@ -411,10 +411,10 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-63.615915,15.015439)"
        id="text9-9-7"
-       style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-7-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
+       style="font-size:32px;white-space:pre;shape-inside:url(#rect9-7-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
-         y="122.32001"
-         id="tspan4">Query</tspan></text>
+         y="127.17265"
+         id="tspan11">Query</tspan></text>
     <g
        id="g13"
        transform="translate(3.2075404,1.2140714)" />
@@ -547,24 +547,24 @@
        transform="matrix(0.91052291,0,0,0.91052291,78.575258,23.947544)" />
     <text
        xml:space="preserve"
-       transform="matrix(0.24090918,0,0,0.24090918,80.120287,-4.4742802)"
+       transform="matrix(0.24090918,0,0,0.24090918,77.532438,-6.2458617)"
        id="text9"
-       style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9);display:inline;fill:#d2c002;fill-opacity:1;stroke:none;stroke-width:1.88868;stroke-dasharray:none;stroke-opacity:1"><tspan
+       style="font-size:29.2872px;white-space:pre;shape-inside:url(#rect9);display:inline;fill:#d2c002;fill-opacity:1;stroke:none;stroke-width:1.88868;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
-         y="122.32001"
-         id="tspan6"><tspan
+         y="124.70434"
+         id="tspan13"><tspan
            style="font-weight:bold;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:#000000"
-           id="tspan5">Shape  Index</tspan></tspan></text>
+           id="tspan12">Shape  Index</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.24090918,0,0,0.24090918,88.217924,31.081569)"
        id="text9-7"
-       style="font-size:26.6667px;white-space:pre;shape-inside:url(#rect9-5);display:inline;fill:#d2c002;fill-opacity:1;stroke:#000000;stroke-width:1.88868;stroke-dasharray:none;stroke-opacity:1"><tspan
+       style="font-size:29.2872px;white-space:pre;shape-inside:url(#rect9-5);display:inline;fill:#d2c002;fill-opacity:1;stroke:#000000;stroke-width:1.88868;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="310.17773"
-         y="122.32001"
-         id="tspan8"><tspan
+         y="124.70434"
+         id="tspan15"><tspan
            style="fill:#000000;stroke:none"
-           id="tspan7">Resources</tspan></tspan></text>
+           id="tspan14">Resources</tspan></tspan></text>
     <g
        id="g2"
        transform="translate(-17.896659,-27.81756)">
@@ -765,15 +765,15 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.88056px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.754999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="15.840631"
-       y="14.686813"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.754999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="2.976408"
+       y="11.615806"
        id="text36"><tspan
          sodipodi:role="line"
          id="tspan36"
-         style="font-size:3.88056px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755"
-         x="15.840631"
-         y="14.686813">Query-shape containement evaluation</tspan></text>
+         style="font-size:7.05556px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755"
+         x="2.976408"
+         y="11.615806">Query-shape containement evaluation</tspan></text>
     <path
        sodipodi:type="star"
        style="fill:#2f67b1;fill-opacity:1;stroke:#000000;stroke-width:0.33847;stroke-dasharray:none;stroke-opacity:1"
@@ -812,14 +812,19 @@
        ry="10.063643" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.88056px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.754999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="80.969215"
-       y="33.482643"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.754999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="78.312866"
+       y="26.61714"
        id="text36-5"><tspan
          sodipodi:role="line"
          id="tspan36-3"
-         style="font-size:3.88056px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755"
-         x="80.969215"
-         y="33.482643">Dereferencing operations</tspan></text>
+         style="font-size:7.05556px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755"
+         x="78.312866"
+         y="26.61714">Dereferencing </tspan><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755"
+         x="78.312866"
+         y="35.436588"
+         id="tspan9">operations</tspan></text>
   </g>
 </svg>
