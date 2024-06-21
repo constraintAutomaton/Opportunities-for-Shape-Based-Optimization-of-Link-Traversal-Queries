@@ -1,69 +1,32 @@
 \section{Introduction}
-\rv{Our target audience does not need the next paragraph.}
 
-\remove{
-The large-scale publication of Linked Data empowers more freedom in the creation and usage of web applications.
-\rv{I don't think the previous sentence is true.}
-Concretely Linked Data can diminish data silos \cite{Verstraete2022}
-and could foster potential new forms of application ownership \cite{Mechant2021}.
-\rv{Neither of those two claims is true. Linked Data is just a technology. It's an inanimate object; it can't make those changes.}
-The \href{https://solidproject.org/TR/protocol}{Solid} and
-\href{https://docs.joinmastodon.org/}{Mastodon} protocols
-are popular technologies utilizing the emancipatory potential of Linked Data.
-\rv{Not true; Solid isn't popular. Does Mastodon rely that much on LD?}
-Linked Data is mostly modeled and published using the graph data formalization \href{https://www.w3.org/TR/rdf12-concepts/}{RDF} and its serializations.
-RDF terms can be expressed using IRIs, Blank Nodes, and Literals.
-The usage of IRIs provides more reusability of data and explicitizes in a machine-interpretable way the relations between
-information from multiple remote or local subgraphs.
-More information about an IRI term can be found if it is dereferenceable (treated as a URL) using the HTTP protocol.
+The World Wide Web is a naturally decentralized database.
+Centralizing large segments of the web provides easier query interfaces and faster query execution time.
+However, data centralization can lead to practice with ethical and legal concerns.
+Thus, decentralization-friendly alternatives are relevant research topics.
+The query language webSQL~\cite{Mendelzon1996} and \href{https://www.w3.org/TR/sparql11-query/}{SPARQL} propose mechanisms to capture descentralized web data with conjunctive queries.
+However, webSQL relies on web indexing~\cite{Mendelzon1996}.
+Indexing processes can be expensive (particularly on the scale of the web) and necessitate frequent updates, furthermore, they can be restrictive by excluding (or not considering) some sources thus hindering the natural serendipity of the web.
+SPARQL solutions relies on the publication of linked data.
+Linked data in their structure (the presence of IRI) provide the possibility to find more related information without indexes.
+However, most query processing using linked data is done in the context of centralized and federated leaving unindexed approaches to the rank of experimental method. 
 
-}
-
-\rv{They are all massive paragraphs in here. Try to break them up a~bit; following theorem way of writing (see later).}
-
-\rv{For the next paragraph, make louder and simpler arguments first, and add the details later. Example:
-  1)~The constraints of our data necessitate decentralized querying.
-  2)~Unfortunately, decentralized querying is too slow.
-  3)~But there's a lot of structure that could make it faster, which isn't used today.
-  4)~Here's why it is slow.
-  5)~Here's why structure could help.
-}
-
-\rv{The next bit comes out of the blue. First state where we're going before actually going there.}
-\remove{
-Index servers and the query language webSQL \cite{Mendelzon1996} propose a mechanism to capture this knowledge using conjunctive queries.
-However, this approach relies on prior indexing.
-Indexing processes can be expensive (particularly on the scale of the web) and necessitate frequent updates, furthermore, they can be restrictive
-by excluding (or not considering) some sources hence hindering the natural serendipity of the web.  
-}
-\rv{A~line of argumentation that might help: querying Open Data querying is technically easy, because one can index/aggregate. But what if we can't?}
-Link Traversal Query Processing (LTQP) \cite{Hartig2012} propose to replace the index servers with descriptive dereferenceable IRIs 
-from the structure of RDF triples to preserve the natural link between information on the web.
-LTQP starts with a few URIs called seed URIs and recursively dereferences them from an internal data source following a lookup policy.
+Link Traversal Query Processing (LTQP)~\cite{Hartig2012} is method to query unindexed network of linked data documents.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
-One of them is the pseudo-infinite search domain derived from the size of the World Wide Web \cite{hartig2016walking}.
-Additionally, HTTP requests can be very slow and unpredictable making their execution the bottleneck of the method \cite{hartig2016walking}.
-Reachability criteria \cite{Hartig2012} are a partial answer to this problem by defining completeness on the traversal of URIs
+One of them is the pseudo-infinite search domain derived from the size of the World Wide Web~\cite{hartig2016walking}.
+Additionally, HTTP requests can be very slow and unpredictable making their execution the bottleneck of the method~\cite{hartig2016walking}.
+Reachability criteria~\cite{Hartig2012} are a partial answer to this problem by defining completeness on the traversal of URIs
 contained in the internal data source of the engine instead of on the acquisition of all the results or the traversal of the whole web.
 Those criteria can also be used as a lookup policy for dereferencing of external data sources.
 Another difficulty is the lack of a priori information about the sources rendering query planning arduous.
-To alleviate this problem, the current state of the art consists of using carefully crafted heuristics for joins ordering \cite{Hartig2011}.
+To alleviate this problem, the current state of the art consists of using carefully crafted heuristics for joins ordering~\cite{Hartig2011}.
 Those heuristics provide non-optimal fairly performant query plans.
 The limitations of this approach are usually of little importance because the main bottleneck is the high number of HTTP requests.
-In response to this, current research focuses on providing fast results to the user by adequately ordering the dereferencing operations of IRIs \cite{hartig2016walking}.
+In response to this, current research focuses on providing fast results to the user by adequately ordering the dereferencing operations of IRIs~\cite{hartig2016walking}.
 
-\rv{Do ask RT to explain the \emph{theorem} way of writing paragraphs. The first sentence is a summary of the entire paragraph and where it is going. The rest are details. Readers should be able to follow the core argumentation of the paper just by reading the first sentence of each paragraph.}
-
-Until recently, LTQP research did not consider the particular structure of the querying environment.
-\rv{So with the theorem way, the first sentence would say something like: structure can possibly massively speed up queries, but it hasn't been investigated.}
-\rv{Actually, upon reading the entire paragraph, your point does not seem to be \enquote{hasn't been investigated}, but rather something else. Because there's a whole bunch of investigation here. So what is it that you aim to say here? (This is a genuine question, as in, I don't know to what mental structure to attach the information coming next.)}
-Environments like Solid describe structures using hypermedia descriptions \cite{Fielding}.
-\rv{They don't! That's not true, and Fielding is not claiming that.}
-We refer to the structures exploitable for query optimizations as \emph{structural assumptions}.
-Structural assumptions act as contracts between the data provider and 
-the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
-The query optimization approach derived from those assumptions consists of using them to guide the query engine towards relevant data sources 
-by discovering and pruning data \cite{verborgh2020guided}.
+More recently LTQP research have focus on using structure in the data publication for query optimization by reducing the search domain.
+This line of research use \emph{structural assumptions} to guide query engines towards relevant data sources~\cite{Taelman2023,verborgh2020guided}.
+Structural assumptions act as contracts between the data provider and the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
 The usage of structural assumptions has been studied in Solid \cite{Taelman2023}.
 The method involves the utilization of the 
 \href{https://solidproject.org/TR/protocol#resources}{solid storages} (that we refer to as Solid pods \cite{Taelman2023}) hypermedia description
@@ -80,8 +43,7 @@ It is reasonable to hypothesize that a significant portion of those HTTP request
 documents containing data that don't contribute to the result of the query.
 Hence investigating more descriptive structural assumptions is a relevant research endeavor.
 
-In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a Shape Index (SI).
-\rv{The abbreviation is not working for me at all in the rest of the text; just abbreviate it to \enquote{index} later on and don't introduce the SI.}
+In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a shape index.
 The shape index is inspired by the type index.
 However, it intends to be more expressive by describing the content of the data instead of only its class \cite{Taelman2017}.
 RDF data shapes are mostly used in data validation \cite{Gayo2018a} hence they provide an excellent means to describe data.
