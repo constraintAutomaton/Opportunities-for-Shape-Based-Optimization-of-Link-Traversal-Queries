@@ -11,11 +11,11 @@ and foreseen opportunities.
 }
 
 Application developers rely on data schema to identify which action to take upon the reception of a certain object.
-The RDF specification does not enforce data schema.
+The RDF specification does not enforce schema on data.
 However, the data publisher often follows an implicit schema due to the nature of their data and the formulation of RDF~\cite{Neumann2011CharacteristicSA}.
-Those implicit schemas can be used  for join ordering estimates in the form of characteristic sets in the context of single and federated queries~\cite{Neumann2011CharacteristicSA, Meimaris2017ExtendedCS, Meimaris2018HierarchicalCS}.
-The LTQP method cannot use those approaches because it is too expensive to calculate the structures necessary to perform those approaches.
-Additionally, they do not tackle the problem of the high number of HTTP requests because they need the whole data to perform the analysis.
+Those implicit schemas can be used  for join ordering estimates using characteristic sets in the context of single and federated queries~\cite{Neumann2011CharacteristicSA, Meimaris2017ExtendedCS, Meimaris2018HierarchicalCS}.
+The LTQP method cannot use those approaches because it is too expensive to calculate the structures necessary to perform those optimizations.
+Additionally, those methods do not tackle the main bottleneck of the approach which is the high number of HTTP requests.
 However, we propose to inspire ourselves from those approaches by expliticizing the schema of RDF documents and their locations using RDF data shapes in the form of a shape index.
 
 The goal of the shape index is to reduce the query execution time by avoiding the dereferencing of unnecessary RDF documents in subdomains of the web (a set of URL or URL schemas).
@@ -25,7 +25,7 @@ A shape index is complete when every resource in the domain is associated with a
 In a shape index when a shape is mapped to a set of RDF resources then the shape \emph{must} validate those resources.
 Furthermore, every set of triples respecting the shape in the domain \emph{must} be located inside one resource of the set.
 
-In order to determine beforehand which resources are useful and which can be pruned in a define subdomains, the query engine solve a \emph{query-shape containment} problem over the shape of the index similar to the classic query containment~\cite{afariQCE, Spasi2023}.
+In order to determine beforehand which resources are useful and which can be pruned in a define subdomains, the query engine solve a \emph{query-shape containment} problem over the shape of the index similar to the classic query containment problem~\cite{afariQCE, Spasi2023}.
 For that process, we propose to transform RDF data shapes into queries ($Q_{s}$) \cite{labragayo2017validating, Corman2019, Delva2021} and apply similar methods of resolution to query containment problems.
 Due to the explicit domain definition of the index, this approach is adaptative, 
 thus, the query engine can start its processing with permissive reachability criteria

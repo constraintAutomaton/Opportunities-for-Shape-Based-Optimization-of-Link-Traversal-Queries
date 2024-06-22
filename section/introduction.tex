@@ -9,9 +9,9 @@ However, webSQL relies on web indexing~\cite{Mendelzon1996}.
 Indexing processes can be expensive (particularly on the scale of the web) and necessitate frequent updates, furthermore, they can be restrictive by excluding (or not considering) some sources thus hindering the natural serendipity of the web.
 SPARQL solutions relies on the publication of linked data.
 Linked data in their structure (the presence of IRI) provide the possibility to find more related information without indexes.
-However, most query processing using linked data is done in the context of centralized and federated leaving unindexed approaches to the rank of experimental method. 
+However, most query processing using linked data is done in the context of centralized and federated setup, thus, leaving approaches requiring no indexing to the rank of experimental methods. 
 
-Link Traversal Query Processing (LTQP)~\cite{Hartig2012} is method to query unindexed network of linked data documents.
+Link Traversal Query Processing (LTQP)~\cite{Hartig2012} is a method to query unindexed network of linked data documents.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
 One of them is the pseudo-infinite search domain derived from the size of the World Wide Web~\cite{hartig2016walking}.
 Additionally, HTTP requests can be very slow and unpredictable making their execution the bottleneck of the method~\cite{hartig2016walking}.
@@ -19,17 +19,17 @@ Reachability criteria~\cite{Hartig2012} are a partial answer to this problem by 
 contained in the internal data source of the engine instead of on the acquisition of all the results or the traversal of the whole web.
 Those criteria can also be used as a lookup policy for dereferencing of external data sources.
 Another difficulty is the lack of a priori information about the sources rendering query planning arduous.
-To alleviate this problem, the current state of the art consists of using carefully crafted heuristics for joins ordering~\cite{Hartig2011}.
+To alleviate this problem, the current state-of-the-art consists of using carefully crafted heuristics for joins ordering~\cite{Hartig2011}.
 Those heuristics provide non-optimal fairly performant query plans.
 The limitations of this approach are usually of little importance because the main bottleneck is the high number of HTTP requests.
 In response to this, current research focuses on providing fast results to the user by adequately ordering the dereferencing operations of IRIs~\cite{hartig2016walking}.
 
 More recently LTQP research have focus on using structure in the data publication for query optimization by reducing the search domain.
-This line of research use \emph{structural assumptions} to guide query engines towards relevant data sources~\cite{Taelman2023,verborgh2020guided}.
+This line of research use \emph{structural assumptions}~\cite{Taelman2023} to guide query engines~\cite{verborgh2020guided} towards relevant data sources.
 Structural assumptions act as contracts between the data provider and the query engines stipulating that in a certain subdomain of the web, some information respecting a constraint can be found.
 The usage of structural assumptions has been studied in Solid \cite{Taelman2023}.
 The method involves the utilization of the 
-\href{https://solidproject.org/TR/protocol#resources}{solid storages} (that we refer to as Solid pods \cite{Taelman2023}) hypermedia description
+\href{https://solidproject.org/TR/protocol#resources}{solid storages} (that we refer to as Solid pods~\cite{Taelman2023}) hypermedia description~\cite{Fielding}
 to locate all the resources of a pod. 
 This hypermedia description is derived from the \href{https://www.w3.org/TR/ldp/}{LDP specification}
 which only captures the structures of storage but not their contents.

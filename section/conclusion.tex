@@ -2,7 +2,7 @@
 
 The shape index approach shows that more precise environment-aware source selection in LTQP can significantly reduce query execution time.
 It is still an early effort, but we think that a solution inspired by our approach could be beneficial for the query and publication of fragmented document-based linked data.
-The solution does not require a lot of computational power from the data publisher during queries and updates (considering no change in data model) of the data source.
-Additionally, we believe that using a shape index could help improve the interoperability of applications' data quality.
+The solution does not require a lot of computational power from the data publisher during queries and updates (considering no change in data model) of data sources.
+Additionally, we believe that using a shape index could help improve the data quality of fragmented document-based linked data.
 There are still multiple questions left to be answered such as how to handle private data, what is the overhead and complexity of the method (given the expressiveness of RDF data shapes language~\cite{Delva2021, staworko_et_al:LIPIcs:2015:4985, 10.1007/978-3-319-68288-4_7} and practice in shape definitions~\cite{lieber_iswc_poster_2020, staworko_et_al:LIPIcs:2015:4985, Staworko2018ContainmentOS} ),
 can the shape index alone or with data summarisation structure be used to improve query planning without sacrificing query execution times?
