@@ -11,22 +11,22 @@ and foreseen opportunities.
 }
 
 Application developers rely on data schema to identify which action to take upon the reception of a certain object.
-The RDF specification does not enforce schema on data.
+The RDF specification does not enforce schemas on data.
 However, the data publisher often follows an implicit schema due to the nature of their data and the formulation of RDF~\cite{Neumann2011CharacteristicSA}.
 Those implicit schemas can be used  for join ordering estimates using characteristic sets in the context of single and federated queries~\cite{Neumann2011CharacteristicSA, Meimaris2017ExtendedCS, Meimaris2018HierarchicalCS}.
 The LTQP method cannot use those approaches because it is too expensive to calculate the structures necessary to perform those optimizations.
 Additionally, those methods do not tackle the main bottleneck of the approach which is the high number of HTTP requests.
-However, we propose to inspire ourselves from those approaches by expliticizing the schema of RDF documents and their locations using RDF data shapes in the form of a shape index.
+However, we propose to inspire ourselves from those approaches by rendering explicit the schema of RDF documents and their locations using RDF data shapes in the form of a shape index.
 
-The goal of the shape index is to reduce the query execution time by avoiding the dereferencing of unnecessary RDF documents in subdomains of the web (a set of URL or URL schemas).
+The goal of the shape index is to reduce the query execution time by avoiding the dereferencing of unnecessary RDF documents in subdomains of the web (set of URL or URL patterns).
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
-To indicate the range of applications of the index an associated domain (a set of URL or URL schemas) and a flag indicating if the shape index is \emph{complete} is defined.
+To indicate the range of applications of the index an associated domain (a set of URL or URL schemas) and a flag indicating if the shape index is \emph{complete} are defined.
 A shape index is complete when every resource in the domain is associated with a shape within the shape index.
 In a shape index when a shape is mapped to a set of RDF resources then the shape \emph{must} validate those resources.
 Furthermore, every set of triples respecting the shape in the domain \emph{must} be located inside one resource of the set.
 
-In order to determine beforehand which resources are useful and which can be pruned in a define subdomains, the query engine solve a \emph{query-shape containment} problem over the shape of the index similar to the classic query containment problem~\cite{afariQCE, Spasi2023}.
-For that process, we propose to transform RDF data shapes into queries ($Q_{s}$) \cite{labragayo2017validating, Corman2019, Delva2021} and apply similar methods of resolution to query containment problems.
+In order to determine beforehand which resources are useful and which can be pruned in a defined subdomain, the query engine solves a \emph{query-shape containment} problem over the shape of the index similar to the classic query containment problem~\cite{afariQCE, Spasi2023}.
+For that process, we propose to transform RDF data shapes into queries ($Q_{s}$) \cite{labragayo2017validating, Corman2019, Delva2021} and apply similar resolution methods to query containment problems.
 Due to the explicit domain definition of the index, this approach is adaptative, 
 thus, the query engine can start its processing with permissive reachability criteria
 such as $c_{all}$ \cite{Hartig2012} or the Solid state of the art reachability criteria \cite{Taelman2023}
@@ -42,15 +42,15 @@ If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_
 the reachability criterion is adapted to ignore all the resources not linked to a $Q_{s}$ even if the shape index is \emph{incomplete}.
 If the shape index is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s}$ the reachability criterion can be adapted
 to visit every resource in relation to a $Q_{s}$ with a partial binding with a $Q_{star}$.
-In a similar case with a \emph{incomplete} shape index the query engine can only use the shape index for data discovery.
+In a similar case with an \emph{incomplete} shape index, the query engine can only use the shape index for data discovery.
 This case is similar to the usage of the type index but with a more reaching ability to match a query with the index  because shapes in their definition describe the properties (RDF predicates) of the entities whereas the type index only provides the classes IRIs.
 It would be possible to dereference the class IRIs to get information about the properties (if available) however it is not the current practice \cite{Taelman2023}.
 A comparison of the RDF data shapes and RDF class approach due to their potential similarities is delegated to future works~\sepfootnote{fn:litShapeComparaison}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.55\textwidth]{figure/shape_containement}
-    \caption{A schema of the source selection algorithm with a shape index. First, the shape index is dereferenced, 
-    then the \emph{query-shape containment} is performed and lastly, only the relevant resources are dereferenced.}
+    \includegraphics[width=0.50\textwidth]{figure/shape_containement}
+    \caption{First, the shape index is dereferenced, 
+    then the \emph{query-shape containment} is performed in the query engine and lastly, only the relevant resources are dereferenced.}
     \label{fig:shape_index}
 \end{figure}
