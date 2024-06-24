@@ -2,7 +2,6 @@
 
 \sepfootnotecontent{fn:solidPrivacy}{
 In this work, we do not take into consideration confidentiality restrictions.
-This might require a different approach for the discovery of the index.
 }
 
 \sepfootnotecontent{fn:litShapeComparaison}{
@@ -37,7 +36,7 @@ In the case of Solid, the index can be at the root of the pod to be easily disco
 After the dereferencing of the index, the analysis is started inside the query engine.
 The analysis consists of interpreting the binding results of the \emph{query-shape containment} problem.
 The algorithm divides the query from the user into multiple star patterns with their dependencies ($Q_{star}$).
-After the division of the query, the queries are pushdown~\cite{Yang2021FlexPushdownDBHP} to the level of source selection to evaluate if the $Q_{star}$ are contained inside the $Q_s$ of the shape index.
+After the division of the query, the queries are pushdown~\cite{Stuckenschmidt2004, Yang2021FlexPushdownDBHP} to the level of source selection to evaluate if the $Q_{star}$ are contained inside the $Q_s$ of the shape index.
 If all the $Q_{star}$ are contained in a $Q_{s}$ or have no binding with any $Q_{s}$
 the reachability criterion is adapted to ignore all the resources not linked to a $Q_{s}$ even if the shape index is \emph{incomplete}.
 If the shape index is \emph{complete} and not all the $Q_{star}$ are contained in a $Q_{s}$ the reachability criterion can be adapted
