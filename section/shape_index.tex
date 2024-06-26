@@ -13,9 +13,9 @@ Application developers rely on data schema to identify which action to take upon
 The RDF specification does not enforce schemas on data.
 However, the data publisher often follows an implicit schema due to the nature of their data and the formulation of RDF~\cite{Neumann2011CharacteristicSA}.
 Those implicit schemas can be used  for join ordering estimates using characteristic sets in the context of single and federated queries~\cite{Neumann2011CharacteristicSA, Meimaris2017ExtendedCS, Meimaris2018HierarchicalCS}.
-The LTQP method cannot use those approaches because it is too expensive to calculate the structures necessary to perform those optimizations.
-Additionally, those methods do not tackle the main bottleneck of the approach which is the high number of HTTP requests.
-However, we propose to inspire ourselves from those approaches by rendering explicit the schema of RDF documents and their locations using RDF data shapes in the form of a shape index.
+Those approaches have not been investigated in the context of LTQP.
+Hence, we propose to inspire ourselves with those methods.
+However, instead of focusing on the query plan (for this paper), we propose to focus on the main bottleneck of LTQP, the high number of HTTP requests by rendering explicit the schema of RDF documents and their locations using a shape index.
 
 The goal of the shape index is to reduce the query execution time by avoiding the dereferencing of unnecessary RDF documents in subdomains of the web (set of URL or URL patterns).
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
