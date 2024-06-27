@@ -19,7 +19,8 @@ We executed each query 50 times with a timeout of 1 minute (6,000 ms).
 Figure \ref{fig:result} shows that the reduction can be as high as 80\% (D1V3 and S1V3) for execution time 
 and 97\% (S1V3) for the number of HTTP requests.
 Our approach reliably executes fewer HTTP requests compared to the state-of-the-art.
-This is an expected result because no queries target (implicitly) each file of a user and the shape index approach requests a subset of the request of the type index approach (without sacrificing query results) with the addition of the request to get the shape definitions (which lead in general to the dereferencing of a small number of short documents).
+This is an expected result because no queries target (implicitly) each file of a user.
+The shape index approach requests a subset of the request of the type index approach (without sacrificing query results) with the addition of the request to get the shape definitions which lead in general to the dereferencing of a small number of short documents.
 There is not a direct correlation between the reduction of execution time and HTTP requests (e.g., the ratio 
 between our approach and the state-of-the-art of the number of HTTP requests by the execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
 This hints at the results from the state-of-the-art \cite{Taelman2023} proposing that the query plan is the bottleneck for some queries in this environment,
@@ -33,7 +34,7 @@ but also in terms of the performance of single executions in unstable networks w
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.93\linewidth]{figure/combined}
+  \includegraphics[width=\linewidth]{figure/combined}
   \caption{
   The execution time with shape indexes is consistently lower (up to 80\% with D1V3 and S1V3) or equal to with the type indexes (except for D3V3 and D3V4), and always uses fewer HTTP requests.
   }

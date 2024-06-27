@@ -9,7 +9,7 @@ However, webSQL relies on web indexing~\cite{Mendelzon1996}.
 Indexing processes can be expensive (particularly on the scale of the web) and necessitate frequent updates, furthermore, they can be restrictive by excluding (or not considering) some sources thus hindering the natural serendipity of the web.
 SPARQL solutions rely on the publication of linked data.
 Linked data in their structure (the presence of IRI) provide the possibility to find more related information without indexes.
-However, most query processing using linked data is performed in the context of centralized and federated setup, thus, leaving approaches requiring no indexing to the rank of experimental methods. 
+However, most query processing over linked data is performed in centralized and federated setups, leaving non-indexing approaches largely experimental.
 
 Link Traversal Query Processing (LTQP)~\cite{Hartig2012} is a method to query unindexed networks of linked data documents.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
@@ -40,8 +40,8 @@ of realistic queries to the extent where the bottleneck is not the execution of
 HTTP requests but the suboptimal heuristic-based query plan \cite{eschauzier_quweda_2023, Taelman2023}.
 Yet for multiple queries, the bottleneck remains the high number of HTTP requests  \cite{eschauzier_quweda_2023}.
 It is reasonable to hypothesize that a significant portion of those HTTP requests lead to the dereferencing of
-documents containing data that don't contribute to the result of the query.
-Hence investigating more descriptive structural assumptions is a relevant research endeavor.
+documents containing data that do not contribute to the result of the query.
+Hence, investigating more descriptive structural assumptions is a relevant research endeavor.
 
 In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a shape index.
 The shape index is inspired by the type index and other data summary methods for decentralized querying~\cite{Stuckenschmidt2004,Goldman1997, Harth2010}.

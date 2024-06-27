@@ -9,13 +9,12 @@ There exist comparisons between the shape and class definition approaches in the
 and foreseen opportunities.
 }
 
-Application developers rely on data schema to identify which action to take upon the reception of a certain object.
 The RDF specification does not enforce schemas on data.
 However, the data publisher often follows an implicit schema due to the nature of their data and the formulation of RDF~\cite{Neumann2011CharacteristicSA}.
 Those implicit schemas can be used  for join ordering estimates using characteristic sets in the context of single and federated queries~\cite{Neumann2011CharacteristicSA, Meimaris2017ExtendedCS, Meimaris2018HierarchicalCS}.
 Those approaches have not been investigated in the context of LTQP.
-Hence, we propose to inspire ourselves with those methods.
-However, instead of focusing on the query plan (for this paper), we propose to focus on the main bottleneck of LTQP, the high number of HTTP requests by rendering explicit the schema of RDF documents and their locations using a shape index.
+We propose to inspire ourselves with those methods.
+However, instead of focusing on the query plan (in the context of this paper), we propose to focus on the main bottleneck of LTQP, the high number of HTTP requests by rendering explicit the schema of RDF documents and their locations using a shape index.
 
 The goal of the shape index is to reduce the query execution time by avoiding the dereferencing of unnecessary RDF documents in subdomains of the web (set of URL or URL patterns).
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
@@ -48,7 +47,7 @@ A comparison of the RDF data shapes and RDF class approach due to their potentia
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.50\textwidth]{figure/shape_containement}
+    \includegraphics[width=0.60\textwidth]{figure/shape_containement}
     \caption{First, the shape index is dereferenced, 
     then the \emph{query-shape containment} is performed in the query engine and lastly, only the relevant resources are dereferenced.}
     \label{fig:shape_index}
