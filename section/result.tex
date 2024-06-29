@@ -1,11 +1,10 @@
 \section{Preliminary results}
 
-
 \sepfootnotecontent{impl}{ The algorithm implementation is available at the following link \newline
 \href{https://github.com/constraintAutomaton/query-shape-detection}{https://github.com/constraintAutomaton/query-shape-detection}
 and the integration in the Comunica query engine at the following link 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}.
-The implementation of the benchmark and complementary results (such as the analysis of the statistical significance) are available at the following link 
+The implementation of the benchmark and complementary results such as the analysis of the statistical significance are available at the following link 
 \href{https://github.com/constraintAutomaton/amw_shape_index_results}{https://github.com/constraintAutomaton/amw\_shape\_index\_results}.
 }
 
@@ -25,7 +24,7 @@ There is not a direct correlation between the reduction of execution time and HT
 between our approach and the state-of-the-art of the number of HTTP requests by the execution time for D1V3 is 0.5 compared to 0.15 for S1V3).
 This hints at the results from the state-of-the-art \cite{Taelman2023} proposing that the query plan is the bottleneck for some queries in this environment,
 however, the overhead of the containment calculation could also be a contributing factor to the current results.
-In the worst cases, our approach  has similar query execution to the state-of-the-art (except for D3V3 and D3V4 with an increase of 9\% of the mean of the execution time).
+In the worst cases, our approach  has similar query execution to the state-of-the-art except for D3V3 and D3V4 with an increase of 9\% of the mean of the execution time.
 Furthermore, their variances tend to be lower compared to their counterpart. 
 One possible explanation for this observation is that the execution time of HTTP requests is unpredictable \cite{hartig2016walking}
 leading to an increase in variance.
@@ -34,9 +33,9 @@ but also in terms of the performance of single executions in unstable networks w
 
 \begin{figure}
   \centering
-  \includegraphics[width=\linewidth]{figure/combined}
+  \includegraphics[width=0.95\linewidth]{figure/combined}
   \caption{
-  The execution time with shape indexes is consistently lower (up to 80\% with D1V3 and S1V3) or equal to with the type indexes (except for D3V3 and D3V4), and always uses fewer HTTP requests.
+  The execution time with shape indexes is consistently lower (up to 80\% with D1V3 and S1V3) or equal to that with the type indexes (except for D3V3 and D3V4), and always uses fewer HTTP requests.
   }
   \label{fig:result}
 \end{figure}
