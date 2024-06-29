@@ -1,7 +1,7 @@
 \section{Introduction}
 
 The World Wide Web is a naturally decentralized database.
-Centralizing large segments of the web at a single endpoint provides easier query interfaces and faster query execution times.
+Centralizing large segments of the web in single endpoints provides easier query interfaces and faster query execution times.
 However, data centralization can lead to practices with ethical and legal concerns.
 Thus, researching decentralization-friendly querying paradigms is a relevant research topic.
 The query languages webSQL~\cite{Mendelzon1996} and \href{https://www.w3.org/TR/sparql11-query/}{SPARQL} propose mechanisms to capture decentralized web data with conjunctive queries.
@@ -31,14 +31,14 @@ The method involves the utilization of the
 This hypermedia description is not expressive enough to capture to content of the resources of a pod, thus, for query-aware optimizations, the \href{https://solid.github.io/type-indexes/}{type index specification} is additionally used.
 The type index formulation proposes a more declarative approach~\cite{Taelman2017} by mapping RDF classes with sets of resources.
 By using those structural assumptions it is possible to reduce the query execution time of realistic queries to the extent where the bottleneck is not the execution of HTTP requests but the suboptimal heuristic-based query plan~\cite{eschauzier_quweda_2023, Taelman2023}.
-Despite of those results for multiple queries the high number of HTTP requests remains the main bottleneck~\cite{eschauzier_quweda_2023}
+Yet, for multiple queries the high number of HTTP requests remains the main bottleneck~\cite{eschauzier_quweda_2023}.
 It is reasonable to hypothesize that a significant portion of those HTTP requests lead to the dereferencing of documents containing data that do not contribute to the result of the query.
 Hence, investigating more descriptive structural assumptions is a relevant research endeavor.
 
 In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a shape index.
 RDF data shapes are mostly used in data validation~\cite{Gayo2018a} hence they are a well-suited mechanism to describe data.
 Additionally, to a lesser extent, they have been used for query optimizations~\cite{kashif2021}.
-The shape index is an earlier effort for summarization of descentralized data~\cite{Stuckenschmidt2004,Goldman1997, Harth2010} within networks of unindexed linked data documents.
+The shape index is an early effort for data summary of descentralized dataset~\cite{Stuckenschmidt2004,Goldman1997, Harth2010} within networks of unindexed linked data documents.
 The current focus of the index is source selection.
 However, we foresee opportunities to use a similar approach for link queue ordering and query planning.
 This paper presents our preliminary work on data discovery and link pruning.
