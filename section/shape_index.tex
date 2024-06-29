@@ -29,13 +29,13 @@ In a shape index when a shape is mapped to a set of RDF resources then the shape
 Furthermore, every set of triples respecting the shape in the domain \emph{must} be located inside one resource of the set.
 
 In order to determine before the traversal of a whole domain which resources are useful and which can be pruned in a defined subdomain, the query engine solves a \emph{query-shape containment} problem over the shape of the index similar to the classic query containment problem~\cite{afariQCE, Spasi2023, Chekol2018}.
-The query containment problem consists of determining if the results of a query are a subset of the results of another query.
+The query containment problem consists of determining independent of the data source if the results of a query will be a subset of the results of another query.
 We propose to transform RDF data shapes into queries ($Q_{s}$)~\cite{labragayo2017validating, Corman2019, Delva2021} and apply similar resolution methods to query containment problems.
 Due to the explicit domain definition of the index, this approach is adaptative, 
 thus, the query engine can start its processing with permissive reachability criteria
 such as $c_{all}$~\cite{Hartig2012} or the Solid state-of-the-art reachability criteria~\cite{Taelman2023}
 and not suffer from the associated longer execution time during the traversal of environments containing a shape index.
-The source selection process is schematized for a single domain in Figure~\ref{fig:shape_index}.
+The source selection process is schematized for a single (sub)domain in Figure~\ref{fig:shape_index}.
 The process starts with the discovery of the shape index in the current (sub)domain.
 In the case of Solid, the index can be at the root of the pod to be easily discoverable~\sepfootnote{fn:solidPrivacy}.
 After the dereferencing of the index, the analysis is started inside the query engine.
@@ -53,7 +53,7 @@ A comparison of the RDF data shapes and RDF class approach due to their potentia
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.51\textwidth]{figure/shape_containement}
+    \includegraphics[width=0.50\textwidth]{figure/shape_containement}
     \caption{First, the shape index is dereferenced, 
     then the \emph{query-shape containment} operations are performed in the query engine and lastly, only the relevant resources are dereferenced.}
     \label{fig:shape_index}
