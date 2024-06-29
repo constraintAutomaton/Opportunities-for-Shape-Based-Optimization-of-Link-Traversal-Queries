@@ -21,15 +21,15 @@ We propose to adapt those methods for LTQP by using explicit data schemas provid
 The goal of the shape index is to reduce the query execution time by minimizing the dereferencing of unnecessary RDF documents in subdomains of the web (set of URL or URL patterns).
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
 This mapping concept shares similarities with shape mapping~\cite{Gayo2018} and target declarations~\cite{Gayo2018Shacl}.
-However instead of linking shapes to RDF subgraphs it links shapes to documents.
-It also shares some commonalities with \href{https://shapetrees.org/}{shape trees}~\sepfootnote{shapetrees}, however it is designed to be a simpler formulation focused on query optimization.
+However, instead of mapping shapes to RDF subgraphs, it maps shapes to documents.
+It also shares some commonalities with \href{https://shapetrees.org/}{shape trees}~\sepfootnote{shapetrees}, however, it is designed to be a simpler formulation focused on query optimization.
 To indicate the range of applications of the index an associated domain and a flag indicating if the shape index is \emph{complete} are defined.
 A shape index is complete when every resource in the domain is associated with a shape within the shape index.
 In a shape index when a shape is mapped to a set of RDF resources then the shape \emph{must} validate those resources.
 Furthermore, every set of triples respecting the shape in the domain \emph{must} be located inside one resource of the set.
 
 In order to determine before the traversal of a whole domain which resources are useful and which can be pruned in a defined subdomain, the query engine solves a \emph{query-shape containment} problem over the shape of the index similar to the classic query containment problem~\cite{afariQCE, Spasi2023, Chekol2018}.
-The problem consists of determining if the results of a query are a subset of the results of another query.
+The query containment problem consists of determining if the results of a query are a subset of the results of another query.
 We propose to transform RDF data shapes into queries ($Q_{s}$)~\cite{labragayo2017validating, Corman2019, Delva2021} and apply similar resolution methods to query containment problems.
 Due to the explicit domain definition of the index, this approach is adaptative, 
 thus, the query engine can start its processing with permissive reachability criteria
