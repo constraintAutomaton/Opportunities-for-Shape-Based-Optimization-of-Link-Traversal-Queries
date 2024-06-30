@@ -1,15 +1,14 @@
 \section{Introduction}
 
 The World Wide Web is a naturally decentralized database.
-Centralizing large segments of the web in single endpoints provides easier query interfaces and faster query execution times.
-However, data centralization can lead to practices with ethical and legal concerns.
-Thus, researching decentralization-friendly querying paradigms is a relevant research topic.
+Centralizing large web segments in single endpoints provides easier query interfaces and faster query execution times.
+However, data centralization can lead to practices that raise ethical and legal concerns, making the exploration of decentralization-friendly query paradigms a relevant research topic.
 The query languages webSQL~\cite{Mendelzon1996} and \href{https://www.w3.org/TR/sparql11-query/}{SPARQL} propose mechanisms to capture decentralized web data with conjunctive queries.
 However, webSQL relies on web indexing~\cite{Mendelzon1996}.
-Indexing processes can be expensive particularly on the scale of the web and necessitate frequent updates, furthermore, they can be restrictive by excluding some sources thus hindering the natural serendipity of the web.
+Indexing processes can be expensive, particularly on the scale of the web, and necessitate frequent updates, furthermore, they can be restrictive by excluding some sources thus hindering the natural serendipity of the web.
 SPARQL solutions rely on the publication of linked data.
 Linked data in their structure particularly with the presence of IRI gives the opportunity to find more related information without indexes.
-However, most query processing over linked data is performed in centralized and federated setups, leaving approaches independent of indexing largely experimental.
+However, most query processing over linked data is performed in centralized and federated setups, leaving indexing-independent approaches largely experimental.
 
 Link Traversal Query Processing (LTQP)~\cite{Hartig2012} is a method to query unindexed networks of linked data documents.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
@@ -38,7 +37,7 @@ Hence, investigating more descriptive structural assumptions is a relevant resea
 In this article, we propose to use RDF data shapes as the main mechanism for a structural assumption in the form of a shape index.
 RDF data shapes are mostly used in data validation~\cite{Gayo2018a} hence they are a well-suited mechanism to describe data.
 Additionally, to a lesser extent, they have been used for query optimizations~\cite{kashif2021}.
-The shape index is an early effort for data summarisation of decentralized dataset~\cite{Stuckenschmidt2004,Goldman1997, Harth2010} within networks of unindexed linked data documents.
+The shape index is an early effort for data summarisation of decentralized datasets~\cite{Stuckenschmidt2004,Goldman1997, Harth2010} within networks of unindexed linked data documents.
 The current focus of the index is source selection.
 However, we foresee opportunities to use a similar approach for link queue ordering and query planning.
 This paper presents our preliminary work on data discovery and link pruning.
