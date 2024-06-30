@@ -21,8 +21,8 @@ We propose to adapt those methods for LTQP by using explicit data schemas provid
 The goal of the shape index is to reduce the query execution time by minimizing the dereferencing of unnecessary RDF documents in subdomains of the web (set of URL or URL patterns).
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
 This mapping concept shares similarities with shape mapping~\cite{Gayo2018} and target declarations~\cite{Gayo2018Shacl}.
-However, instead of mapping shapes to RDF subgraphs, it maps shapes to documents.
-It also shares some commonalities with \href{https://shapetrees.org/}{shape trees}~\sepfootnote{shapetrees}, however, it is designed to be a simpler formulation focused on query optimization.
+However, instead of mapping shapes to RDF subgraphs, it maps shapes to sets of documents.
+The shape index mapping also shares some commonalities with \href{https://shapetrees.org/}{shape trees}~\sepfootnote{shapetrees}, however, it is designed to be a simpler formulation focused on query optimization.
 To indicate the range of applications of the index an associated domain and a flag indicating if the shape index is \emph{complete} are defined.
 A shape index is complete when every resource in the domain is associated with a shape within the shape index.
 In a shape index when a shape is mapped to a set of RDF resources then the shape \emph{must} validate those resources.
