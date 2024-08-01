@@ -45,3 +45,16 @@ can the shape index alone or with other data summarisation structures be used to
 
 
 </p>
+## How to cite
+
+```bib
+@misc{tam2024opportunitiesshapebasedoptimizationlink,
+      title={Opportunities for Shape-based Optimization of Link Traversal Queries}, 
+      author={Bryan-Elliott Tam and Ruben Taelman and Pieter Colpaert and Ruben Verborgh},
+      year={2024},
+      eprint={2407.00998},
+      archivePrefix={arXiv},
+      primaryClass={cs.DB},
+      url={https://arxiv.org/abs/2407.00998}, 
+}
+```
