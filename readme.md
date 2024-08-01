@@ -42,9 +42,8 @@ Our solution does not require extensive computational power from the data publis
 Additionally, using a shape index holds promise to improve the data quality of fragmented document-based linked data.
 There are still multiple questions left to be answered such as how to handle private data, what is the overhead and the complexity of the method,
 can the shape index alone or with other data summarisation structures be used to improve query planning without sacrificing query execution times.
-
-
 </p>
+
 ## How to cite
 
 ```bib
