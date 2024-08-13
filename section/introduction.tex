@@ -1,5 +1,9 @@
 \section{Introduction}
 
+\sepfootnotecontent{fn:typeIndex}{
+  \href{https://solid.github.io/type-indexes/}{https://solid.github.io/type-indexes/}
+}
+
 The World Wide Web is a naturally decentralized database.
 Centralizing large web segments in single endpoints provides easier query interfaces and faster query execution times.
 However, data centralization can lead to practices that raise ethical and legal concerns, making the exploration of decentralization-friendly query paradigms a relevant research topic.
@@ -28,7 +32,7 @@ Structural assumptions act as contracts between the data provider and the query 
 The use of structural assumptions has been studied in Solid \cite{Taelman2023}.
 The method involves the utilization of the 
 \href{https://solidproject.org/TR/protocol#resources}{solid storage} hypermedia description~\cite{Fielding} to locate all the resources of a pod. 
-This hypermedia description is not expressive enough to capture the content of the resources of a pod, thus, for query-aware optimizations, the \href{https://solid.github.io/type-indexes/}{type index specification} is additionally used.
+This hypermedia description is not expressive enough to capture the content of the resources of a pod, thus, for query-aware optimizations, the \href{https://solid.github.io/type-indexes/}{type index specification}~\sepfootnote{fn:typeIndex} is additionally used.
 The type index formulation proposes a more declarative approach~\cite{Taelman2017} by mapping RDF classes with sets of resources.
 By using those structural assumptions it is possible to reduce the query execution time of realistic queries to the extent where the bottleneck is not the execution of HTTP requests but the suboptimal heuristic-based query plan~\cite{eschauzier_quweda_2023, Taelman2023}.
 Yet, for multiple queries the high number of HTTP requests remains the main bottleneck~\cite{eschauzier_quweda_2023}.
