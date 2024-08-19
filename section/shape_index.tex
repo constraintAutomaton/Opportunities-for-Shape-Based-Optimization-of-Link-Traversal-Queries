@@ -1,5 +1,13 @@
 \section{Shape Index and Query-Shape Containment}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figure/shape_containement}
+    \caption{First, the shape index is dereferenced, 
+    then the \emph{query-shape containment} operations are performed in the query engine and lastly, only the relevant resources are dereferenced.}
+    \label{fig:shape_index}
+\end{figure}
+
 \sepfootnotecontent{fn:shapetrees}{
     \href{https://shapetrees.org/TR/specification/}{https://shapetrees.org/TR/specification/}
 }
@@ -54,10 +62,11 @@ This case is similar to the usage of the type index but with a more reaching abi
 It is possible to dereference the class IRIs to get information about the properties (if available), however, it is not the current practice \cite{Taelman2023}.
 A comparison of the RDF data shapes and RDF class approach due to their potential similarities is delegated to future works~\sepfootnote{fn:litShapeComparaison}.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{figure/shape_containement}
-    \caption{First, the shape index is dereferenced, 
-    then the \emph{query-shape containment} operations are performed in the query engine and lastly, only the relevant resources are dereferenced.}
-    \label{fig:shape_index}
-\end{figure}
+We conclude this section with a concrete example.
+Let's assume that a user wants to request every ID and content of the comments in the networks with the forums where they have been posted and the capital of the countries where the forum has been created.
+Conceptually and in terms of star pattern we \emph{can} have four entities, the comments $ Q_{comments}$, the forum $Q_{forums}$, and the countries $Q_{countries}$,
+the query is formed by the union, with consideration of the dependencies between those star patterns via the definition of the variables, of those patterns $Q = Q_{comments} \cup Q_{forums} \cup Q_{countries}$. 
+When traversing a part of the networks the engine cannot know what is inside the documents hence it is preferable for it to dereference all of them that are reachable given the defined reachability criteria.
+Hence, if a domain only contains forum data as advertised by a shape index via a shape mapping, it can be skipped entirely skipped 
+whereas if a domain has comments and pasta recipes the query engine can know it can safely limit its dereferencing to the set of documents related to comments without affecting results completeness given the index is complete
+because at least one star pattern is contained in the comment shape and none in the pasta shape.

@@ -16,6 +16,17 @@ The implementation of the benchmark and complementary results such as the analys
   \href{https://www.w3.org/TR/sparql11-query/\#propertypaths}{https://www.w3.org/TR/sparql11-query/\#propertypaths}
 }
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\linewidth]{figure/combined}
+  \caption{
+  The execution time with shape indexes is consistently lower (up to 80\% with D1V3 and S1V3) or equal to that with the type indexes (except for D3V3 and D3V4), and always uses fewer HTTP requests.
+  The queries are denoted with first the initial of the query template (e.g., S1 for interactive-\textbf{s}hort-\textbf{1}), and the version of the concrete query (e.g., V0). 
+  Values not present in the plot (D7V0 and D7V3) indicate that the query timeout before the end of the execution.
+  }
+  \label{fig:result}
+\end{figure}
+
 An open-source implementation of the \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{integration} in the query engine 
 Comunica \cite{taelman_iswc_resources_comunica_2018} is available online~\sepfootnote{fn:impl}.
@@ -37,14 +48,3 @@ A possible explanation for this observation is that the execution time of HTTP r
 leading to an increase in variance.
 This observation not only has potential implications for the reliability of multiple executions in terms of execution time
 but also in terms of the performance of single executions in unstable networks where the server might take longer times to respond. 
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{figure/combined}
-  \caption{
-  The execution time with shape indexes is consistently lower (up to 80\% with D1V3 and S1V3) or equal to that with the type indexes (except for D3V3 and D3V4), and always uses fewer HTTP requests.
-  The queries are denoted with first the initial of the query template (e.g., S1 for interactive-\textbf{s}hort-\textbf{1}), and the version of the concrete query (e.g., V0). 
-  Values not present in the plot (D7V0 and D7V3) indicate that the query timeout before the end of the execution.
-  }
-  \label{fig:result}
-\end{figure}
