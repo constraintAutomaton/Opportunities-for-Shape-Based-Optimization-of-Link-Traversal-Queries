@@ -64,9 +64,9 @@ A comparison of the RDF data shapes and RDF class approach due to their potentia
 
 We conclude this section with a concrete example.
 Let's assume that a user wants to request every ID and content of the comments in the networks with the forums where they have been posted and the capital of the countries where the forum has been created.
-Conceptually and in terms of star pattern we \emph{can} have four entities, the comments $ Q_{comments}$, the forum $Q_{forums}$, and the countries $Q_{countries}$,
-the query is formed by the union, with consideration of the dependencies between those star patterns via the definition of the variables, of those patterns $Q = Q_{comments} \cup Q_{forums} \cup Q_{countries}$. 
-When traversing a part of the networks the engine cannot know what is inside the documents hence it is preferable for it to dereference all of them that are reachable given the defined reachability criteria.
-Hence, if a domain only contains forum data as advertised by a shape index via a shape mapping, it can be skipped entirely skipped 
+Conceptually, we \emph{can} imagine a situation with four star pattern query entities, the comments $ Q_{comments}$, the forum $Q_{forums}$, and the countries $Q_{countries}$.
+The user's query is formed by the join of those star patterns, with consideration of the dependencies between them induced by the definition of variables with the same name $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{countries}$. 
+When traversing a part of the networks the engine cannot know what is inside the documents hence it is preferable for it to dereference all the reachable document given the defined reachability criteria.
+Hence, if a domain only contains forum data as advertised by a shape index via a shape mapping, it can be skipped entirely 
 whereas if a domain has comments and pasta recipes the query engine can know it can safely limit its dereferencing to the set of documents related to comments without affecting results completeness given the index is complete
 because at least one star pattern is contained in the comment shape and none in the pasta shape.
