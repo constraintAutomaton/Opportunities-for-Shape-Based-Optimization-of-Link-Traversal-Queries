@@ -41,7 +41,7 @@ Furthermore, every set of triples respecting the shape in the domain \emph{must}
 
 In order to determine before the traversal of a whole subdomain which resources are useful and which can be pruned, the query engine solves a \emph{query-shape containment} problem over the shape of the index analogous to the classic query containment problem~\cite{afariQCE, Spasi2023, Chekol2018}.
 The query containment problem consists of determining independent of the data source if the results of a query will be a subset of the results of another query.
-We propose to express RDF data shapes into select SPARQL queries ($Q_{s}$)~\cite{delva2023, labragayo2017validating, Corman2019} and apply similar resolution methods to query containment problems.
+We propose to express RDF data shapes into select SPARQL queries ($Q_{s}$)~\cite{delva2023, spapeExpressionConvert, labragayo2017validating, Corman2019} and apply similar resolution methods to query containment problems.
 Due to the explicit domain definition of the index, this approach is adaptative, 
 thus, the query engine can start its processing with permissive reachability criteria
 such as $c_{all}$~\cite{Hartig2012} or the Solid state-of-the-art reachability criteria~\cite{Taelman2023}
