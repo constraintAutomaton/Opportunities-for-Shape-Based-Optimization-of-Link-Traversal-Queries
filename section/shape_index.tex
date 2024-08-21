@@ -71,4 +71,4 @@ However, if a domain only contains books data as advertised by a shape index via
 whereas if a domain has comments and pasta recipes the query engine can know it can safely limit its dereferencing to the set of documents related to comments without affecting results completeness given the index is complete
 because at least one star pattern is contained in the comment shape and none in the pasta shape.
 If we have a domain that is incomplete but advertises comments, forums, and countries at least then the documents associated with the rest of the domain can be ignored.
-Thus, the traversal proceeds domain by domain (considering that there is one domain with an abstract empty shape index containing the rest of the web) only requesting elements respecting the star pattern queries, until no new documents are reachable or a limit clause is satisfied.
+Thus, the traversal proceeds domain by domain (considering that there is one domain with an abstract empty shape index containing the rest of the web) requesting document sets not in contradiction with the star pattern queries, until no new documents are reachable or a limit clause is satisfied.
