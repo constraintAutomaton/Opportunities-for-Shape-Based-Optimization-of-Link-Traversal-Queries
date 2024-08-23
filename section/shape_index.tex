@@ -68,8 +68,8 @@ Conceptually, we \emph{can} imagine a situation with three star pattern query en
 The user's query is formed by the join of those star patterns, with consideration of the dependencies between them induced by the definition of variables with the same name $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{countries}$. 
 When traversing a part of the networks the engine cannot know what is inside the documents hence it is preferable for it to dereference all the reachable ones given a defined reachability criterion.
 The presence of a shape index can make the state of affairs different.
-If a domain only contains books data as advertised by a shape index via a shape mapping, all its documents can be skipped entirely 
-whereas if a domain has comments and pasta recipes data the query engine can know it can safely limit its dereferencing operations to the set of documents related to comments without affecting results completeness given the indexes are complete in both cases.
+If a domain only contains books data as advertised by a shape index via a shape mapping, all its documents can be skipped 
+whereas if a domain has comments and pasta recipes data the query engine can know it can safely limit its dereferencing operations to the set of documents related to comments without affecting results completeness given the indexes are complete in both situations.
 The engine can do as such because at least one star pattern is contained in the comment shape and none in the pasta recipe and book shapes.
 If the engine encounters a domain with a shape index that is incomplete but advertises comments, forums, and countries at least then the documents associated with the rest of the domain can be ignored.
 Thus, we can consider that the traversal proceeds domain by domain requesting document sets known a priori to be not in contradiction with the star pattern queries until no new documents are reachable or a limit clause is satisfied.
