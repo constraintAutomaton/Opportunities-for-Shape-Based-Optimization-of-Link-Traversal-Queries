@@ -69,7 +69,7 @@ The user's query is formed by the join of those star patterns, where the joins r
 When traversing the network the query engine cannot know the content of the documents encountered, therefore, it is preferable for the engine to dereference all the reachable documents based on the defined reachability criterion.
 The presence of a shape index can change the state of affairs.
 If the engine encounters a domain containing exclusively book data as indicated by a complete shape index, the engine can skip the documents of the domain. 
-Conversely, if a domain has comment and pasta recipe data the query engine can safely limit its dereferencing operations to the set of documents related to comments without affecting results completeness assuming the index is complete.
-The engine can restrict its dereferencing operations because at least one star pattern is contained in the comment shape and none in the pasta recipe and book shapes.
+Conversely, if a domain has comment and movie review data the query engine can safely limit its dereferencing operations to the set of documents related to comments without affecting results completeness assuming the index is complete.
+The engine can restrict its dereferencing operations because at least one star pattern is contained in the comment shape and none in the movie review and book shapes.
 If the engine encounters a domain regardless of the completeness of the index, declaring comment, forum, and country data, among others, then the documents associated with the non-query-relevant part of the domain can be ignored with the same containment logic presented earlier.
 Thus, we can consider that the traversal proceeds domain by domain ignoring documents known a priori to not content query-relevant data.
