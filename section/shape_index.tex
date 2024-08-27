@@ -64,8 +64,8 @@ A comparison of the RDF data shapes and RDF class approach due to their potentia
 
 We conclude this section with a concrete example informed by Figure~\ref{fig:shape_index}.
 Let's assume that a user wants to retrieve the IDs and contents of the comments in a network along with the forums ID where they have been posted and the name of the moderator of the forums.
-Conceptually, this task \emph{can} involves three star pattern queries, the comment $ Q_{comments}$, the forum $Q_{forums}$, and the moderator $Q_{moderator}$ queries.
-The user's query is formed by the join of those star patterns, where the joins respect the dependencies defined by shared variables $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{moderator}$. 
+Conceptually, this task \emph{can} involves three star pattern queries, the comment $ Q_{comments}$, the forum $Q_{forums}$, and the moderator $Q_{moderators}$ queries.
+The user's query is formed by the join of those star patterns, where the joins respect the dependencies defined by shared variables $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{moderators}$. 
 When traversing the network the query engine cannot know the content of the documents encountered, therefore, it is preferable for the engine to dereference all the reachable documents based on the defined reachability criterion.
 The presence of a shape index can change the state of affairs.
 If the engine encounters a domain containing exclusively book data as indicated by a complete shape index, the engine can skip the documents of the domain. 
