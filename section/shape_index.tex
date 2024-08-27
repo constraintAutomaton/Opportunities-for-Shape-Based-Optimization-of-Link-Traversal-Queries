@@ -63,13 +63,13 @@ It is possible to dereference the class IRIs to get information about the proper
 A comparison of the RDF data shapes and RDF class approach due to their potential similarities is delegated to future works~\sepfootnote{fn:litShapeComparaison}.
 
 We conclude this section with a concrete example.
-Let's assume that a user wants to request every ID and content of the comments in a network with the forums where they have been posted and the capital of the countries where the forum has been created.
-Conceptually, we \emph{can} imagine a situation with three star pattern query entities, the comments $ Q_{comments}$, the forum $Q_{forums}$, and the countries $Q_{countries}$.
-The user's query is formed by the join of those star patterns, with consideration of the dependencies between them induced by the definition of variables with the same name $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{countries}$. 
-When traversing a part of the network the engine cannot know what is inside the documents hence it is preferable for it to dereference all the reachable ones given a defined reachability criterion.
-The presence of a shape index can make the state of affairs different.
-If a domain only contains book data as advertised by a shape index via a shape mapping, all its documents can be skipped 
-whereas if a domain has comment and pasta recipe data the query engine can know that it can safely limit its dereferencing operations to the set of documents related to comments without affecting results completeness given the indexes are complete in both situations.
+Let's assume that a user wants to retrieve the IDs and contents of the comments in a network along with the forums ID where they have been posted and the capital of the countries where the forum has been created.
+Conceptually, this task \emph{can} involves three star pattern queries, the comments $ Q_{comments}$, the forum $Q_{forums}$, and the countries $Q_{countries}$.
+The user's query is formed by the join of those star patterns, where the joins respect the dependencies defined by shared variables $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{countries}$. 
+When traversing the network the query engine cannot know the content of the documents encountered, therefore, it is preferable for the engine to dereference all the reachable documents based on the defined reachability criterion.
+The presence of a shape index can change the state of affairs.
+If the engine encounters a domain containing exclusively book data as indicated by a complete shape index, the engine can skip the documents of the domain. 
+Conversely, if a domain has comment and pasta recipe data the query engine can safely limit its dereferencing operations to the set of documents related to comments without affecting results completeness assuming the index is complete.
 The engine can restrict its dereferencing operations because at least one star pattern is contained in the comment shape and none in the pasta recipe and book shapes.
-If the engine encounters a domain regardless of the completeness of the index, advertising comment, forum, and country data, among others, then the documents associated with the rest of the domain (the among other data) can be ignored with the same containment logic presented earlier.
-Thus, we can consider that the traversal proceeds domain by domain requesting document sets known a priori to be not in contradiction with the star pattern queries until no new documents are reachable or a limit clause is satisfied.
+If the engine encounters a domain regardless of the completeness of the index, declaring comment, forum, and country data, among others, then the documents associated with the non-query-relevant part of the domain can be ignored with the same containment logic presented earlier.
+Thus, we can consider that the traversal proceeds domain by domain ignoring documents known a priori to not content query-relevant data.
