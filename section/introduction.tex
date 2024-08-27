@@ -15,7 +15,9 @@ Linked data in their structure particularly with the presence of IRI gives the o
 However, most query processing over linked data is performed in centralized and federated setups, leaving indexing-independent approaches largely experimental.
 
 Link Traversal Query Processing (LTQP)~\cite{Hartig2012} is a method to query unindexed networks of linked data documents.
-The method consists of starting from an initial set of IRI leading to external sources to recursively dereference them and any newly acquired IRI from these sources according to a policy while concurrently answering the query provided by the user with the data acquired.
+The method consists of answering a query using an evolving triple store.
+This evolving triple store is continuously updated with data acquired by the query engine through the dereferencing of IRIs from the store recursively.
+The process is started with a set of IRIs provided by the user to the engine.
 While LTQP enables live exploration of environments without prior indexing, it leads to some difficulties.
 One of them is the pseudo-infinite search domain derived from the size of the World Wide Web~\cite{hartig2016walking}.
 Additionally, HTTP requests can be very slow and unpredictable making their execution the bottleneck of the method~\cite{hartig2016walking}.
