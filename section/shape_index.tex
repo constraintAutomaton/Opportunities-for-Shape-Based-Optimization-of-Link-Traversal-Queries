@@ -63,7 +63,7 @@ It is possible to dereference the class IRIs to get information about the proper
 A comparison of the RDF data shapes and RDF class approach due to their potential similarities is delegated to future works~\sepfootnote{fn:litShapeComparaison}.
 
 We conclude this section with a concrete example.
-Let's assume that a user wants to retrieve the IDs and contents of the comments in a network along with the forums ID where they have been posted and the capital of the countries where the forum has been created.
+Let's assume that a user wants to retrieve the IDs and contents of the comments in a network along with the forums ID where they have been posted and the capital of the countries where the forums has been created.
 Conceptually, this task \emph{can} involves three star pattern queries, the comments $ Q_{comments}$, the forum $Q_{forums}$, and the countries $Q_{countries}$.
 The user's query is formed by the join of those star patterns, where the joins respect the dependencies defined by shared variables $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{countries}$. 
 When traversing the network the query engine cannot know the content of the documents encountered, therefore, it is preferable for the engine to dereference all the reachable documents based on the defined reachability criterion.
