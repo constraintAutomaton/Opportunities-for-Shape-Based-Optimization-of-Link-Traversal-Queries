@@ -29,6 +29,8 @@ However, the data published often adhere to an implicit schema due to the nature
 From those observations, implicit schemas have been used with success for query optimization~\cite{Neumann2011CharacteristicSA, Meimaris2018HierarchicalCS}.
 We propose to adapt those methods for LTQP by using explicit data schemas provided by the data provider in our source selection process.
 
+\subsection{Shape Index}
+
 Our method introduces the concept of a \emph{shape index} to reduce query execution time by minimizing unnecessary dereferencing of RDF documents within web subdomains (sets of URLs or URL patterns)~\sepfootnote{fn:domain}.
 We define a shape index as a set of mappings between RDF data shapes and sets of resources.
 This mapping concept shares similarities with shape mapping~\cite{Gayo2018} and target declarations~\cite{Gayo2018Shacl}.
@@ -38,6 +40,8 @@ The shape index has a range of applications defined in a domain and a flag indic
 A shape index is complete when every resource in the domain is associated with a shape within the shape index.
 In a shape index when a shape is mapped to a set of RDF resources then the shape \emph{must} validate those resources.
 Furthermore, every set of triples respecting the shape in the domain \emph{must} be located inside one resource of the set.
+
+\subsection{Query-Shape Containment}
 
 In order to determine before the traversal of a whole subdomain which resources are useful and which can be pruned, the query engine solves a \emph{query-shape containment} problem over the shape of the index analogous to the classic query containment problem~\cite{afariQCE, Spasi2023, Chekol2018}.
 The query containment problem consists of determining independent of the data source if the results of a query will be a subset of the results of another query.
@@ -62,11 +66,14 @@ This case is similar to the usage of the type index but with a more reaching abi
 It is possible to dereference the class IRIs to get information about the properties (if available), however, it is not the current practice \cite{Taelman2023}.
 A comparison of the RDF data shapes and RDF class approach due to their potential similarities is delegated to future works~\sepfootnote{fn:litShapeComparaison}.
 
-We conclude this section with a concrete example informed by Figure~\ref{fig:shape_index}.
+\subsection{A Concrete Example}
+
+We conclude this section with a concrete example.
 Let's assume that a user wants to retrieve the IDs and contents of the comments in a network along with the forums ID where they have been posted and the name of the moderator of the forums.
-Conceptually, this task \emph{can} involves three star pattern queries, the comment $ Q_{comments}$, the forum $Q_{forums}$, and the moderator $Q_{moderators}$ queries.
-The user's query is formed by the join of those star patterns, where the joins respect the dependencies defined by shared variables $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{moderators}$. 
-When traversing the network the query engine cannot know the content of the documents encountered, therefore, it is preferable for the engine to dereference all the reachable documents based on the defined reachability criterion.
+This query is schematized in Figure~\ref{fig:shape_index}.
+The query \emph{can} be represented by three star pattern queries, the comment $ Q_{comments}$, the forum $Q_{forums}$, and the moderator $Q_{moderators}$.
+The full query is formed by the join of those star patterns, where the joins respect the dependencies defined by shared variables $Q = Q_{comments} \bowtie Q_{forums} \bowtie Q_{moderators}$. 
+When traversing the network the query engine cannot know the content of the documents encountered, therefore, the engine \emph{must} deference every reachable document as defined by a reachability criterion.
 The presence of a shape index can change the state of affairs.
 If the engine encounters a domain containing exclusively book data as indicated by a complete shape index, the engine can skip the documents of the domain. 
 Conversely, if a domain has comment and movie review data declared by a complete shape index, the query engine can safely limit its dereferencing operations to the set of documents related to comments without affecting results completeness.
