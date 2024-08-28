@@ -29,7 +29,7 @@ The implementation of the benchmark and complementary results such as the analys
 
 An open-source implementation of the \href{https://github.com/constraintAutomaton/query-shape-detection}{algorithm} and an 
 \href{https://github.com/constraintAutomaton/comunica-feature-link-traversal/tree/feature/shapeIndex}{integration} in the query engine 
-Comunica \cite{taelman_iswc_resources_comunica_2018} is available online~\sepfootnote{fn:impl}.
+Comunica \cite{taelman_iswc_resources_comunica_2018} is available online.~\sepfootnote{fn:impl}
 We use the \href{https://github.com/SolidBench/SolidBench.js}{benchmark Solidbench} \cite{Taelman2023} to compare our approach with the current state-of-the-art (the \href{https://solid.github.io/type-indexes/}{type index} and the \href{https://www.w3.org/TR/ldp/}{LDP specification}~\sepfootnote{fn:ldp} as structural assumptions)~\cite{Taelman2023}.
 We used the supported subset of SolidBench queries, skipping the currently unimplemented \href{https://www.w3.org/TR/sparql11-query/#propertypaths}{SPARQL property paths}~\sepfootnote{fn:propertyPath} and unions.
 We executed each query 50 times with a timeout of 1 minute (6,000 ms).
