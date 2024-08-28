@@ -48,7 +48,7 @@ can the shape index alone or with other data summarisation structures be used to
 ## How to cite
 
 ```bib
-@misc{tam2024opportunitiesshapebasedoptimizationlink,
+@misc{tamShapeIndexAMW2024,
       title={Opportunities for Shape-based Optimization of Link Traversal Queries}, 
       author={Bryan-Elliott Tam and Ruben Taelman and Pieter Colpaert and Ruben Verborgh},
       year={2024},
