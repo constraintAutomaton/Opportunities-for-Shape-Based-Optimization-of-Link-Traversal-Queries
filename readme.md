@@ -1,4 +1,4 @@
-# Opportunities for Shape-based Optimization of Link Traversal Queries
+# Opportunities for Shape-Based Optimization of Link Traversal Queries
 
 Short paper accepted by the ["Alberto Mendelzon International Workshop on Foundations of Data Management (AMW 2024)"](https://amw2024.github.io/). 
 The experiment repository is available via [this hypermedia link](https://github.com/constraintAutomaton/amw_shape_index_results/tree/main).
