@@ -62,3 +62,6 @@ Data on the web is naturally unindexed and decentralized. Centralizing web data,
   _type     = {Workshop}
 }
 ```
+
+## License
+The code is licensed under the CC-BY-4.0 license. See the [LICENSE](LICENSE) file for details.
